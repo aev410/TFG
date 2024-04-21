@@ -1,9 +1,8 @@
-import './App.css';
-
+import Map from "./components/google-map/map"
 function App() {
   return (
     <div className="App">
-    
+      <Map></Map>
     </div>
   );
 }
