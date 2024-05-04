@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Admin123
+      POSTGRES_DB: alpujarra_almeria
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init:/docker-entrypoint-initdb.d  # Monta el directorio init
+
+  express:
+    build: ./ProyectoServidor
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+
+  react:
+    build: ./proyecto
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - express
+
+volumes:
+  postgres_data:
