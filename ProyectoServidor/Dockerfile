@@ -2,7 +2,7 @@
 FROM node:latest
 
 # Establece el directorio de trabajo dentro del contenedor
-WORKDIR /usr/src/app
+WORKDIR /usr/src
 
 # Copia el archivo package.json y package-lock.json (si existe) al directorio de trabajo
 COPY package*.json ./
@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Comando para ejecutar la aplicación cuando se inicie el contenedor
-CMD ["node", "app.js"]
+CMD ["node", "src/server.js"]
