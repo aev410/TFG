@@ -55,7 +55,7 @@ const Map = () => {
     return (
         <div className="container">
             <div className="controls">
-                <h1>Commute</h1>
+                <h1>Ciudades</h1>
                 <Places setOffice={(position) => {
                     setOffice(position);
                     mapRef.current?.panTo(position)
