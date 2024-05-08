@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Autofill from './autofillMaps';
 
 const formPub = () => {
     const [formState, setFormState] = useState({

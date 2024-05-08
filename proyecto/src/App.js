@@ -1,8 +1,9 @@
-import Map from "./components/google-map/map"
+import Map from "./components/google-map/map";
+import Autofill from "./components/google-map/menus/autofillMaps";
 function App() {
   return (
     <div className="App">
-      <Map></Map>
+      <Map Menu={Autofill}></Map>
     </div>
   );
 }
