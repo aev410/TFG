@@ -1,6 +1,5 @@
 import React, { useState, useMemo, useCallback, useRef } from "react";
 import { useLoadScript, GoogleMap, Marker, Circle, MarkerClusterer } from "@react-google-maps/api";
-import Places from "./places";
 import "./map.css";
 
 const generateHouses = (position) => {
@@ -32,7 +31,7 @@ const closeOptions = {
     fillCollor: "#8BC34A"
 }
 
-const Map = () => {
+const Map = ({ Menu }) => {
     const [office, setOffice] = useState();
     const mapRef = useRef();
     const center = useMemo(() => ({ lat: 37.033002717899535, lng: -2.6214881335802667 }), []);
@@ -55,11 +54,11 @@ const Map = () => {
     return (
         <div className="container">
             <div className="controls">
-                <h1>Ciudades</h1>
-                <Places setOffice={(position) => {
+                <h1>Mapa</h1>
+                <Menu setOffice={(position) => {
                     setOffice(position);
                     mapRef.current?.panTo(position)
-                }} ></Places>
+                }} ></Menu>
             </div>
             <div className="map">
                 <GoogleMap zoom={17} center={center}
@@ -72,9 +71,9 @@ const Map = () => {
                                 center.lat, center.lng
                             </Marker>
                             <MarkerClusterer>
-                                {(clusterer) => houses.map(house => <Marker key= {house.lat} position={house} clusterer={clusterer}/>)}
+                                {(clusterer) => houses.map(house => <Marker key={house.lat} position={house} clusterer={clusterer} />)}
                             </MarkerClusterer>
-                            <Circle center={office} radius={1000} options={closeOptions}/>
+                            <Circle center={office} radius={1000} options={closeOptions} />
                         </>
                     )}
                 </GoogleMap>
