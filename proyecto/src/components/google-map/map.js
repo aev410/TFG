@@ -2,17 +2,8 @@ import React, { useState, useMemo, useCallback, useRef } from "react";
 import { useLoadScript, GoogleMap, Marker, Circle, MarkerClusterer } from "@react-google-maps/api";
 import "./map.css";
 
-const generateHouses = (position) => {
-    const _houses = [];
-    for (let i = 0; i < 100; i++) {
-        const direction = Math.random() < 0.5 ? -2 : 2;
-        _houses.push({
-            lat: position.lat + Math.random() / direction,
-            lng: position.lng + Math.random() / direction
-        })
-    }
-    return _houses;
-}
+/*Opciones para el mapa y el circulo que aparece cuando buscamos una zona en especifico
+respectivamente*/
 
 const defaultOptions = {
     strokeCapacity: 0.5,
@@ -31,49 +22,57 @@ const closeOptions = {
     fillCollor: "#8BC34A"
 }
 
-const Map = ({ Menu }) => {
+/*Contiene dos props, menu es el tipo de interfaz que aparece en el rectangulo negro
+Siendo autofillMaps una barra de busqueda y places checkboxes con provincias*/
+
+const Map = ({ Menu, setOfficeLocation }) => {
     const [office, setOffice] = useState();
+    //La verdad no se que hace esto, no creo que haya necesidad de moverlo
     const mapRef = useRef();
+    //Donde va a iniciar el mapa
     const center = useMemo(() => ({ lat: 37.033002717899535, lng: -2.6214881335802667 }), []);
+    //Aplica las opciones
     const options = useMemo(() => ({
         disableDefaultUI: true,
         clickableIcons: false
     }), []);
+    //Carga el mapa, creo
     const onLoad = useCallback(Map => (mapRef.current = Map), [])
 
+    //API de google
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: "AIzaSyBE2cF2mYtxB3H_LMxgpf_CxeBTjtfl3o4",
         libraries: ["places"]
     });
-
-    const houses = useMemo(() => generateHouses(center), [center]);
-
+    
+    //Si no ha cargado muestra esto
     if (!isLoaded) {
         return <div>Loading...</div>
     }
+
     return (
         <div className="container">
             <div className="controls">
                 <h1>Mapa</h1>
+                
                 <Menu setOffice={(position) => {
-                    setOffice(position);
-                    mapRef.current?.panTo(position)
-                }} ></Menu>
+                    setOffice(position); //setOffice aplica las coordenadas pasadas
+                    setOfficeLocation(position);  //Usamos dos office locations para poder darle las coordenadas al formulario de crearPub
+                    mapRef.current?.panTo(position) //panea a la zona
+                }} />
             </div>
             <div className="map">
                 <GoogleMap zoom={17} center={center}
                     mapContainerClassName="map-container"
                     options={options}
+
                     onLoad={onLoad}>
                     {office && (
                         <>
                             <Marker position={office}>
                                 center.lat, center.lng
                             </Marker>
-                            <MarkerClusterer>
-                                {(clusterer) => houses.map(house => <Marker key={house.lat} position={house} clusterer={clusterer} />)}
-                            </MarkerClusterer>
-                            <Circle center={office} radius={1000} options={closeOptions} />
+                            <Circle center={office} radius={300} options={closeOptions} />
                         </>
                     )}
                 </GoogleMap>

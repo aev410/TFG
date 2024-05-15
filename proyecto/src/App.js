@@ -1,9 +1,8 @@
-import Map from "./components/google-map/map";
-import Autofill from "./components/google-map/menus/autofillMaps";
+import UploadItem from "./components/nuevPub/copilot";
 function App() {
   return (
     <div className="App">
-      <Map Menu={Autofill}></Map>
+      <UploadItem></UploadItem>
     </div>
   );
 }
