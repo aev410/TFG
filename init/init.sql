@@ -1,13 +1,16 @@
+-- Active: 1715772260983@@localhost@5432@alpujarraalmeria
 
-use AlpujarraAlmeria;
+use alpujarraalmeria;
 
+CREATE SCHEMA clientes
+usa
 CREATE Table Usuarios(
     idUsuario INT PRIMARY KEY,
     nombre VARCHAR(50),
     apellido VARCHAR(50),
     contra VARCHAR(50),
     correo VARCHAR(50),
-    fechaNac DATE,
+    fechaNac DATE
 );
 
 CREATE TABLE Publicacion(

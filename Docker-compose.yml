@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: Admin123
-      POSTGRES_DB: alpujarra_almeria
+      POSTGRES_DB: alpujarraalmeria
     ports:
       - "5432:5432"
     volumes:
