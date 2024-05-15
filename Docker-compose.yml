@@ -1,9 +1,3 @@
-version: '3.7'
-
-networks:
-  my-network:
-    driver: bridge
-
 services:
   postgres:
     image: postgres:latest
@@ -17,8 +11,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./init:/docker-entrypoint-initdb.d  # Monta el directorio init
-    networks:
-      - my-network
+
 
   express:
     build: ./ProyectoServidor
@@ -27,8 +20,6 @@ services:
       - "3000:3000"
     depends_on:
       - postgres
-    networks:
-      - my-network
 
   react:
     build: ./proyecto
@@ -37,7 +28,6 @@ services:
       - "80:80"
     depends_on:
       - express
-    networks:
-      - my-network
+
 volumes:
   postgres_data:
