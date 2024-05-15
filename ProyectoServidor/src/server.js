@@ -1,6 +1,6 @@
 const express = require('express')
 const morgan = require('morgan')
-// const { connectDB } = require('./config/database')
+const { connectDB } = require('./config/database')
 require('dotenv').config()
 
 const app = express()
@@ -13,16 +13,16 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-// app.get('/users', async (req, res) => {
-//   connectDB()
-//   try {
-//     const { pool } = require('./config/database')
-//     const result = await pool.query('SELECT * FROM users')
-//     res.json(result.rows)
-//   } catch (error) {
-//     console.error('Error executing query', error.stack)
-//     res.status(500).send('Internal Server Error')
-//   }
-// })
+app.get('/pelis', async (req, res) => {
+  connectDB()
+  try {
+    const { pool } = require('./config/database')
+    const result = await pool.query('SELECT * FROM alpujarraalmeria.usuarios')
+    res.json(result.rows)
+  } catch (error) {
+    console.error('Error executing query', error.stack)
+    res.status(500).send('Internal Server Error')
+  }
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
