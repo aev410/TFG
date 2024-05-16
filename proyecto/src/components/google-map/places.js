@@ -17,7 +17,7 @@ const Places = ({setOffice}) => {
                     type="radio"
                     value="alboloduy"
                     name="municipio"
-                    onChange={() => handleSelect({ lat: 37.033, lng: -2.616 })}
+                    onChange={() => handleSelect({ lat: 37.033, lng: -2.621 })}
                 />
             </label>
             <label>
