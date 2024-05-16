@@ -1,4 +1,4 @@
-import UploadItem from "./components/nuevPub/copilot";
+import UploadItem from "./components/nuevPub/UploadItem";
 function App() {
   return (
     <div className="App">

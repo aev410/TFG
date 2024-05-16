@@ -1,5 +1,5 @@
 # Usa la imagen base de Node.js
-FROM node:latest as build
+FROM node:17 as build
 
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /usr/src/app
