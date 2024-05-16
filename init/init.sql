@@ -6,7 +6,7 @@ CREATE SCHEMA clientes;
 -- Cambia al esquema "mi_esquema"
 SET search_path TO clientes;
 
-usa
+
 CREATE Table Usuarios(
     idUsuario INT PRIMARY KEY,
     nombre VARCHAR(50),

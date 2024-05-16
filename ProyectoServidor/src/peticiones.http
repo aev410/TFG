@@ -1,0 +1,8 @@
+@direccion = http://localhost:3000
+
+GET {{direccion}}/
+Accept: application/json
+
+###
+GET {{direccion}}/publicacion
+Accept: application/json
