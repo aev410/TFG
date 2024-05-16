@@ -1,13 +1,13 @@
 
-use AlpujarraAlmeria;
+use alpujarra_almeria;
 
 CREATE Table Usuarios(
-    idUsuario INT PRIMARY KEY,
+    idUsuario SERIAL PRIMARY KEY ,
     nombre VARCHAR(50),
     apellido VARCHAR(50),
     contra VARCHAR(50),
     correo VARCHAR(50),
-    fechaNac DATE,
+    fechaNac DATE
 );
 
 CREATE TABLE Publicacion(
@@ -26,3 +26,4 @@ ADD FOREIGN KEY (idUsuario)
 REFERENCES Usuarios (idUsuario)
 ON DELETE CASCADE
 ON UPDATE CASCADE;
+
