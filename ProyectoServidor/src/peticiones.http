@@ -1,8 +1,12 @@
+# Archivo para probar las rutas de la API
 @direccion = http://localhost:3000
 
+# Devuelve hola mundo
 GET {{direccion}}/
 Accept: application/json
 
 ###
+# devuelve todas las publicaciones
 GET {{direccion}}/publicacion
 Accept: application/json
+

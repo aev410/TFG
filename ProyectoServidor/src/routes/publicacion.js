@@ -15,7 +15,6 @@ router.get('/', async (req, res) => {
     }
     console.log('Filas seleccionadas:', result.rows)
     res.json(result.rows)
-    pool.end() // Cierra la conexión al finalizar
   })
 })
 
