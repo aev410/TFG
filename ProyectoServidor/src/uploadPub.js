@@ -18,7 +18,7 @@ app.post('/', upload.single('imagenes'), async (req, res) => {
       VALUES($1, $2, $3, $4, $5, $6, $7)
     `
     const values = [precio, descripcion, fechaPub, latitud, longitud, imagenes, idUsuario]
-    await pool.query(query, values)
+    pool.query(query, values)
 
     res.status(200).json({ message: 'Publicacion created successfully.' })
   } catch (error) {

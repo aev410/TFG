@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useCallback, useRef } from "react";
-import { useLoadScript, GoogleMap, Marker, Circle, MarkerClusterer } from "@react-google-maps/api";
+import { useLoadScript, GoogleMap, Marker, Circle } from "@react-google-maps/api";
 import "./map.css";
 
 /*Opciones para el mapa y el circulo que aparece cuando buscamos una zona en especifico
