@@ -1,5 +1,11 @@
+-- Active: 1715772260983@@localhost@5432@alpujarraalmeria
 
-use alpujarra_almeria;
+use alpujarraalmeria;
+
+CREATE SCHEMA clientes;
+-- Cambia al esquema "mi_esquema"
+SET search_path TO clientes;
+
 
 CREATE Table Usuarios(
     idUsuario SERIAL PRIMARY KEY ,

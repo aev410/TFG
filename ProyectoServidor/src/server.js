@@ -1,28 +1,19 @@
-const express = require('express');
-const cors = require("cors");
-const path = require('path');
-const registerEndpoint = require('./registrarse'); 
-const loginEndpoint = require('./iniciarSesion');
-const app = express();
-const port = 3000;
+const express = require('express')
+const morgan = require('morgan')
+const publicacionRouter = require('./routes/publicacion')
 
-// Utilizar el middleware cors
-app.use(cors());
+require('dotenv').config()
 
-//Manejar solicitudes JSON:
-app.use(express.json());
+const app = express()
+const port = process.env.PORT || 3000// El puerto se guarda en el archivo .env
+//  Midelware
+app.use(morgan('dev')) //   Muestra info sobre las solicitudes http
+app.use(express.json())//   Para que las solicitudes http sean accesibles con req.body
 
-// Usar el endpoint de registro
-app.use(registerEndpoint);
+app.use('/publicacion', publicacionRouter)
 
-//Usar el endpoint de inicio de sesión
-app.use(loginEndpoint);
-
-// Servir archivos estáticos desde la carpeta de React
-app.use(express.static(path.join(__dirname, 'TFG', 'proyecto')));
-
-
-app.get('/', (req, res) => res.send('Hello World!!'))
-
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
