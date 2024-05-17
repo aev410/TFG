@@ -1,6 +1,8 @@
--- Active: 1715772260983@@localhost@5432@alpujarraalmeria
+-- Active: 1715949403010@@127.0.0.1@5432@alpujarra_almeria
 
-use alpujarraalmeria;
+create database alpujarraalmeria;
+
+use alpujarra_almeria;
 
 CREATE SCHEMA clientes;
 -- Cambia al esquema "mi_esquema"
