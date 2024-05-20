@@ -6,7 +6,6 @@ import "./form.css";
 
 const UploadItem = () => {
     const currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
-    console.log(currentDate)
     const [precio, setPrecio] = useState('');
     const [descripcion, setDescripcion] = useState('');
     const [imagenes, setImagenes] = useState('');

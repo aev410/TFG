@@ -21,7 +21,7 @@ CREATE Table Usuarios(
 );
 
 CREATE TABLE Publicacion(
-    idPublicacion INT PRIMARY KEY,
+    idPublicacion INT SERIAL KEY,
     precio INT,
     descripcion VARCHAR(50),
     fecha_pub DATE,
