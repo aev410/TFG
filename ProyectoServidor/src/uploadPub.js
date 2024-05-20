@@ -1,5 +1,6 @@
 const express = require('express')
 const multer = require('multer')
+const path = require('path')
 const { connectDB, pool } = require('./config/database')
 const app = express()
 
@@ -12,10 +13,10 @@ const storage = multer.diskStorage({
   filename: function (req, file, cb) {
     cb(null, file.fieldname + '-' + Date.now() + file.originalname.match(/\..*$/)[0])
   }
-});
+})
 
 // Checa si el archivo es de mas de 5mb y si es jpg, png o jpeg
-const multi_Upload = multer({
+const multiUpload = multer({
   storage,
   limits: { fileSize: 1 * 5120 * 5120 }, // 1MB
   fileFilter: (req, file, cb) => {
@@ -28,22 +29,22 @@ const multi_Upload = multer({
       return cb(err)
     }
   }
-}).array('uploadedImages', 5)
+})
 
-app.post('/', multi_Upload.array('imagenes'), async (req, res) => {
-  const { precio, descripcion, fechaPub, latitud, longitud, idUsuario } = req.body
-  const imagenes = req.files.path // This will be the path where your image is stored by Multer
-
+app.post('/', multiUpload.array('imagenes'), async (req, res) => {
+  const idUsuario = 4
+  const { precio, descripcion, fechaPub, latitud, longitud } = req.body
+  const imagenes = req.files.map(file => file.path)
   try {
+    console.log('imagenes: ', imagenes)
     const query = `
-      INSERT INTO clientes.publicacion(precio, descripcion, fecha_pub, latitud, longitud, imagenes, idUsuario)
-      VALUES($1, $2, $3, $4, $5, $6, $7)
-    `
+          INSERT INTO clientes.publicacion(precio, descripcion, fecha_pub, latitud, longitud, imagenes, idUsuario)
+          VALUES($1, $2, $3, $4, $5, $6, $7)
+        `
     const values = [precio, descripcion, fechaPub, latitud, longitud, imagenes, idUsuario]
-    pool.query(query, values)
+    await pool.query(query, values)
 
-    res.status(200).json({ message: 'Publicacion created successfully.' })
-    res.send('Publicacion creada correctamente')
+    res.status(200).json({ message: 'Publicacion creada correctamente' })
   } catch (error) {
     console.error(error)
     res.status(500).json({ message: 'Error en servidor' })
