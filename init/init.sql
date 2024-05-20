@@ -1,11 +1,10 @@
+<<<<<<< HEAD
 -- Active: 1715949403010@@127.0.0.1@5432@alpujarra_almeria
+=======
+-- Active: 1715772260983@@localhost@5432@alpujarra_almeria
+>>>>>>> AEBranch
 
-drop DATABASE alpujarra_almeria WITH (FORCE);
--- Active: 1715957714479@@127.0.0.1@5432@alpujarra_almeria
 
-create database alpujarra_almeria;
-
-use alpujarra_almeria;
 
 CREATE SCHEMA clientes;
 -- Cambia al esquema "mi_esquema"
