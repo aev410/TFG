@@ -30,10 +30,18 @@ a {
   border: none;
 }
 
+.container{
+  height: 100%;
+}
+
 
 .map {
   width: 80%;
-  height: 100px;
+  height: 120vh;
+}
+
+.map-container {
+  height: 120vh;
 }
 
 .highlight {

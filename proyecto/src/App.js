@@ -1,8 +1,9 @@
-import UploadItem from "./components/nuevPub/UploadItem";
+import Map from "./components/google-map/map"
+import Places from "./components/google-map/places"
 function App() {
   return (
     <div className="App">
-      <UploadItem></UploadItem>
+      <Map Menu={Places}></Map>
     </div>
   );
 }
