@@ -1,58 +1,80 @@
+
 /* Parametros principales de nav-item */
-.navbar-nav .nav-link {
-    cursor: pointer;
-    color: var(--primary-600);
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  
-  /* Animacion subrayado texto de nav-item */
-  .navbar-light .navbar-nav .nav-link:hover {
-    cursor: pointer;
-    color: var(--principal);
-  }
+/* .navbar-nav .nav-link {
+  cursor: pointer;
+  color: var(--primary-600);
+  font-size: 1rem;
+  font-weight: bold;
+} */
+
+/* Animacion subrayado texto de nav-item */
+/* .navbar-light .navbar-nav .nav-link:hover {
+  cursor: pointer;
+  color: var(--principal);
+}
+.aUnL::after {
+  content: "";
+  display: block;
+  height: 1.7px;
+  background-color: var(--principal);
+  transform: scale(0, 1);
+  transform-origin: left;
+  transition: transform 0.2s;
+}
+.aUnL:hover::after {
+  transform: scale(1.05, 1);
+} */
+
+/* configuracion general navbar */
+.container-fluid{
+  background-color: var(--principal);
+}
+
+.navbar-brand img {
+  height: 12.5em; 
+  width: auto;
+}
+.form-control {
+  border-radius: 20px;
+}
+.btn-outline-success, .btn-primary {
+  border-radius: 20px;
+}
+.btn-primary {
+  background-color: #00c4cc;
+  border-color: #00c4cc;
+}
+.btn-outline-success {
+  color: #00c4cc;
+  border-color: #00c4cc;
+}
+.btn-outline-success:hover {
+  background-color: #00c4cc;
+  color: white;
+}
+/* Boton entrar al metaverso */
+
+/* #btnEntrar {
+  background-color: var(--acento);
+
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--secundario);
+} */
+
+/* #btnEntrar:hover {
+  background-color: var(--acento-hover);
+  color: var(--secundario);
+}
+
+@media (max-width: 1140px) {
   .aUnL::after {
     content: "";
     display: block;
-    height: 1.7px;
+    height: 0;
     background-color: var(--principal);
-    transform: scale(0, 1);
-    transform-origin: left;
-    transition: transform 0.2s;
+    transform: none;
+    transition: none;
   }
-  .aUnL:hover::after {
-    transform: scale(1.05, 1);
-  }
-  
-  /* configuracion general navbar */
-  nav {
-    background-color: var(--secundario);
-  }
-  
-  /* Boton entrar al metaverso */
-  
-  #btnEntrar {
-    background-color: var(--acento);
-  
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--secundario);
-  }
-  
-  #btnEntrar:hover {
-    background-color: var(--acento-hover);
-    color: var(--secundario);
-  }
-  
-  @media (max-width: 1140px) {
-    .aUnL::after {
-      content: "";
-      display: block;
-      height: 0;
-      background-color: var(--principal);
-      transform: none;
-      transition: none;
-    }
-  }
-  
+} */

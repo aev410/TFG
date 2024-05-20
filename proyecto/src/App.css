@@ -1,8 +1,15 @@
-:root{
-/* paleta de colores */
-    --color-1: #427a36;
-    --color-2: #6e9b5f;
-    --color-3: #99bd88;
-    --color-4: #c4deb2;
-    --color-5: #efffdb;
-}
+:root {
+    /*Color palette*/
+    --color1: #427a36;
+    --color2: #6e9b5f;
+    --color3: #99bd88 ;
+    --color4: #c4deb2;
+    --color5: #efffdb;
+  
+    --principal: #003400;
+    --secundario: #ffffff;
+    --acento: #009389;
+    --acento-hover: #33b9b0;
+  
+  
+  }
