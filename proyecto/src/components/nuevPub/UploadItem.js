@@ -5,7 +5,8 @@ import Autofill from '../google-map/menus/autofillMaps';
 import "./form.css";
 
 const UploadItem = () => {
-    const currentDate = new Date();
+    const currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    console.log(currentDate)
     const [precio, setPrecio] = useState('');
     const [descripcion, setDescripcion] = useState('');
     const [imagenes, setImagenes] = useState('');
@@ -18,7 +19,7 @@ const UploadItem = () => {
         const formData = new FormData();
         formData.append('precio', precio);
         formData.append('descripcion', descripcion);
-        formData.append('fecha_pub', currentDate.toString());
+        formData.append('fecha_pub', currentDate);
         formData.append('latitud', lat);
         formData.append('longitud', lon);
         formData.append('imagenes', imagenes);
@@ -47,7 +48,7 @@ const UploadItem = () => {
             </div>
             <div className='input'>
                 Subir Imagen:
-                <input type='file' multiple='multiple' onChange={(e) => setImagenes(e.target.files)} required />
+                <input type='file' multiple onChange={(e) => setImagenes(e.target.files)} required />
             </div>
             <div className='input'>
                 Seleccionar Ubicacion:
