@@ -1,6 +1,7 @@
 -- Active: 1716075812714@@127.0.0.1@5432@postgres
 
 drop DATABASE alpujarra_almeria WITH (FORCE);
+-- Active: 1715957714479@@127.0.0.1@5432@alpujarra_almeria
 
 create database alpujarra_almeria;
 
