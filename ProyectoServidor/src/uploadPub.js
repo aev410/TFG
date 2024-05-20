@@ -7,30 +7,30 @@ connectDB()
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-      cb(null, path.join(__dirname, './images/'))
+    cb(null, path.join(__dirname, './images/'))
   },
   filename: function (req, file, cb) {
-          cb(null, file.fieldname + '-' + Date.now() + file.originalname.match(/\..*$/)[0])
+    cb(null, file.fieldname + '-' + Date.now() + file.originalname.match(/\..*$/)[0])
   }
 });
 
 // Checa si el archivo es de mas de 5mb y si es jpg, png o jpeg
-const multi_upload = multer({
+const multi_Upload = multer({
   storage,
   limits: { fileSize: 1 * 5120 * 5120 }, // 1MB
   fileFilter: (req, file, cb) => {
-      if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
-          cb(null, true);
-      } else {
-          cb(null, false);
-          const err = new Error('Solo formatos de imagenes aceptados (png, jpg, jpeg)')
-          err.name = 'ExtensionError'
-          return cb(err);
-      }
-  },
+    if (file.mimetype === 'image/png' || file.mimetype === 'image/jpg' || file.mimetype === 'image/jpeg') {
+      cb(null, true)
+    } else {
+      cb(null, false)
+      const err = new Error('Solo formatos de imagenes aceptados (png, jpg, jpeg)')
+      err.name = 'ExtensionError'
+      return cb(err)
+    }
+  }
 }).array('uploadedImages', 5)
 
-app.post('/', multi_upload.multiple('imagenes'), async (req, res) => {
+app.post('/', multi_Upload.array('imagenes'), async (req, res) => {
   const { precio, descripcion, fechaPub, latitud, longitud, idUsuario } = req.body
   const imagenes = req.files.path // This will be the path where your image is stored by Multer
 

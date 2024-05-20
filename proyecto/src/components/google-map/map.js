@@ -58,8 +58,15 @@ const Map = ({ Menu, setLat, setLon }) => {
                 <Menu setOffice={(position) => {
                     setOffice(position); //setOffice aplica las coordenadas pasadas
                     mapRef.current?.panTo(position) //panea a la zona
-                    setLat(position.lat);
-                    setLon(position.lng)
+                    if(typeof setLat === 'undefined' && typeof setLon === 'undefined'){
+                        console.log("Operando sin guardar coordenadas")
+                    } else{
+                        console.log("Guardando coordenadas") 
+                        console.log(setLat)
+                        console.log(setLon)
+                        setLat(position.lat)
+                        setLon(position.lng)
+                    }
                 }} />
             </div>
             <div className="map">
