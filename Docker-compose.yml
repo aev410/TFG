@@ -9,7 +9,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./volumen:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
 
 
   express:
@@ -27,3 +27,6 @@ services:
       - "80:80"
     depends_on:
       - express
+
+volumes:
+  postgres_data:
