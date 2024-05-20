@@ -1,9 +1,14 @@
-import Map from "./components/google-map/map"
-import Places from "./components/google-map/places"
+// import Map from "./components/google-map/map"
+import Nav from "./components/nav/nav"
+import Footer from "./components/footer/footer"
+import './App.css'
+
 function App() {
+
   return (
-    <div className="App">
-      <Map Menu={Places}></Map>
+    <div>
+        <Nav />
+        <Footer />
     </div>
   );
 }
