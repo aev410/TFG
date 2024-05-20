@@ -9,10 +9,6 @@ import {
 } from "@reach/combobox";
 import "@reach/combobox/styles.css"
 
-const PlacesProps = {
-    setOffice: (position) => ""
-} 
-
 const Autofill = ({setOffice}) => {
     const {ready, value, setValue, suggestions: {status, data}, clearSuggestions} =
      usePlacesAutocomplete();

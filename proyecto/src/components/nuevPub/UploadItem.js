@@ -8,9 +8,9 @@ const UploadItem = () => {
     const currentDate = new Date();
     const [precio, setPrecio] = useState('');
     const [descripcion, setDescripcion] = useState('');
-    const [latitud, setLatitud] = useState(null);
-    const [longitud, setLongitud] = useState(null);
-    const [imagenes, setImagenes] = useState(null);
+    const [imagenes, setImagenes] = useState('');
+    const [lat, setLat] = useState(null);
+    const [lon, setLon] = useState(null);
 
     const submitForm = async (e) => {
         e.preventDefault();
@@ -19,8 +19,8 @@ const UploadItem = () => {
         formData.append('precio', precio);
         formData.append('descripcion', descripcion);
         formData.append('fecha_pub', currentDate.toString());
-        formData.append('latitud', latitud);
-        formData.append('longitud', longitud);
+        formData.append('latitud', lat);
+        formData.append('longitud', lon);
         formData.append('imagenes', imagenes);
 
         try {
@@ -47,13 +47,14 @@ const UploadItem = () => {
             </div>
             <div className='input'>
                 Subir Imagen:
-                <input type="file" onChange={(e) => setImagenes(e.target.files[0])} required />
+                <input type='file' multiple='multiple' onChange={(e) => setImagenes(e.target.files)} required />
             </div>
             <div className='input'>
                 Seleccionar Ubicacion:
-                <Map Menu={Autofill} setOfficeLocation={({ lat, lng }) => { setLatitud(lat); setLongitud(lng); }} />
+                <Map Menu={Autofill} setLat={setLat} setLon={setLon}/>
             </div>
-            <button type="submit">Subir Publicacion</button>
+            <button type="submit"
+                >Subir Publicacion</button>
         </form>
     );
 };

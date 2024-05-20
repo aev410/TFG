@@ -1,6 +1,8 @@
--- Active: 1715949403010@@127.0.0.1@5432@alpujarra_almeria
+-- Active: 1716075812714@@127.0.0.1@5432@postgres
 
-create database alpujarraalmeria;
+drop DATABASE alpujarra_almeria WITH (FORCE);
+
+create database alpujarra_almeria;
 
 use alpujarra_almeria;
 
@@ -23,8 +25,8 @@ CREATE TABLE Publicacion(
     precio INT,
     descripcion VARCHAR(50),
     fecha_pub DATE,
-    latitud INT,
-    longitud INT,
+    latitud VARCHAR(50),
+    longitud VARCHAR(50),
     imagenes VARCHAR(50),
     idUsuario INT
 );

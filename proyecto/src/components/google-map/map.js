@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useCallback, useRef } from "react";
-import { useLoadScript, GoogleMap, Marker, Circle, MarkerClusterer } from "@react-google-maps/api";
+import { useLoadScript, GoogleMap, Marker, Circle } from "@react-google-maps/api";
 import "./map.css";
 
 /*Opciones para el mapa y el circulo que aparece cuando buscamos una zona en especifico
@@ -25,7 +25,7 @@ const closeOptions = {
 /*Contiene dos props, menu es el tipo de interfaz que aparece en el rectangulo negro
 Siendo autofillMaps una barra de busqueda y places checkboxes con provincias*/
 
-const Map = ({ Menu, setOfficeLocation }) => {
+const Map = ({ Menu, setLat, setLon }) => {
     const [office, setOffice] = useState();
     //La verdad no se que hace esto, no creo que haya necesidad de moverlo
     const mapRef = useRef();
@@ -57,8 +57,9 @@ const Map = ({ Menu, setOfficeLocation }) => {
                 
                 <Menu setOffice={(position) => {
                     setOffice(position); //setOffice aplica las coordenadas pasadas
-                    setOfficeLocation(position);  //Usamos dos office locations para poder darle las coordenadas al formulario de crearPub
                     mapRef.current?.panTo(position) //panea a la zona
+                    setLat(position.lat);
+                    setLon(position.lng)
                 }} />
             </div>
             <div className="map">
