@@ -1,6 +1,6 @@
 const express = require('express')
-const { connectDB, pool } = require('./config/database')
-const { multiUpload } = require('./middleware/multer')
+const { connectDB, pool } = require('../config/database')
+const { multiUpload } = require('../middleware/multer')
 const app = express()
 connectDB()
 

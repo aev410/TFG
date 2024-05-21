@@ -1,4 +1,6 @@
 // import Home from "./pages/home"
+import Nav from "./components/nav/nav"
+import Footer from "./components/footer/footer"
 import LoginPage from "./pages/login";
 import Register from "./components/Sessions/register";
 import { BrowserRouter as Router,Route , Routes } from 'react-router-dom';
@@ -9,12 +11,12 @@ function App() {
 
   return (
     <Router>
-
+      <Nav />
       <Routes>
         <Route path="/"  element={<><LoginPage/></>}/>
-        <Route path="/contacto"  element={<><Register/></>}/>
+        <Route path="/register"  element={<><Register/></>}/>
       </Routes>
-      
+      <Footer />
     </Router>
   );
 }
