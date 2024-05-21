@@ -5,8 +5,6 @@ import Autofill from '../google-map/menus/autofillMaps';
 import "./form.css";
 
 const UploadItem = () => {
-    const currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
-    console.log(currentDate)
     const [precio, setPrecio] = useState('');
     const [descripcion, setDescripcion] = useState('');
     const [imagenes, setImagenes] = useState('');
@@ -16,13 +14,39 @@ const UploadItem = () => {
     const submitForm = async (e) => {
         e.preventDefault();
 
+        //Check de formato, si precio es numerico
+        if (isNaN(precio)) {
+            alert('Error: Precio debe ser un número.');
+            return;
+        }
+    
+        // Check de formato, si descripcion excede 200 caracteres
+        if (descripcion.length > 200) {
+            alert('Error: Descripcion no debe exceder 200 caracteres.');
+            return;
+        }
+
+        //Check de formato, si imagenes es jpg, jpeg o png
+        for (let i = 0; i < imagenes.length; i++) {
+            const file = imagenes[i];
+            const extension = file.name.split('.').pop().toLowerCase();
+            const allowedExtensions = ['jpg', 'jpeg', 'png'];
+    
+            if (!allowedExtensions.includes(extension)) {
+                alert('Error: Solo formatos de imagenes aceptados (png, jpg, jpeg).');
+                return;
+            }
+        }
+
         const formData = new FormData();
         formData.append('precio', precio);
         formData.append('descripcion', descripcion);
-        formData.append('fecha_pub', currentDate);
         formData.append('latitud', lat);
         formData.append('longitud', lon);
-        formData.append('imagenes', imagenes);
+        for (let i = 0; i < imagenes.length; i++) {
+            console.log('hola')
+            formData.append('imagenes', imagenes[i]);
+        }
 
         try {
             const response = await axios.post('http://localhost:3000/api/publicacion', formData, {

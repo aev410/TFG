@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import Home from "./pages/home"
 import LoginPage from "./pages/login";
 import Register from "./components/Sessions/register";
@@ -16,6 +17,15 @@ function App() {
       </Routes>
       
     </Router>
+=======
+import UploadItem from "./components/nuevPub/UploadItem";
+function App() {
+
+  return (
+    <div className="App">
+      <UploadItem></UploadItem>
+    </div>
+>>>>>>> gabeBranch
   );
 }
 
