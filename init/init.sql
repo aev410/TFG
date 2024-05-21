@@ -1,4 +1,4 @@
--- Active: 1716075812714@@127.0.0.1@5432@alpujarra_almeria
+-- Active: 1715949403010@@127.0.0.1@5432@alpujarra_almeria
 
 drop DATABASE alpujarra_almeria WITH (FORCE);
 -- Active: 1715957714479@@127.0.0.1@5432@alpujarra_almeria
@@ -23,14 +23,15 @@ CREATE Table Usuarios(
     fechaNac DATE
 );
 
+drop table Publicacion;
 CREATE TABLE Publicacion(
     idPublicacion SERIAL PRIMARY KEY,
     precio INT,
-    descripcion VARCHAR(50),
+    descripcion VARCHAR(200),
     fecha_pub DATE,
     latitud VARCHAR(50),
     longitud VARCHAR(50),
-    imagenes VARCHAR(50),
+    imagenes VARCHAR(450),
     idUsuario INT
 );
 
