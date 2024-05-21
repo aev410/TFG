@@ -1,16 +1,12 @@
-// import Map from "./components/google-map/map"
-import Nav from "./components/nav/nav"
-import Footer from "./components/footer/footer"
+// import Home from "./pages/home"
+import LoginPage from "./pages/login";
+
 import './App.css'
 
 function App() {
 
   return (
-
-    <div>
-        <Nav />
-        <Footer />
-    </div>
+    <LoginPage />
   );
 }
 
