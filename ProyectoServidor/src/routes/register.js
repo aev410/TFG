@@ -1,25 +1,7 @@
-const express = require('express')
-const { Pool } = require('pg')
+const { Router } = require('express')
+const { pool } = require('../config/database')
 
-const router = express.Router()
-
-// Configurar la conexión a la base de datos
-const pool = new Pool({
-  user: 'postgres',
-  password: 'Admin123',
-  host: 'postgres',
-  database: 'alpujarra_almeria',
-  port: 5432
-})
-
-// Comprobar conexión a la base de datos
-pool.connect((err) => {
-  if (err) {
-    console.error('Error al conectarse a la base de datos', err)
-    return
-  }
-  console.log('Conexión establecida a la base de datos')
-})
+const router = Router()
 
 // Endpoint registrar usuarios
 router.post('/register', async (req, res) => {
