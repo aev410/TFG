@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 // Checa si el archivo es de mas de 5mb y si es jpg, png o jpeg
 const multiUpload = multer({
   storage,
-  limits: { fileSize: 1 * 5120 * 5120 }, // 1MB
+  limits: { fileSize: 5 * 1024 * 1024 }, // 5MB
   fileFilter: (req, file, cb) => {
     if (file.mimetype === 'image/png' || file.mimetype === 'image/jpg' || file.mimetype === 'image/jpeg') {
       cb(null, true)
@@ -33,8 +33,10 @@ const multiUpload = multer({
 
 app.post('/', multiUpload.array('imagenes'), async (req, res) => {
   const idUsuario = 4
-  const { precio, descripcion, fechaPub, latitud, longitud } = req.body
-  const imagenes = req.files.map(file => file.path)
+  const fechaPub = req.body.fecha_Pub
+  const { precio, descripcion, latitud, longitud } = req.body
+  const imagenes = req.body.imagenes
+  console.log(req.body)
   try {
     console.log('imagenes: ', imagenes)
     const query = `
