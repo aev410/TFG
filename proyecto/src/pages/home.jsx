@@ -1,13 +1,11 @@
-import Nav from "../components/nav/nav"
-import Footer from "../components/footer/footer"
+import Map from '../components/google-map/map'
+import Places from '../components/google-map/places'
 
 
 const Home = () => {
     return(
         <>
-            <Nav />
-            <h1>HOME</h1>
-            <Footer />
+            <Map Menu={Places}></Map>
         </>
     )
 }

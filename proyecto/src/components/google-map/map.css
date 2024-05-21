@@ -20,10 +20,15 @@ a {
 }
 
 .controls {
-  width: 20%;
+  width: 30%;
   padding: 1rem;
   background: #14161a;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 80vh; /* Altura máxima del contenedor */
+  overflow-y: auto; 
 }
 
 .controls input {
@@ -36,12 +41,12 @@ a {
 
 
 .map {
-  width: 80%;
-  height: 120vh;
+  width: 100%;
+  height: 80vh;
 }
 
 .map-container {
-  height: 120vh;
+  height: 80vh;
 }
 
 .highlight {

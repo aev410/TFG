@@ -1,4 +1,4 @@
-// import Home from "./pages/home"
+import Home from "./pages/home"
 import Nav from "./components/nav/nav"
 import Footer from "./components/footer/footer"
 import LoginPage from "./pages/login";
@@ -13,7 +13,8 @@ function App() {
     <Router>
       <Nav />
       <Routes>
-        <Route path="/"  element={<><LoginPage/></>}/>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/login"  element={<><LoginPage/></>}/>
         <Route path="/register"  element={<><Register/></>}/>
       </Routes>
       <Footer />
