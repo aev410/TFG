@@ -18,7 +18,7 @@ const UploadItem = () => {
         const formData = new FormData();
         formData.append('precio', precio);
         formData.append('descripcion', descripcion);
-        formData.append('fecha_pub', currentDate);
+        formData.append('fechaPub', currentDate);
         formData.append('latitud', lat);
         formData.append('longitud', lon);
         formData.append('imagenes', imagenes);

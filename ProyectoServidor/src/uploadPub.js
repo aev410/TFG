@@ -33,10 +33,12 @@ const multiUpload = multer({
 
 app.post('/', multiUpload.array('imagenes'), async (req, res) => {
   const idUsuario = 4
+
   const { precio, descripcion, fechaPub, latitud, longitud } = req.body
   const imagenes = req.files.map(file => file.path)
   try {
-    console.log('imagenes: ', imagenes)
+    console.log(req.body)
+    console.log('imagenes: ', req.files)
     const query = `
           INSERT INTO clientes.publicacion(precio, descripcion, fecha_pub, latitud, longitud, imagenes, idUsuario)
           VALUES($1, $2, $3, $4, $5, $6, $7)

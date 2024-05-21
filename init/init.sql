@@ -3,6 +3,8 @@
 drop DATABASE alpujarra_almeria WITH (FORCE);
 -- Active: 1715957714479@@127.0.0.1@5432@alpujarra_almeria
 
+select * from publicacion
+
 create database alpujarra_almeria;
 
 use alpujarra_almeria;
