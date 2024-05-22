@@ -44,7 +44,6 @@ const UploadItem = () => {
         formData.append('longitud', lon);
         //Mediante este for subimos cada uno de los archivos que elija el usuario
         for (let i = 0; i < imagenes.length; i++) {
-            console.log('hola')
             formData.append('imagenes', imagenes[i]);
         }
 
