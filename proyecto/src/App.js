@@ -16,6 +16,12 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/login"  element={<><LoginPage/></>}/>
         <Route path="/register"  element={<><Register/></>}/>
+        {/* <Route path="/user" element={<>  </>}/> */}
+        {/* <Route path="/register/tienda" element={<>  </>}/> */}
+        {/* <Route path="/user/tienda" element={<>  </>}/> */}
+        {/* <Route path="/newPub" element={<>  </>}/> */}
+        {/* <Route path="/publics" element={<>  </>}/> */}
+        {/* <Route path="/publics/idPub" element={<>  </>}/> */}
       </Routes>
       <Footer />
     </Router>
