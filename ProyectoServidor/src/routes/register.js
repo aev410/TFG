@@ -4,7 +4,7 @@ const { pool } = require('../config/database')
 const router = Router()
 
 // Endpoint registrar usuarios
-router.post('/register', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const { nombre, apellido, contra, correo, fechaNac } = req.body
 
