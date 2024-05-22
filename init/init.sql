@@ -11,7 +11,7 @@ CREATE Table Usuarios(
     idUsuario SERIAL PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL ,
     apellido VARCHAR(50),
-    contra VARCHAR(50) NOT NULL,
+    contra VARCHAR(255) NOT NULL,
     correo VARCHAR(50) NOT NULL,
     fechaNac DATE
 );
