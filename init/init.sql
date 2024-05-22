@@ -9,20 +9,20 @@ SET search_path TO clientes;
 -- Tabla Usuarios
 CREATE Table Usuarios(
     idUsuario SERIAL PRIMARY KEY,
-    nombre VARCHAR(50) ,
+    nombre VARCHAR(50) NOT NULL ,
     apellido VARCHAR(50),
-    contra VARCHAR(50),
-    correo VARCHAR(50),
+    contra VARCHAR(50) NOT NULL,
+    correo VARCHAR(50) NOT NULL,
     fechaNac DATE
 );
 
 -- Tabla Tienda
 CREATE Table Tienda(
     idTienda SERIAL PRIMARY KEY,
-    nombreTienda VARCHAR(50),
-    telefono INT,
+    nombreTienda VARCHAR(50) NOT NULL,
+    telefono INT NOT NULL,
     direccion VARCHAR(100),
-    idUsuario INT UNIQUE
+    idUsuario INT UNIQUE NOT NULL
 );
 
 -- Clave foránea para la tabla Tienda
@@ -36,12 +36,12 @@ ON UPDATE CASCADE;
 -- Tabla Publicacion
 CREATE TABLE Publicacion(
     idPublicacion SERIAL PRIMARY KEY,
-    precio INT,
+    precio INT NOT NULL,
     descripcion VARCHAR(200),
-    fecha_pub DATE,
-    latitud VARCHAR(50),
-    longitud VARCHAR(50),
-    imagenes VARCHAR(450),
+    fecha_pub DATE NOT NULL,
+    latitud VARCHAR(50) NOT NULL,
+    longitud VARCHAR(50) NOT NULL,
+    imagenes VARCHAR(450) NOT NULL,
     idTienda INT
 );
 
