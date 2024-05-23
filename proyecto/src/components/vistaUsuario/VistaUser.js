@@ -21,8 +21,9 @@ const VistaUser = () => {
                 se escribe lo que esta despues de ':', en este caso una pantalla de loading*/ }
             {userData ? (
                 <div>
-                    <h2>User Data:</h2>
                     <p>Nombre: {userData.nombre + ' ' + userData.apellido}</p>
+                    <h2>Informacion de contacto:</h2>
+                    <p>Correo electronico: {userData.correo}</p>
                 </div>
             ) : (
                 <p>Loading...</p>

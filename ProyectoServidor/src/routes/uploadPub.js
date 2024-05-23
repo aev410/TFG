@@ -12,16 +12,16 @@ router.post('/', multiUpload.array('imagenes', 5), async (req, res) => {
   const fechaPub = new Date().toISOString().slice(0, 19).replace('T', ' ')
 
   // Define las variables segun la informacion en la formData y segun el procesado de multer para las imagenes
-  const { precio, descripcion, latitud, longitud } = req.body
+  const { nombre, precio, descripcion, latitud, longitud } = req.body
   const imagenes = req.files.map(file => file.path).join(';')
 
   try {
     // Query, los dolares llaman a variables que definimos y colocamos en pool.query()
     const query = `
-          INSERT INTO clientes.publicacion(precio, descripcion, fecha_pub, latitud, longitud, imagenes, idUsuario)
+          INSERT INTO clientes.publicacion(nombre, precio, descripcion, fecha_pub, latitud, longitud, imagenes, idUsuario)
           VALUES($1, $2, $3, $4, $5, $6, $7)
         `
-    const values = [precio, descripcion, fechaPub, latitud, longitud, imagenes, idUsuario]
+    const values = [nombre, precio, descripcion, fechaPub, latitud, longitud, imagenes, idUsuario]
     await pool.query(query, values)
     // Control de errores
     res.status(200).json({ message: 'Publicacion creada correctamente' })

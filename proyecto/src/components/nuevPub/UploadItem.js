@@ -5,6 +5,7 @@ import Autofill from '../google-map/menus/autofillMaps';
 import "./form.css";
 
 const UploadItem = () => {
+    const [nombre, setNombre] = useState('');
     const [precio, setPrecio] = useState('');
     const [descripcion, setDescripcion] = useState('');
     const [imagenes, setImagenes] = useState('');
@@ -38,6 +39,7 @@ const UploadItem = () => {
 
         //Aqui creamos el objeto para subir todo a servidor
         const formData = new FormData();
+        formData.append('nombre', nombre)
         formData.append('precio', precio);
         formData.append('descripcion', descripcion);
         formData.append('latitud', lat);
@@ -62,6 +64,10 @@ const UploadItem = () => {
 
     return (
         <form onSubmit={submitForm}>
+            <div className='input'>
+                Titulo:
+            <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
+            </div>
             <div className='input'>
                 Precio:
                 <input type="number" value={precio} onChange={(e) => setPrecio(e.target.value)} required />
