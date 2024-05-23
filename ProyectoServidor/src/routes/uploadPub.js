@@ -1,10 +1,10 @@
-const express = require('express')
+const { Router } = require('express')
 const { connectDB, pool } = require('../config/database')
 const { multiUpload } = require('../middleware/multer')
-const app = express()
+const router = Router()
 connectDB()
 
-app.post('/', multiUpload.array('imagenes', 5), async (req, res) => {
+router.post('/', multiUpload.array('imagenes', 5), async (req, res) => {
   // idUsuario = placeholder, tengo que tomarlo de la sesion del usuario
   const idUsuario = 4
 
@@ -26,8 +26,8 @@ app.post('/', multiUpload.array('imagenes', 5), async (req, res) => {
     // Control de errores
     res.status(200).json({ message: 'Publicacion creada correctamente' })
   } catch (error) {
-    res.status(500).json({ message: 'Error en servidor' })
+    return res.status(500).json({ message: 'Error en servidor' })
   }
 })
 
-module.exports = app
+module.exports = router

@@ -43,20 +43,25 @@ button:hover {
     background-color: #45a049;
 }
 
-
-
 /* Map.css */
 
 .container{
-    height: 200px;
+    height: 50vh; /* Adjust as needed */
+}
+
+.controls{
+    width: 30%;
 }
 
 .map{
     height: 100%;
+    width: 90%;
 }
 
 .map-container {
-    width: 530px;
+    width: 100%; /* Changed from 530px to 100% */
     height: 100%;
-
 }
+
+
+

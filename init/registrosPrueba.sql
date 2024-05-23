@@ -1,4 +1,4 @@
--- Active: 1715772260983@@localhost@5432@alpujarra_almeria
+-- Active: 1715949403010@@127.0.0.1@5432@alpujarra_almeria
 -- Insertar 20 registros en la tabla Usuarios
 INSERT INTO clientes.usuarios (nombre, apellido, contra, correo, fechaNac) VALUES
 ('Juan', 'Perez', 'password1', 'juan.perez@example.com', '1980-01-01'),
@@ -21,6 +21,8 @@ INSERT INTO clientes.usuarios (nombre, apellido, contra, correo, fechaNac) VALUE
 ('Elena', 'Ramos', 'password18', 'elena.ramos@example.com', '1991-06-06'),
 ('Carlos', 'Romero', 'password19', 'carlos.romero@example.com', '1993-07-07'),
 ('Marta', 'Navarro', 'password20', 'marta.navarro@example.com', '1995-08-08');
+
+insert into clientes.usuarios (nombre, apellido, contra, correo, fechaNac) VALUES ('John', 'Doe', 'password1', 'johnDoe@example.com', '1999-01-01')
 
 -- Insertar 20 registros en la tabla Tienda
 INSERT INTO clientes.tienda (nombreTienda, telefono, direccion, idUsuario) VALUES
