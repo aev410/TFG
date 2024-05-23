@@ -17,8 +17,8 @@ router.post('/', async (req, res) => {
     if (store.rows.length === 0) {
       return res.status(200).json({ message: 'Peticion exitosa', userData })
     } else {
-      const publicaciones = await pool.query('SELECT * FROM clientes.publicaciones WHERE idTienda = $1', [storeData.idTienda])
-      const publicacionData = publicaciones.row[0]
+      const publicaciones = await pool.query('SELECT * FROM clientes.publicacion WHERE idTienda = $1', [storeData.idTienda])
+      const publicacionData = publicaciones.rows[0]
 
       return res.status(200).json({ message: 'Peticion exitosa', userData, storeData, publicacionData })
     }

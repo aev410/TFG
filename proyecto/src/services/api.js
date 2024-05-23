@@ -10,6 +10,7 @@ const usePublicacion = (id) => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(`http://localhost:3000/publicacion/${id}`);
+                console.log(response)
                 setDatos(response.data);
             } catch (error) {
                 console.error("Error al buscar publicación: " + error);

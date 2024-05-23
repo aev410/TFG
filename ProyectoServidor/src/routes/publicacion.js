@@ -21,6 +21,7 @@ router.get('/', async (req, res) => {
 //  Obtiene la publicacion por id
 router.get('/:id', async (req, res) => {
   const id = req.params.id
+  console.log(id)
 
   if (isNaN(id)) {
     res.status(400).send('ID no válido')
@@ -31,6 +32,7 @@ router.get('/:id', async (req, res) => {
   // Ejecuta la consulta
   pool.query(query, [parseInt(id)], (err, result) => {
     if (err) {
+      res.status(500).send({ message: 'Error en servidor' })
       console.error('Error al ejecutar la consulta:', err)
       return
     }
