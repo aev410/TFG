@@ -5,17 +5,15 @@ const VistaUser = () => {
     const [userData, setUserData] = useState();
 
     useEffect(() => {
-        const fetchUser = async () => {
-            try {
-                const response = await axios.post('http://localhost:3000/user', {idUsuario: 1});
+        axios.post('http://localhost:3000/user', { idUsuario: 1 })
+            .then((response) => {
                 console.log(response.data);
                 setUserData(response.data.userData);
-            } catch (error) {
+            })
+            .catch((error) => {
                 console.error(error);
-            }
-        };
+            })
 
-        fetchUser();
     }, []);
     return (
         <div>
@@ -25,7 +23,7 @@ const VistaUser = () => {
                 <div>
                     <h2>User Data:</h2>
                     <p>Nombre: {userData.nombre + ' ' + userData.apellido}</p>
-                </div>   
+                </div>
             ) : (
                 <p>Loading...</p>
             )}

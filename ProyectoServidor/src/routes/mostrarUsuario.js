@@ -6,8 +6,9 @@ connectDB()
 router.post('/', async (req, res) => {
   try {
     const { idUsuario } = req.body
-
-    const user = await pool.query('SELECT * FROM usuarios WHERE idusuario = $1', [idUsuario])
+    console.log(req.body)
+    console.log(idUsuario)
+    const user = await pool.query('SELECT * FROM usuarios WHERE idUsuario = $1', [idUsuario])
 
     if (user.rows.length === 0) {
       return res.status(400).json({ message: 'Usuario no encontrado' })
@@ -19,4 +20,4 @@ router.post('/', async (req, res) => {
   }
 })
 
-exports.modules = router
+module.exports = router

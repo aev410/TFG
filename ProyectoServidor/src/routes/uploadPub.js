@@ -26,7 +26,7 @@ router.post('/', multiUpload.array('imagenes', 5), async (req, res) => {
     // Control de errores
     res.status(200).json({ message: 'Publicacion creada correctamente' })
   } catch (error) {
-    res.status(500).json({ message: 'Error en servidor' })
+    return res.status(500).json({ message: 'Error en servidor' })
   }
 })
 
