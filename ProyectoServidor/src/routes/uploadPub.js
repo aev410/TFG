@@ -6,7 +6,7 @@ connectDB()
 
 router.post('/', multiUpload.array('imagenes', 5), async (req, res) => {
   // idUsuario = placeholder, tengo que tomarlo de la sesion del usuario
-  const idUsuario = 4
+  const idTienda = 4
 
   // Da un formato de fecha legible para SQL
   const fechaPub = new Date().toISOString().slice(0, 19).replace('T', ' ')
@@ -18,10 +18,10 @@ router.post('/', multiUpload.array('imagenes', 5), async (req, res) => {
   try {
     // Query, los dolares llaman a variables que definimos y colocamos en pool.query()
     const query = `
-          INSERT INTO clientes.publicacion(nombre, precio, descripcion, fecha_pub, latitud, longitud, imagenes, idUsuario)
-          VALUES($1, $2, $3, $4, $5, $6, $7)
+          INSERT INTO clientes.publicacion(nombre, precio, descripcion, fecha_pub, latitud, longitud, imagenes, idTienda)
+          VALUES($1, $2, $3, $4, $5, $6, $7, $8)
         `
-    const values = [nombre, precio, descripcion, fechaPub, latitud, longitud, imagenes, idUsuario]
+    const values = [nombre, precio, descripcion, fechaPub, latitud, longitud, imagenes, idTienda]
     await pool.query(query, values)
     // Control de errores
     res.status(200).json({ message: 'Publicacion creada correctamente' })

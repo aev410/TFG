@@ -9,7 +9,10 @@ const storage = multer.diskStorage({
   },
   // Le da un formato legible a la imagen, con el nombre de la info subida a formData, la fecha y la extension
   filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + date.getFullYear + date.getMonth + date.getDate + '-' + file.originalname.match(/\..*$/)[0])
+    cb(null, file.fieldname + '-' + date.getFullYear().toString() +
+    (date.getMonth() + 1).toString().padStart(2, '0') +
+    date.getDate().toString().padStart(2, '0') +
+    file.originalname.match(/\..*$/)[0])
   }
 })
 
