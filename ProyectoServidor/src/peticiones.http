@@ -10,5 +10,7 @@ Accept: application/json
 GET {{direccion}}/publicacion
 Accept: application/json
 
-
-
+###
+# Devuelve la publicacion con id 5
+GET {{direccion}}/publicacion/5
+Accept: application/json
