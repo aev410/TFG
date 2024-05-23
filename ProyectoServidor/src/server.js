@@ -13,14 +13,9 @@ const port = process.env.PORT || 3000// El puerto se guarda en el archivo .env
 
 //  Midelware
 app.use(cors({
-  origin: ['http://localhost:80', 'http://localhost:3000', 'https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true']
+  origin: ['http://localhost:80', 'http://localhost', 'http://localhost:3000', 'https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true'],
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept']
 }))
-
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*')
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
-  next()
-})
 
 app.use(morgan('dev')) //   Muestra info sobre las solicitudes http
 app.use(express.json())//   Para que las solicitudes http sean accesibles con req.body
