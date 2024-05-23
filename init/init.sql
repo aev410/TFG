@@ -36,8 +36,9 @@ ON UPDATE CASCADE;
 -- Tabla Publicacion
 CREATE TABLE Publicacion(
     idPublicacion SERIAL PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
     precio INT NOT NULL,
-    descripcion VARCHAR(200),
+    descripcion TEXT,
     fecha_pub DATE NOT NULL,
     latitud VARCHAR(50) NOT NULL,
     longitud VARCHAR(50) NOT NULL,
