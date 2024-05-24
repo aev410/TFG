@@ -1,4 +1,4 @@
-import usePublicacion from "../../services/api";
+import {usePublicacion} from "../../services/api";
 import "./vistaPub.css"
 
 const VistaPub = ({ id }) => {
