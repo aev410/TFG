@@ -52,7 +52,7 @@ INSERT INTO clientes.tienda (nombreTienda, telefono, direccion, idUsuario) VALUE
 -- Puedes necesitar ajustar idTienda dependiendo de tus datos en la tabla Tienda
 
 INSERT INTO clientes.Publicacion (nombre, precio, descripcion, fecha_pub, latitud, longitud, imagenes, idTienda) VALUES
-('Publicacion 1', 100, 'Descripción de la publicación 1', '2023-01-01', '37.033', '-2.621', 'imagen1.jpg', 1),
+('Publicacion 1', 100, 'Descripción de la publicación 1', '2023-01-01', '37.033', '-2.621', 'imagen1.jpg', 4),
 ('Publicacion 2', 150, 'Descripción de la publicación 2', '2023-02-01', '36.9736', '-2.9613', 'imagen2.jpg', 1),
 ('Publicacion 3', 200, 'Descripción de la publicación 3', '2023-03-01', '36.9898', '-2.587', 'imagen3.jpg', 1),
 ('Publicacion 4', 250, 'Descripción de la publicación 4', '2023-04-01', '36.9571', '-2.5687', 'imagen4.jpg', 1),

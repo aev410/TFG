@@ -1,5 +1,7 @@
 -- Active: 1715949403010@@127.0.0.1@5432@alpujarra_almeria
 
+drop database alpujarra_almeria with (force)
+
 create DATABASE alpujarra_almeria;
 
 use alpujarra_almeria;
