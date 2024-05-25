@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 const ValidadorCorreo = () => {
   // Función para crear una RegExp para el correo:

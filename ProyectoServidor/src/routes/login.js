@@ -1,19 +1,10 @@
-const express = require('express')
-const { Pool } = require('pg')
+const { Router } = require('express')
+const { pool } = require('../config/database')
 
-const router = express.Router()
-
-// Configurar conexión a la base de datos
-const pool = new Pool({
-  user: 'postgres',
-  password: 'Admin123',
-  host: 'postgres',
-  database: 'alpujarra_almeria',
-  port: 5432
-})
+const router = Router()
 
 // Endpoint iniciar sesión
-router.post('/login', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const { correo, contra } = req.body
 
