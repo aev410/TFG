@@ -1,4 +1,4 @@
--- Active: 1715772260983@@localhost@5432@alpujarra_almeria
+-- Active: 1715949403010@@127.0.0.1@5432@alpujarra_almeria
 -- Insertar 20 registros en la tabla Usuarios
 INSERT INTO clientes.usuarios (nombre, apellido, contra, correo, fechaNac) VALUES
 ('Juan', 'Perez', 'password1', 'juan.perez@example.com', '1980-01-01'),
@@ -21,6 +21,8 @@ INSERT INTO clientes.usuarios (nombre, apellido, contra, correo, fechaNac) VALUE
 ('Elena', 'Ramos', 'password18', 'elena.ramos@example.com', '1991-06-06'),
 ('Carlos', 'Romero', 'password19', 'carlos.romero@example.com', '1993-07-07'),
 ('Marta', 'Navarro', 'password20', 'marta.navarro@example.com', '1995-08-08');
+
+insert into clientes.usuarios (nombre, apellido, contra, correo, fechaNac) VALUES ('John', 'Doe', 'password1', 'johnDoe@example.com', '1999-01-01')
 
 -- Insertar 20 registros en la tabla Tienda
 INSERT INTO clientes.tienda (nombreTienda, telefono, direccion, idUsuario) VALUES
@@ -46,24 +48,30 @@ INSERT INTO clientes.tienda (nombreTienda, telefono, direccion, idUsuario) VALUE
 ('Tienda20', 234567892, 'Direccion 20', 20);
 
 -- Insertar 20 registros en la tabla Publicacion utilizando las coordenadas proporcionadas
-INSERT INTO clientes.publicacion (precio, descripcion, fecha_pub, latitud, longitud, imagenes, idTienda) VALUES
-(100, 'Descripcion 1', '2023-01-01', '37.033', '-2.621', 'imagen1.jpg', 1),
-(200, 'Descripcion 2', '2023-02-01', '36.9736', '-2.9613', 'imagen2.jpg', 2),
-(300, 'Descripcion 3', '2023-03-01', '36.9898', '-2.587', 'imagen3.jpg', 3),
-(400, 'Descripcion 4', '2023-04-01', '36.9571', '-2.5687', 'imagen4.jpg', 4),
-(500, 'Descripcion 5', '2023-05-01', '36.9664', '-2.602', 'imagen5.jpg', 5),
-(600, 'Descripcion 6', '2023-06-01', '37.0029', '-2.7901', 'imagen6.jpg', 6),
-(700, 'Descripcion 7', '2023-07-01', '37.0024', '-2.5944', 'imagen7.jpg', 7),
-(800, 'Descripcion 8', '2023-08-01', '37.0303', '-2.9954', 'imagen8.jpg', 8),
-(900, 'Descripcion 9', '2023-09-01', '37.0121', '-2.7907', 'imagen9.jpg', 9),
-(1000, 'Descripcion 10', '2023-10-01', '36.9872', '-2.6194', 'imagen10.jpg', 10),
-(1100, 'Descripcion 11', '2023-11-01', '37.0090', '-2.7407', 'imagen11.jpg', 11),
-(1200, 'Descripcion 12', '2023-12-01', '36.9807', '-2.8567', 'imagen12.jpg', 12),
-(1300, 'Descripcion 13', '2024-01-01', '36.9678', '-2.6092', 'imagen13.jpg', 13),
-(1400, 'Descripcion 14', '2024-02-01', '36.9853', '-2.6391', 'imagen14.jpg', 14),
-(1500, 'Descripcion 15', '2024-03-01', '36.9931', '-2.6597', 'imagen15.jpg', 15),
-(1600, 'Descripcion 16', '2024-04-01', '36.9941', '-2.8925', 'imagen16.jpg', 16),
-(1700, 'Descripcion 17', '2024-05-01', '37.0383', '-2.7452', 'imagen17.jpg', 17),
-(1800, 'Descripcion 18', '2024-06-01', '36.9989', '-2.7741', 'imagen18.jpg', 18),
-(1900, 'Descripcion 19', '2024-07-01', '37.022', '-2.9529', 'imagen19.jpg', 19),
-(2000, 'Descripcion 20', '2024-08-01', '36.9955', '-2.6806', 'imagen20.jpg', 20);
+-- Asumiendo que la tabla Tienda ya está creada y tiene al menos 1 registro
+-- Puedes necesitar ajustar idTienda dependiendo de tus datos en la tabla Tienda
+
+INSERT INTO Publicacion (nombre, precio, descripcion, fecha_pub, latitud, longitud, imagenes, idTienda) VALUES
+('Publicacion 1', 100, 'Descripción de la publicación 1', '2023-01-01', '37.033', '-2.621', 'imagen1.jpg', 1),
+('Publicacion 2', 150, 'Descripción de la publicación 2', '2023-02-01', '36.9736', '-2.9613', 'imagen2.jpg', 1),
+('Publicacion 3', 200, 'Descripción de la publicación 3', '2023-03-01', '36.9898', '-2.587', 'imagen3.jpg', 1),
+('Publicacion 4', 250, 'Descripción de la publicación 4', '2023-04-01', '36.9571', '-2.5687', 'imagen4.jpg', 1),
+('Publicacion 5', 300, 'Descripción de la publicación 5', '2023-05-01', '36.9664', '-2.602', 'imagen5.jpg', 1),
+('Publicacion 6', 350, 'Descripción de la publicación 6', '2023-06-01', '37.0029', '-2.7901', 'imagen6.jpg', 1),
+('Publicacion 7', 400, 'Descripción de la publicación 7', '2023-07-01', '37.0024', '-2.5944', 'imagen7.jpg', 1),
+('Publicacion 8', 450, 'Descripción de la publicación 8', '2023-08-01', '37.0303', '-2.9954', 'imagen8.jpg', 1),
+('Publicacion 9', 500, 'Descripción de la publicación 9', '2023-09-01', '37.0121', '-2.7907', 'imagen9.jpg', 1),
+('Publicacion 10', 550, 'Descripción de la publicación 10', '2023-10-01', '36.9872', '-2.6194', 'imagen10.jpg', 1),
+('Publicacion 11', 600, 'Descripción de la publicación 11', '2023-11-01', '37.0090', '-2.7407', 'imagen11.jpg', 1),
+('Publicacion 12', 650, 'Descripción de la publicación 12', '2023-12-01', '36.9807', '-2.8567', 'imagen12.jpg', 1),
+('Publicacion 13', 700, 'Descripción de la publicación 13', '2024-01-01', '36.9678', '-2.6092', 'imagen13.jpg', 1),
+('Publicacion 14', 750, 'Descripción de la publicación 14', '2024-02-01', '36.9853', '-2.6391', 'imagen14.jpg', 1),
+('Publicacion 15', 800, 'Descripción de la publicación 15', '2024-03-01', '36.9931', '-2.6597', 'imagen15.jpg', 1),
+('Publicacion 16', 850, 'Descripción de la publicación 16', '2024-04-01', '36.9941', '-2.8925', 'imagen16.jpg', 1),
+('Publicacion 17', 900, 'Descripción de la publicación 17', '2024-05-01', '37.0383', '-2.7452', 'imagen17.jpg', 1),
+('Publicacion 18', 950, 'Descripción de la publicación 18', '2024-06-01', '36.9989', '-2.7741', 'imagen18.jpg', 1),
+('Publicacion 19', 1000, 'Descripción de la publicación 19', '2024-07-01', '37.022', '-2.9529', 'imagen19.jpg', 1),
+('Publicacion 20', 1050, 'Descripción de la publicación 20', '2024-08-01', '36.9955', '-2.6806', 'imagen20.jpg', 1);
+
+-- Repite el patrón de coordenadas si necesitas más registros o ajusta los valores de las coordenadas para más variedad
+

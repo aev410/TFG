@@ -1,4 +1,6 @@
--- Active: 1715772260983@@localhost@5432@alpujarra_almeria
+-- Active: 1715949403010@@127.0.0.1@5432@alpujarra_almeria
+
+create DATABASE alpujarra_almeria;
 
 use alpujarra_almeria;
 
@@ -36,8 +38,9 @@ ON UPDATE CASCADE;
 -- Tabla Publicacion
 CREATE TABLE Publicacion(
     idPublicacion SERIAL PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
     precio INT NOT NULL,
-    descripcion VARCHAR(200),
+    descripcion TEXT,
     fecha_pub DATE NOT NULL,
     latitud VARCHAR(50) NOT NULL,
     longitud VARCHAR(50) NOT NULL,
