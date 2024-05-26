@@ -16,11 +16,11 @@ router.get('/:id', async (req, res) => {
     const storeData = store.rows[0]
 
     if (store.rows.length === 0) {
-      return res.status(200).json({ message: 'Peticion exitosa', userData })
+      return res.status(200).json({ userData })
     } else {
       const publicacion = await pool.query('SELECT * FROM clientes.publicacion WHERE idTienda = $1', [storeData.idtienda])
       const publicacionData = publicacion.rows[0]
-      return res.status(200).json({ message: 'Peticion exitosa', userData, storeData, publicacionData })
+      return res.status(200).json({ userData, storeData, publicacionData })
     }
   } catch {
     return res.status(500).json({ message: 'Error en el servidor' })

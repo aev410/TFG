@@ -1,10 +1,8 @@
 import usePublicacion from "../../services/api";
-import "./vistaPub.css"
+import "./vistaPub.css";
 
 const VistaPub = ({ id }) => {
-  const { datos, cargando, error } = usePublicacion(id)
-  console.log(datos)
-  const imagenesArray = datos[0].imagenes.split(";")
+  const { datos, cargando, error } = usePublicacion(id);
 
   if (cargando) {
     return <p>Cargando...</p>;
@@ -14,9 +12,11 @@ const VistaPub = ({ id }) => {
     return <p>{error}</p>;
   }
 
-  if (!datos) {
-    return null;
+  if (!datos || datos.length === 0) {
+    return <p>No hay datos disponibles.</p>;
   }
+
+  const imagenesArray = datos[0].imagenes.split(";");
 
   return (
     <div className='tarjeta'>
@@ -28,6 +28,6 @@ const VistaPub = ({ id }) => {
       </div>
     </div>
   );
-}
+};
 
 export default VistaPub;

@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 const usePublicacion = (id) => {
-    const [datos, setDatos] = useState(null);
+    const [datos, setDatos] = useState([]);
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(null);
 
@@ -10,10 +10,10 @@ const usePublicacion = (id) => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(`http://localhost:3000/publicacion/${id}`);
-                console.log(response)
+                console.log("Publicación response:", response.data);
                 setDatos(response.data);
             } catch (error) {
-                console.error("Error al buscar publicación: " + error);
+                console.error("Error al buscar publicación:", error);
                 setError("Error al buscar publicación");
             } finally {
                 setCargando(false);
@@ -25,8 +25,5 @@ const usePublicacion = (id) => {
 
     return { datos, cargando, error };
 };
-
-
-
 
 export default usePublicacion;

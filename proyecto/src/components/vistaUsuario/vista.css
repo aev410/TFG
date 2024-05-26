@@ -1,0 +1,33 @@
+.vista{
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.user-card{
+    background-color: white;
+    border-radius: 0 0 16px 16px;
+    margin-bottom: 3rem;
+}
+
+.user-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pub-zone{
+    padding: 16px;
+    background-color: white;
+    border-radius: 16px;
+}
+
+.pub-content{
+    display: grid;
+    grid-gap: 0.75rem;
+}
