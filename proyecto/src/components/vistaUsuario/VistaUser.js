@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import VistaPub from "../vistaPublicacion/vistaPub";
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './vista.css';
+import { Container, Card, Row, Col } from 'react-bootstrap';
 
 const VistaUser = () => {
     const [usuario, setUsuario] = useState(null);
@@ -22,47 +24,55 @@ const VistaUser = () => {
 
     if (!usuario) {
         return (
-            <div>
+            <Container>
                 <p>Loading...</p>
-            </div>
+            </Container>
         );
     }
 
     const { userData, storeData, publicacionData } = usuario;
 
     return (
-        <div className="vista">
-            <div className="user-card">
-                <div className="user-content">
-                    <h2>{userData.nombre} {userData.apellido}</h2>
-                        {storeData ? (
-                            <div>
-                                <p>Email: {userData.correo}</p>
-                                <p>Telefono: {storeData.telefono}</p>
-                                <p>direccion: {storeData.direccion}</p>
-                            </div>
-                        ) : (
-                            <div>
-                                <p>
-                                    Email: {userData.correo}
-                                </p>
-                            </div>
-                        )}
-                </div>
-            </div>
+        <Container fluid className="bg-light py-3" id="user-root">
+            <Card className="mb-custom">
+                <Card.Body>
+                    <Row className="align-items-center">
+                        <Col className="text-start" id="user-Name">
+                            <h2>{userData.nombre} {userData.apellido}</h2>
+                        </Col>
+                        <Col className="d-flex flex-column align-items-end" id="store-Info">
+                            {storeData ? (
+                                <div>
+                                    <span>Email: {userData.correo}</span><br />
+                                    <span>Telefono: {storeData.telefono}</span><br />
+                                    <span>Direccion: {storeData.direccion}</span>
+                                </div>
+                            ) : (
+                                <div>
+                                    <p>
+                                        Email: {userData.correo}
+                                    </p>
+                                </div>
+                            )}
+                        </Col>
+                    </Row>
+                </Card.Body>
+            </Card>
             {storeData && (
-                <div className="pub-zone">
-                    <h2>Publicaciones de la tienda:</h2>
+                <Card className="p-3">
+                    <h2>Publicaciones de la tienda {storeData.nombretienda}:</h2>
                     {publicacionData ? (
-                        <div pub-content>
-                            <VistaPub id={publicacionData.idpublicacion} />
-                        </div>
+                        <Row className="g-3">
+                            <Col>
+                                <VistaPub id={publicacionData.idpublicacion} />
+                            </Col>
+                        </Row>
                     ) : (
                         <p>No hay publicaciones disponibles.</p>
                     )}
-                </div>
+                </Card>
             )}
-        </div>
+        </Container>
     );
 };
 

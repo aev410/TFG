@@ -19,7 +19,7 @@ router.get('/:id', async (req, res) => {
       return res.status(200).json({ userData })
     } else {
       const publicacion = await pool.query('SELECT * FROM clientes.publicacion WHERE idTienda = $1', [storeData.idtienda])
-      const publicacionData = publicacion.rows[0]
+      const publicacionData = publicacion.rows
       return res.status(200).json({ userData, storeData, publicacionData })
     }
   } catch {

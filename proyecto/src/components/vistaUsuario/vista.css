@@ -1,33 +1,23 @@
-.vista{
-    background-color: lightgray;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
+.mb-custom {
+    border-radius: 0 0 16px 16px;
+    margin-bottom: 3rem
+}
+
+.card{
+    width: 85%;
     margin-right: auto;
     margin-left: auto;
 }
 
-.user-card{
-    background-color: white;
-    border-radius: 0 0 16px 16px;
-    margin-bottom: 3rem;
+#user-root {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.user-content {
-    display: flex;
-    flex-wrap: wrap;
+#user-Name{
+    padding-left: 3rem;
 }
 
-.pub-zone{
-    padding: 16px;
-    background-color: white;
-    border-radius: 16px;
-}
-
-.pub-content{
-    display: grid;
-    grid-gap: 0.75rem;
+#store-Info{
+    padding-right: 3rem;
 }
