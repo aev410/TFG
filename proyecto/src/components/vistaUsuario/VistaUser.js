@@ -31,7 +31,7 @@ const VistaUser = () => {
     }
 
     const { userData, storeData, publicacionData } = usuario;
-
+    console.log(publicacionData)
     return (
         <Container fluid className="bg-light py-3" id="user-root">
             <Card className="mb-custom">
@@ -62,16 +62,20 @@ const VistaUser = () => {
                 <Card className="p-3">
                     <h2>Publicaciones de la tienda {storeData.nombretienda}:</h2>
                     {publicacionData ? (
-                        <Row className="g-3">
-                            <Col>
-                                <VistaPub id={publicacionData.idpublicacion} />
-                            </Col>
+                        <Row>
+                            {publicacionData.map((pub, i) => (
+                                <Col md={{ span: 5, offset: i % 2 === 0 ? 1 : 0 }} key={i} className="d-flex">
+                                    <VistaPub id={pub.idpublicacion} className="card h-100" />
+                                </Col>
+                            ))}
                         </Row>
                     ) : (
                         <p>No hay publicaciones disponibles.</p>
                     )}
                 </Card>
             )}
+
+
         </Container>
     );
 };

@@ -4,9 +4,13 @@
 }
 
 .card{
-    width: 85%;
+    width: 90%;
     margin-right: auto;
     margin-left: auto;
+}
+
+.tarjeta {
+    width: 450px;
 }
 
 #user-root {
