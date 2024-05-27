@@ -4,6 +4,7 @@ import Footer from "./components/footer/footer"
 import LoginPage from "./pages/login";
 import Register from "./components/Sessions/register";
 import VistaUser from "./components/vistaUsuario/VistaUser";
+import UploadItem from"./components/nuevPub/UploadItem"
 import UploadItem from "./components/nuevPub/UploadItem";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/user" element={<><VistaUser/></>}/>
         {/* <Route path="/register/tienda" element={<>  </>}/> */}
         {/* <Route path="/user/tienda" element={<>  </>}/> */}
+        <Route path="/newPub" element={<><UploadItem/></>}/>
         <Route path="/newPub" element={<><UploadItem/></>}/>
         {/* <Route path="/publics" element={<>  </>}/> */}
         {/* <Route path="/publics/idPub" element={<>  </>}/> */}
