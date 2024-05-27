@@ -27,3 +27,6 @@ REFERENCES Usuarios (idUsuario)
 ON DELETE CASCADE
 ON UPDATE CASCADE;
 
+ALTER TABLE Usuarios
+ALTER COLUMN contra TYPE VARCHAR(255); /*Para poder guardar las contraseñas hash ya que requieren mínimo
+                                        60 carácteres*/
