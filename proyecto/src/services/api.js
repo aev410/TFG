@@ -50,4 +50,24 @@ export const useUltimasPublicaciones = () => {
     return { datos, cargando, error };
 }
 
+export const GetUsuario = (id) => {
+    const [usuario, setUsuario] = useState(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            console.log("Starting data fetch...");
+            try {
+                const response = await axios.get(`http://localhost:3000/user/${id}`);
+                setUsuario(response.data);
+            } catch (error) {
+                console.error("Error al buscar usuario: " + error);
+            }
+        };
+
+        fetchData();
+    }, []);
+    
+    return usuario;
+}
+
 
