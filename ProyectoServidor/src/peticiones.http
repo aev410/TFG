@@ -1,0 +1,16 @@
+# Archivo para probar las rutas de la API
+@direccion = http://localhost:3000
+
+# Devuelve hola mundo
+GET {{direccion}}/
+Accept: application/json
+
+###
+# devuelve todas las publicaciones
+GET {{direccion}}/publicacion
+Accept: application/json
+
+###
+# Devuelve la publicacion con id 5
+GET {{direccion}}/publicacion/5
+Accept: application/json

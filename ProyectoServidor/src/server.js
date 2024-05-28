@@ -1,28 +1,36 @@
-const express = require('express');
-const cors = require("cors");
-const path = require('path');
-const registerEndpoint = require('./registrarse'); 
-const loginEndpoint = require('./iniciarSesion');
-const app = express();
-const port = 3000;
+const express = require('express')
+const morgan = require('morgan')
+const cors = require('cors')
+require('dotenv').config()
+const publicacionRouter = require('./routes/publicacion.js')
+const uploadPub = require('./routes/uploadPub.js')
+const login = require('./routes/login.js')
+const register = require('./routes/register.js')
 
-// Utilizar el middleware cors
-app.use(cors());
+const app = express()
+const port = process.env.PORT || 3000// El puerto se guarda en el archivo .env
 
-//Manejar solicitudes JSON:
-app.use(express.json());
+//  Midelware
+app.use(cors({
+  origin: ['http://localhost:80', 'http://localhost:3000', 'https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true']
+}))
 
-// Usar el endpoint de registro
-app.use(registerEndpoint);
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  next()
+})
 
-//Usar el endpoint de inicio de sesión
-app.use(loginEndpoint);
+app.use(morgan('dev')) //   Muestra info sobre las solicitudes http
+app.use(express.json())//   Para que las solicitudes http sean accesibles con req.body
 
-// Servir archivos estáticos desde la carpeta de React
-app.use(express.static(path.join(__dirname, 'TFG', 'proyecto')));
+app.use('/api/publicacion', uploadPub)
+app.use('/publicacion', publicacionRouter)
+app.use('/login', login)
+app.use('/register', register)
 
-
-app.get('/', (req, res) => res.send('Hello World!!'))
-
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
