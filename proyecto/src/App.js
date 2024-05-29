@@ -1,4 +1,4 @@
-// import Home from "./pages/home"
+import Home from "./pages/home"
 import Nav from "./components/nav/nav"
 import Footer from "./components/footer/footer"
 
@@ -45,7 +45,7 @@ function App() {
       <Nav />
       <Link to="/newPub"><button>prueba</button></Link>
       <Routes>
-        {/* <Route path="/" element={<Home/>}/> */}
+        <Route path="/" element={<Home/>}/>
         <Route path="/login"  element={<><LoginPage/></>}/>
         <Route path="/register"  element={<><Register/></>}/>
         <Route path="/user" element={<><VistaUser/></>}/>
