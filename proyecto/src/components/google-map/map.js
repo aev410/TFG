@@ -32,13 +32,14 @@ const Map = ({ Menu, setLat, setLon, latP, lonP }) => {
     //Esto guarda una referencia como objeto de una instancia de google maps, permitiendole al componente trabajar con la api
     const mapRef = useRef();
 
-    let center
-    //Donde va a iniciar el mapa
-    if (!latP || !lonP) {
-        center = useMemo(() => ({ lat: 37.033002717899535, lng: -2.6214881335802667 }), []);
-    } else {
-        center = useMemo(() => ({lat: latP, lng: lonP}), []);
-    }
+    const center = useMemo(() => {
+        if (!latP || !lonP) {
+            return { lat: 37.033002717899535, lng: -2.6214881335802667 };
+        } else {
+            return { lat: latP, lng: lonP };
+        }
+    }, [latP, lonP]);
+    
     //Aplica las opciones
     const options = useMemo(() => ({
         disableDefaultUI: true,
