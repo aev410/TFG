@@ -1,4 +1,4 @@
--- Active: 1715772260983@@localhost@5432@alpujarra_almeria
+-- Active: 1715949403010@@127.0.0.1@5432@alpujarra_almeria
 -- Insertar 20 registros en la tabla Usuarios
 INSERT INTO clientes.usuarios (nombre, apellido, contra, correo, fechaNac) VALUES
 ('Juan', 'Perez', 'password1', 'juan.perez@example.com', '1980-01-01'),
@@ -21,6 +21,8 @@ INSERT INTO clientes.usuarios (nombre, apellido, contra, correo, fechaNac) VALUE
 ('Elena', 'Ramos', 'password18', 'elena.ramos@example.com', '1991-06-06'),
 ('Carlos', 'Romero', 'password19', 'carlos.romero@example.com', '1993-07-07'),
 ('Marta', 'Navarro', 'password20', 'marta.navarro@example.com', '1995-08-08');
+
+insert into clientes.usuarios (nombre, apellido, contra, correo, fechaNac) VALUES ('John', 'Doe', 'password1', 'johnDoe@example.com', '1999-01-01')
 
 -- Insertar 20 registros en la tabla Tienda
 INSERT INTO clientes.tienda (nombreTienda, telefono, direccion, idUsuario) VALUES
@@ -49,11 +51,13 @@ INSERT INTO clientes.tienda (nombreTienda, telefono, direccion, idUsuario) VALUE
 -- Asumiendo que la tabla Tienda ya está creada y tiene al menos 1 registro
 -- Puedes necesitar ajustar idTienda dependiendo de tus datos en la tabla Tienda
 
-INSERT INTO Publicacion (nombre, precio, descripcion, fecha_pub, latitud, longitud, imagenes, idTienda) VALUES
-('Publicacion 1', 100, 'Descripción de la publicación 1', '2023-01-01', '37.033', '-2.621', 'imagen1.jpg', 1),
-('Publicacion 2', 150, 'Descripción de la publicación 2', '2023-02-01', '36.9736', '-2.9613', 'imagen2.jpg', 1),
-('Publicacion 3', 200, 'Descripción de la publicación 3', '2023-03-01', '36.9898', '-2.587', 'imagen3.jpg', 1),
-('Publicacion 4', 250, 'Descripción de la publicación 4', '2023-04-01', '36.9571', '-2.5687', 'imagen4.jpg', 1),
+TRUNCATE clientes.publicacion
+
+INSERT INTO clientes.Publicacion (nombre, precio, descripcion, fecha_pub, latitud, longitud, imagenes, idTienda) VALUES
+('Publicacion 1', 100, 'Descripción de la publicación 1', '2023-01-01', '37.033', '-2.621', 'imagen1.jpg', 4),
+('Publicacion 2', 150, 'Descripción de la publicación 2', '2023-02-01', '36.9736', '-2.9613', 'imagen2.jpg', 4),
+('Publicacion 3', 200, 'Descripción de la publicación 3', '2023-03-01', '36.9898', '-2.587', 'imagen3.jpg', 4),
+('Publicacion 4', 250, 'Descripción de la publicación 4', '2023-04-01', '36.9571', '-2.5687', 'imagen4.jpg', 4),
 ('Publicacion 5', 300, 'Descripción de la publicación 5', '2023-05-01', '36.9664', '-2.602', 'imagen5.jpg', 1),
 ('Publicacion 6', 350, 'Descripción de la publicación 6', '2023-06-01', '37.0029', '-2.7901', 'imagen6.jpg', 1),
 ('Publicacion 7', 400, 'Descripción de la publicación 7', '2023-07-01', '37.0024', '-2.5944', 'imagen7.jpg', 1),
