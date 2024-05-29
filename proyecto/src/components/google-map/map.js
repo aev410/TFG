@@ -27,12 +27,18 @@ const librariesConst = ["places"]
 /*Contiene dos props, menu es el tipo de interfaz que aparece en el rectangulo negro
 Siendo autofillMaps una barra de busqueda y places checkboxes con provincias*/
 
-const Map = ({ Menu, setLat, setLon }) => {
+const Map = ({ Menu, setLat, setLon, latP, lonP }) => {
     const [office, setOffice] = useState();
     //Esto guarda una referencia como objeto de una instancia de google maps, permitiendole al componente trabajar con la api
     const mapRef = useRef();
+
+    let center
     //Donde va a iniciar el mapa
-    const center = useMemo(() => ({ lat: 37.033002717899535, lng: -2.6214881335802667 }), []);
+    if (!latP || !lonP) {
+        center = useMemo(() => ({ lat: 37.033002717899535, lng: -2.6214881335802667 }), []);
+    } else {
+        center = useMemo(() => ({lat: latP, lng: lonP}), []);
+    }
     //Aplica las opciones
     const options = useMemo(() => ({
         disableDefaultUI: true,
@@ -46,7 +52,7 @@ const Map = ({ Menu, setLat, setLon }) => {
         googleMapsApiKey: "AIzaSyBE2cF2mYtxB3H_LMxgpf_CxeBTjtfl3o4",
         libraries: librariesConst
     });
-    
+
     //Si no ha cargado muestra esto
     if (!isLoaded) {
         return <div>Loading...</div>
@@ -56,19 +62,22 @@ const Map = ({ Menu, setLat, setLon }) => {
         <div className="container">
             <div className="controls">
                 <h1>Mapa</h1>
-                
-                <Menu setOffice={(position) => {
-                    setOffice(position); //setOffice aplica las coordenadas pasadas
-                    mapRef.current?.panTo(position) //panea a la zona
-                    //Este codigo permite que los props set sean opcionales, si no introduces nada, o los dejas nulls no te saltara un error
-                    if(typeof setLat === 'undefined' && typeof setLon === 'undefined'){
-                        console.log("Operando sin guardar coordenadas")
-                    } else{
-                        console.log("Guardando coordenadas") 
-                        setLat(position.lat)
-                        setLon(position.lng)
-                    }
-                }} />
+                {Menu ? (
+                    <Menu setOffice={(position) => {
+                        setOffice(position); //setOffice aplica las coordenadas pasadas
+                        mapRef.current?.panTo(position) //panea a la zona
+                        //Este codigo permite que los props set sean opcionales, si no introduces nada, o los dejas nulls no te saltara un error
+                        if (typeof setLat === 'undefined' && typeof setLon === 'undefined') {
+                            console.log("Operando sin guardar coordenadas")
+                        } else {
+                            console.log("Guardando coordenadas")
+                            setLat(position.lat)
+                            setLon(position.lng)
+                        }
+                    }} />
+                ) : (
+                    null
+                )}
             </div>
             <div className="map">
                 <GoogleMap zoom={17} center={center}
