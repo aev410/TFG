@@ -1,4 +1,4 @@
--- Active: 1715772260983@@localhost@5432@alpujarra_almeria
+-- Active: 1716835071015@@127.0.0.1@5432@alpujarra_almeria
 
 use alpujarra_almeria;
 
@@ -53,3 +53,4 @@ FOREIGN KEY (idTienda)
 REFERENCES Tienda (idTienda)
 ON DELETE CASCADE
 ON UPDATE CASCADE;
+

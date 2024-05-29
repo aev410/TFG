@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000// El puerto se guarda en el archivo .env
 
 //  Midelware
 app.use(cors({
-  origin: ['http://localhost:80', 'http://localhost:3000', 'https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true']
+  origin: ['http://localhost:80', 'http://localhost', 'http://localhost:3000', 'https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true']
 }))
 
 app.use((req, res, next) => {

@@ -14,3 +14,28 @@ Accept: application/json
 # Devuelve la publicacion con id 5
 GET {{direccion}}/publicacion/5
 Accept: application/json
+
+###
+# Login
+POST {{direccion}}/login
+Content-Type: application/json
+Accept: application/json
+
+{ 
+  "correo": "antonioo.mejor@example.com",
+  "contra": "p12343425"
+}
+
+### 
+# Registro de Usuario
+POST {{direccion}}/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nombre": "Antonio",
+  "apellido": "Sandoval",
+  "correo": "antonioo.mejor@example.com",
+  "contra": "p12343425",
+  "fechaNac": "1994-01-01"
+}
