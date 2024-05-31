@@ -18,12 +18,12 @@ const UltimasPublicaciones = () =>{
     if (!datos) {
         return null;
     }
-
+    console.log(datos);
     return(
         <>
-        <VistaPub id={datos[0].ididpublicacion}></VistaPub>
-        <VistaPub id={datos[1].ididpublicacion}></VistaPub>
-        <VistaPub id={datos[2].ididpublicacion}></VistaPub>
+        <VistaPub id={datos[0].idpublicacion}></VistaPub>
+        <VistaPub id={datos[1].idpublicacion}></VistaPub>
+        <VistaPub id={datos[2].idpublicacion}></VistaPub>
         </>
         
     )

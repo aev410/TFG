@@ -15,7 +15,6 @@ const VistaPub = ({ id }) => {
   if (!datos) {
     return null;
   }
-
   return (
     <div className='tarjeta'>
       <div>
