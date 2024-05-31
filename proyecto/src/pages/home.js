@@ -2,17 +2,18 @@ import Map from '../components/google-map/map'
 import Places from '../components/google-map/places'
 import VistaPub from '../components/vistaPublicacion/vistaPub'
 import {useUltimasPublicaciones} from '../services/api'
+import "./home.css"
 
 
 const UltimasPublicaciones = () =>{
     const { datos, cargando, error } = useUltimasPublicaciones()
     
     if (cargando) {
-        return <p>Cargando...</p>;
+        return <p className='loading'>Cargando...</p>;
     }
     
     if (error) {
-        return <p>{error}</p>;
+        return <p className='error'>{error}</p>;
     }
     
     if (!datos) {
@@ -31,10 +32,10 @@ const UltimasPublicaciones = () =>{
 
 const Home = () => {
     return(
-        <>
+        <div>
             <Map Menu={Places}></Map>
             <UltimasPublicaciones />
-        </>
+        </div>
     )
 }
 
