@@ -50,7 +50,7 @@ const useUltimasPublicaciones = () => {
     return { datos, cargando, error };
 }
 
-export const GetUsuario = (id) => {
+const GetUsuario = (id) => {
     const [usuario, setUsuario] = useState(null);
 
     useEffect(() => {
@@ -71,3 +71,4 @@ export const GetUsuario = (id) => {
 }
 
 
+export { usePublicacion, useUltimasPublicaciones, GetUsuario };
