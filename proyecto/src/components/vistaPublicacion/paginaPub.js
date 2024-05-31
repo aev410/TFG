@@ -2,6 +2,7 @@ import React from "react";
 import { usePublicacion } from "../../services/api";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Carousel, Row, Col, Card } from 'react-bootstrap';
+import Map from "../google-map/map";
 
 const PaginaPub = ({ id }) => {
     const { datos, cargando, error } = usePublicacion(id);
@@ -18,7 +19,7 @@ const PaginaPub = ({ id }) => {
         return <p>No hay datos disponibles.</p>;
     }
 
-    let imagenes = datos.imagenes ? datos.imagenes.split(";").filter(src => src) : [];
+    let imagenes = datos[0].imagenes ? datos.imagenes.split(";").filter(src => src) : [];
 
     // Format the date to a more readable format
     const formatDate = (fecha) => {
@@ -49,19 +50,19 @@ const PaginaPub = ({ id }) => {
                 <Col md={4}>
                     <Card>
                         <Card.Body>
-                            <Card.Title>{datos.nombre}</Card.Title>
+                            <Card.Title>{datos[0].nombre}</Card.Title>
                             <Card.Text>
-                                Precio: {datos.precio}€
+                                Precio: {datos[0].precio}€
                             </Card.Text>
                             <Card.Text>
-                                Descripción: {datos.descripcion}
+                                Descripción: {datos[0].descripcion}
                             </Card.Text>
                             <Card.Text>
-                                Fecha de publicación: {formatDate(datos.fecha_pub)}
+                                Fecha de publicación: {formatDate(datos[0].fecha_pub)}
                             </Card.Text>
                             {/* Here you can add a map or location component */}
                             <Card.Text>
-                                Ubicación: Latitud {datos.latitud}, Longitud {datos.longitud}
+                                <Map latP={datos[0].latitud} lonP={datos[0].longitud} />
                             </Card.Text>
                         </Card.Body>
                     </Card>

@@ -5,6 +5,7 @@ import LoginPage from "./pages/login";
 import Register from "./components/Sessions/register";
 import VistaUser from "./components/vistaUsuario/VistaUser";
 import UploadItem from"./components/nuevPub/UploadItem";
+import PaginaPub from "./components/vistaPublicacion/paginaPub";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 import './App.css'
@@ -16,6 +17,7 @@ function App() {
       <Nav />
       <Link to="/user">Go to User Page</Link>
       <Link to="/newPub">Go to Publicacion Page</Link>
+      <Link to="/publics/idPub">Go to existing publicacion</Link>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/login"  element={<><LoginPage/></>}/>
@@ -26,7 +28,7 @@ function App() {
         <Route path="/newPub" element={<><UploadItem/></>}/>
         <Route path="/newPub" element={<><UploadItem/></>}/>
         {/* <Route path="/publics" element={<>  </>}/> */}
-        {/* <Route path="/publics/idPub" element={<>  </>}/> */}
+        <Route path="/publics/idPub" element={<><PaginaPub id={4}/></>}/>
       </Routes>
       <Footer />
     </Router>
