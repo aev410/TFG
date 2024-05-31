@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-export const usePublicacion = (id) => {
+const usePublicacion = (id) => {
     const [datos, setDatos] = useState(null);
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(null);
@@ -26,7 +26,7 @@ export const usePublicacion = (id) => {
     return { datos, cargando, error };
 };
 
-export const useUltimasPublicaciones = () => {
+const useUltimasPublicaciones = () => {
     const [datos, setDatos] = useState(null);
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(null);

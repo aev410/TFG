@@ -111,7 +111,7 @@ function nav() {
           </li>
         </ul>
       </div>
-
+      
       <div class="col-lg-3 col-md-3 col-sm-12 align-items-center">
         <h6 class="hFooter mb-2">MEDAC</h6>
         <ul class="list-unstyled ulFooter">

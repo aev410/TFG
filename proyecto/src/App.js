@@ -8,6 +8,7 @@ import UploadItem from"./components/nuevPub/UploadItem";
 import PaginaPub from "./components/vistaPublicacion/paginaPub";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
+
 import './App.css'
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
       </Routes>
       <Footer />
     </Router>
+
   );
 }
 
