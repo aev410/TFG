@@ -10,9 +10,9 @@ const showUser = require('./routes/mostrarUsuario.js')
 
 const app = express()
 const port = process.env.PORT || 3000// El puerto se guarda en el archivo .env
-app.get('*', function (req, res) {
-  res.send('../proyecto/public/index.html')
-})
+// app.get('*', function (req, res) {
+//   res.send('../proyecto/public/index.html')
+// })
 
 //  Midelware
 app.use(cors({

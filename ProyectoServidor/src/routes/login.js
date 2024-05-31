@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
 
     // Verificar si el usuario existe en la base de datos
     const user = await pool.query(
-      'SELECT * FROM usuarios WHERE correo = $1 AND contra = $2',
+      'SELECT * FROM clientes.usuarios WHERE correo = $1 AND contra = $2',
       [correo, contra]
     )
 
