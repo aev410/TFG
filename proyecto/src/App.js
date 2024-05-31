@@ -27,7 +27,6 @@ function App() {
         {/* <Route path="/register/tienda" element={<>  </>}/> */}
         {/* <Route path="/user/tienda" element={<>  </>}/> */}
         <Route path="/newPub" element={<><UploadItem/></>}/>
-        <Route path="/newPub" element={<><UploadItem/></>}/>
         {/* <Route path="/publics" element={<>  </>}/> */}
         <Route path="/publics/idPub" element={<><PaginaPub id={4}/></>}/>
       </Routes>
