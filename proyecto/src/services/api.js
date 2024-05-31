@@ -65,7 +65,7 @@ export const GetUsuario = (id) => {
         };
 
         fetchData();
-    }, []);
+    }, [id]);
     
     return usuario;
 }
