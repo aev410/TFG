@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
 
     // Verificar si el correo o la contraseña ya existen en la base de datos
     const existingUser = await pool.query(
-      'SELECT * FROM usuarios WHERE correo = $1 OR contra = $2',
+      'SELECT * FROM clientes.usuarios WHERE correo = $1 OR contra = $2',
       [correo, contra]
     )
 
@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
 
     // Insertar el nuevo usuario en la base de datos
     const result = await pool.query(
-      'INSERT INTO usuarios (nombre, apellido, contra, correo, fechaNac) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+      'INSERT INTO clientes.usuarios (nombre, apellido, contra, correo, fechaNac) VALUES ($1, $2, $3, $4, $5) RETURNING *',
       [nombre, apellido, contra, correo, fechaNac]
     )
 

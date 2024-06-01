@@ -8,6 +8,7 @@ import UploadItem from"./components/nuevPub/UploadItem";
 import PaginaPub from "./components/vistaPublicacion/paginaPub";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
+
 import './App.css'
 
 function App() {
@@ -26,12 +27,12 @@ function App() {
         {/* <Route path="/register/tienda" element={<>  </>}/> */}
         {/* <Route path="/user/tienda" element={<>  </>}/> */}
         <Route path="/newPub" element={<><UploadItem/></>}/>
-        <Route path="/newPub" element={<><UploadItem/></>}/>
         {/* <Route path="/publics" element={<>  </>}/> */}
         <Route path="/publics/idPub" element={<><PaginaPub id={4}/></>}/>
       </Routes>
       <Footer />
     </Router>
+
   );
 }
 

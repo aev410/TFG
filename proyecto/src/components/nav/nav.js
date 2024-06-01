@@ -11,7 +11,7 @@ function nav() {
         <img src={logo} alt="Logo" />
       </a>
       <form class="form-inline d-flex w-50">
-        <input class="form-control mr-sm-2 w-100" type="search" placeholder="Busca vinilos" aria-label="Search" />
+        <input class="form-control mr-sm-2 w-100" type="search" placeholder="Buscar" aria-label="Search" />
       </form>
       <div class="d-flex">
         <button class="btn btn-outline-success mr-2" type="button">Regístrate o inicia sesión</button>

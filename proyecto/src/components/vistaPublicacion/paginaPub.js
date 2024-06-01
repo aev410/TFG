@@ -18,8 +18,8 @@ const PaginaPub = ({ id }) => {
     if (!datos) {
         return <p>No hay datos disponibles.</p>;
     }
-
-    let imagenes = datos[0].imagenes ? datos.imagenes.split(";").filter(src => src) : [];
+    
+    let imagenes = datos[0].imagenes.length > 1  ? datos[0].imagenes.split(";").filter(src => src) : datos[0].imagenes;
 
     // Format the date to a more readable format
     const formatDate = (fecha) => {
@@ -62,7 +62,7 @@ const PaginaPub = ({ id }) => {
                             </Card.Text>
                             {/* Here you can add a map or location component */}
                             <Card.Text>
-                                <Map latP={datos[0].latitud} lonP={datos[0].longitud} />
+                                <Map latP={parseInt(datos[0].latitud)} lonP={parseInt(datos[0].longitud)} />
                             </Card.Text>
                         </Card.Body>
                     </Card>
