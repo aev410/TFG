@@ -1,5 +1,9 @@
--- Active: 1715949403010@@127.0.0.1@5432@alpujarra_almeria
+-- Active: 1716075812714@@127.0.0.1@5432@alpujarra_almeria
 -- Insertar 20 registros en la tabla Usuarios
+
+select * from clientes.usuarios;
+
+
 INSERT INTO clientes.usuarios (nombre, apellido, contra, correo, fechaNac) VALUES
 ('Juan', 'Perez', 'password1', 'juan.perez@example.com', '1980-01-01'),
 ('Maria', 'Garcia', 'password2', 'maria.garcia@example.com', '1982-02-02'),
