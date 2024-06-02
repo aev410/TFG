@@ -5,7 +5,7 @@ const router = Router()
 connectDB()
 
 router.post('/', multiUpload.array('imagenes', 5), async (req, res) => {
-  // idUsuario = placeholder, tengo que tomarlo de la sesion del usuario
+  // idTienda = placeholder, tengo que tomarlo de la sesion del usuario
   const idTienda = 4
 
   // Da un formato de fecha legible para SQL

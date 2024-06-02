@@ -1,13 +1,27 @@
 import React from "react";
-import VistaPub from "../vistaPublicacion/vistaPub";
 import { GetUsuario } from "../../services/api";
+import VistaPub from "../vistaPublicacion/vistaPub";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './vista.css';
 import { Container, Card, Row, Col } from 'react-bootstrap';
 
 const VistaUser = () => {
     //Aqui guardo el resultado de la busqueda, dividido segun las tablas, 4 seria el ID
-    const { userData, storeData, publicacionData } = GetUsuario(4);
+    const { usuario, cargando, error } = GetUsuario(1);
+
+    if (cargando) {
+        return <p>Cargando...</p>;
+      }
+    
+      if (error) {
+        return <p>{error}</p>;
+      }
+    
+      if (!usuario.userData) {
+        return <p>No hay datos disponibles.</p>;
+      }
+
+    const { userData, storeData, publicacionData } = usuario;
 
     //Este codigo esta usando la libreria de bootstrap con React, los nombres de los componentes se transportan a las clases de bootstrap
     return (

@@ -7,6 +7,7 @@ router.get('/:id', async (req, res) => {
   try {
     const idUsuario = req.params.id
     const user = await pool.query('SELECT * FROM clientes.usuarios WHERE idUsuario = $1', [idUsuario])
+
     if (user.rows.length === 0) {
       return res.status(400).json({ message: 'Usuario no encontrado' })
     }
