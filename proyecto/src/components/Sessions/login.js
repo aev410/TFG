@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import "./session.css";
+import {userNavigate} from 'react-router-dom'
 import ValidadorCorreo from './formatoCorreo';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
 const Login = () => {
     const [errorMessage, setErrorMessage] = useState('');
+    const navigate = userNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -13,9 +15,17 @@ const Login = () => {
             const formData = new FormData(e.target);
             const correo = formData.get('correo');
             const contra = formData.get('contra');
+            console.log('Datos enviados:', { correo, contra });
             const response = await axios.post('http://localhost:3000/login', { correo, contra });
             console.log(response.data);
-            setErrorMessage('');
+            if (response.status === 200){
+                navigate('/user');
+                setErrorMessage('');
+            }else{
+                console.error('Respuesta inesperada:', response.status);
+                setErrorMessage('Error inesperado. Por favor, inténtalo de nuevo.');
+            }
+
         } catch (error) {
             console.error('Error al enviar el formulario:', error);
             if (error.response && error.response.data && error.response.data.error) {
