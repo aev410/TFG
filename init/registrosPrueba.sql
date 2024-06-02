@@ -1,5 +1,4 @@
--- Active: 1715957714479@@127.0.0.1@5432@alpujarra_almeria@clientes
-
+-- Active: 1715772260983@@localhost@5432@alpujarra_almeria
 -- Insertar 20 registros en la tabla Usuarios
 
 select * from clientes.usuarios;
