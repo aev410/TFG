@@ -2,10 +2,11 @@ const { Router } = require('express')
 const { pool } = require('../config/database')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+require('dotenv').config()
 
 const router = Router()
 
-const secretKey = 'ClaveSecreta123'
+const secretKey = process.env.SECRETKEY
 
 // Endpoint iniciar sesión
 router.post('/', (req, res) => {
@@ -52,7 +53,7 @@ router.post('/', (req, res) => {
       req.session.token = token
 
       // Usuario autenticado, enviar respuesta exitosa
-      res.status(200).json({ message: 'Inicio de sesión exitoso', token: token })
+      res.status(200).json({ message: 'Inicio de sesión exitoso', data: token })
     })
   })
 })

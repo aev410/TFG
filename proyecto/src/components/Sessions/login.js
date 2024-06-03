@@ -18,7 +18,13 @@ const Login = () => {
             console.log('Datos enviados:', { correo, contra });
             const response = await axios.post('http://localhost:3000/login', { correo, contra });
             console.log(response.data);
-            if (response.status === 200){
+            if (response.data.message === 'Inicio de sesión exitoso'){
+                localStorage.setItem('authToken', response.data.token);
+
+                // Purebas
+                const token = localStorage.getItem('authToken');
+                console.log("TOKEN DE LOCALSTORAGE 1: "+token);
+
                 navigate('/user');
                 setErrorMessage('');
             }else{

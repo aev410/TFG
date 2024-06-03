@@ -7,19 +7,19 @@ import { Container, Card, Row, Col } from 'react-bootstrap';
 
 const VistaUser = () => {
     //Aqui guardo el resultado de la busqueda, dividido segun las tablas, 4 seria el ID
-    const { usuario, cargando, error } = GetUsuario(1);
+    const { usuario, cargando, error } = GetUsuario();
 
     if (cargando) {
         return <p>Cargando...</p>;
-      }
+    }
     
-      if (error) {
+    if (error) {
         return <p>{error}</p>;
-      }
+    }
     
-      if (!usuario.userData) {
+    if (!usuario.userData) {
         return <p>No hay datos disponibles.</p>;
-      }
+    }
 
     const { userData, storeData, publicacionData } = usuario;
 
