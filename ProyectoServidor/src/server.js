@@ -7,7 +7,7 @@ const publicacionRouter = require('./routes/publicacion.js')
 const uploadPub = require('./routes/uploadPub.js')
 const login = require('./routes/login.js')
 const register = require('./routes/register.js')
-const verifyToken = require('./middleware/authMiddleware.js');
+const verifyToken = require('./middleware/authMiddleware.js')
 const showUser = require('./routes/mostrarUsuario.js')
 
 const app = express()
@@ -45,7 +45,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 app.get('*', function (req, res) {
   res.send('../proyecto/public/index.html')
 })
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
