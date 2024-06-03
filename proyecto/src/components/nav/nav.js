@@ -19,7 +19,7 @@ function nav() {
     //     </div>
     //   </div>
     // </nav>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar bg-light sticky-top navbar-expand-lg p-0">
       <div class="container-fluid">
         <a class="navbar-brand" href=" "><img src={logo} alt="Logo" /></a>
         <form class="form-inline d-flex w-50">
@@ -31,12 +31,12 @@ function nav() {
         <div class="collapse navbar-collapse" id="main_nav">
           <ul class="navbar-nav">
             <li class="nav-item dropdown has-megamenu">
-              <a class="nav-link dropdown-toggle" href=" " data-bs-toggle="dropdown"> Mega menu  </a>
+              <a class="nav-link dropdown-toggle" href=" " data-bs-toggle="dropdown">Productos</a>
               <div class="dropdown-menu megamenu" role="menu">
-              <div class="row g-3">
+              <div class="row g-3 text-center">		
 						<div class="col-lg-3 col-6">
 							<div class="col-megamenu">
-								<h6 class="title">Title Menu One</h6>
+								<h6 class="title">Title Menu Two</h6>
 								<ul class="list-unstyled">
 									<li><a href=" ">Custom Menu</a></li>
 									<li><a href=" ">Custom Menu</a></li>
@@ -45,7 +45,7 @@ function nav() {
 									<li><a href=" ">Custom Menu</a></li>
 									<li><a href=" ">Custom Menu</a></li>
 								</ul>
-							</div>  
+							</div> 
 						</div>
 						<div class="col-lg-3 col-6">
 							<div class="col-megamenu">
@@ -91,9 +91,8 @@ function nav() {
             </li>
           </ul>
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"> <button class="btn btn-primary" type="button">Vender</button></li>
             <li class="nav-item">
-			<button class="btn btn-outline-success mr-2" type="button">Regístrate o inicia sesión</button>
+			<button class="btn btn-outline-success" type="button">Regístrate o inicia sesión</button>
             </li>
           </ul>
         </div>

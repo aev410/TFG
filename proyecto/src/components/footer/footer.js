@@ -1,6 +1,6 @@
 import React from 'react';
 import "./footer.css";
-
+import logo from "./img/logo.png";
 
 // navbar 
 function nav() {
@@ -17,11 +17,11 @@ function nav() {
         <div class="container">
           <div class="row g-4 align-middle">
             <div class="col-xs-12 col-md-6 col-lg-12">
-              <a target="_blank" title="MEDAC logo" href=" " rel="noreferrer"
+              <a target="_blank" title="ASAAPP logo" href=" " rel="noreferrer"
                 ><img
                   class="iFooter"
-                  src="assets/logo-vector/MEDAC_imagotipo_horiz_blanco_RGB.svg"
-                  alt="Logotipo de MEDAC"
+                  src={logo}
+                  alt="Logotipo"
               /></a>
             </div>
             <div
@@ -29,42 +29,42 @@ function nav() {
             >
               <a
                 target="_blank"
-                title="MEDAC facebook"
+                title=" "
                 class="iZoom"
-                href="https://www.facebook.com/institutomedac" rel="noreferrer"
+                href=" " rel="noreferrer"
                 ><i class="fa-brands fa-facebook fa-xl"></i
               ></a>
               <a
                 target="_blank"
-                title="MEDAC instagram"
+                title=" "
                 class="iZoom"
-                href="https://www.instagram.com/institutomedac" rel="noreferrer"
+                href=" " rel="noreferrer"
                 ><i class="fa-brands fa-instagram fa-xl"></i
               ></a>
               <a
                 target="_blank"
-                title="MEDAC linkedin"
+                title=" "
                 class="iZoom"
                 href=" " rel="noreferrer"
                 ><i class="fa-brands fa-linkedin fa-xl"></i
               ></a>
               <a
                 target="_blank"
-                title="MEDAC twitter"
+                title=" "
                 class="iZoom"
                 href=" " rel="noreferrer"
                 ><i class="fa-brands fa-x-twitter fa-xl"></i
               ></a>
               <a
                 target="_blank"
-                title="MEDAC youtube"
+                title=" "
                 class="iZoom"
                 href=" " rel="noreferrer"
                 ><i class="fa-brands fa-youtube fa-xl"></i
               ></a>
               <a
                 target="_blank"
-                title="MEDAC tiktok"
+                title=" "
                 class="iZoom"
                 href=" " rel="noreferrer"
                 ><i class="fa-brands fa-tiktok fa-xl"></i
@@ -74,22 +74,22 @@ function nav() {
         </div>
       </div>
       <div class="col-lg-3 col-md-3 col-sm-12 align-items-center">
-        <h6 class="hFooter mb-2">MEDAC</h6>
+        <h6 class="hFooter mb-2">ASAA APP</h6>
         <ul class="list-unstyled ulFooter">
           <li>
             <a target="_blank" href=" " rel="noreferrer">
-              Fundación MEDAC
+              espacio 1
             </a>
           </li>
           <li><a target="_blank" href=" " rel="noreferrer">Blog</a></li>
           <li>
             <a target="_blank" href=" " rel="noreferrer">
-              Revista
+            espacio 2
             </a>
           </li>
           <li>
             <a target="_blank" href=" " rel="noreferrer">
-              Canal ético
+            espacio 3
             </a>
           </li>
           <li>
@@ -97,33 +97,33 @@ function nav() {
           </li>
           <li>
             <a target="_blank" href=" " rel="noreferrer">
-              Trabaja con nosotros
+            espacio 4
             </a>
           </li>
         </ul>
       </div>
 
       <div class="col-lg-3 col-md-3 col-sm-12 align-items-center">
-        <h6 class="hFooter mb-2">Alumnos</h6>
+        <h6 class="hFooter mb-2">espacio 5</h6>
         <ul class="list-unstyled ulFooter">
           <li>
             <a target="_blank" href=" " rel="noreferrer">
-              Aula Virtual
+            espacio 6
             </a>
           </li>
           <li>
             <a target="_blank" href=" " rel="noreferrer">
-              Preguntas frecuentes
+            espacio 7
             </a>
           </li>
           <li>
             <a target="_blank" href=" " rel="noreferrer">
-                Empresas colaboradoras
+            espacio 8
             </a>
           </li>
           <li>
             <a target="_blank" href=" " rel="noreferrer">
-              Opiniones MEDAC
+              Opiniones 
             </a>
           </li>
           <li>

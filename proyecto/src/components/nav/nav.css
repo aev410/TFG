@@ -32,9 +32,7 @@
 } */
 
 .container-fluid{
-  background-color: var(--principal);
-  /* margin: 0 !important;
-  padding: 0 !important; */
+  background-color: var(--principal)
 }
 
 .navbar-brand img {
@@ -48,15 +46,15 @@
   border-radius: 20px;
 }
 .btn-primary {
-  background-color: #00c4cc;
-  border-color: #00c4cc;
+  background-color: var(--color1);
+  border-color: var(--color1);
 }
 .btn-outline-success {
-  color: #00c4cc;
-  border-color: #00c4cc;
+  color: var(--color2);
+  border-color: var(--color1);
 }
 .btn-outline-success:hover {
-  background-color: #00c4cc;
+  background-color: var(--color2);
   color: white;
 }
 /* Boton entrar al metaverso */
@@ -86,23 +84,30 @@
   }
 } */
 
-.navbar .megamenu{ padding: 1rem; }
+/* .navbar .megamenu{ 
+  padding: 1rem; 
+} */
 
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {
 
-  .navbar .has-megamenu{position:static!important;}
-  .navbar .megamenu{left:0; right:0; width:100%; margin-top:0;  }
+  .navbar .has-megamenu{
+    position:static!important;
+  }
+  .navbar .megamenu{
+    left:0; 
+    right:0; 
+    width:100%; 
+    margin-top:0;  
+  }
 
 }	
-/* ============ desktop view .end// ============ */
 
-/* ============ mobile view ============ */
+/*  mobile view  */
 @media(max-width: 991px){
   .navbar.fixed-top .navbar-collapse, .navbar.sticky-top .navbar-collapse{
     overflow-y: auto;
-      max-height: 90vh;
-      margin-top:10px;
+    max-height: 90vh;
+    margin-top:10px;
   }
 }
-/* ============ mobile view .end// ============ */
