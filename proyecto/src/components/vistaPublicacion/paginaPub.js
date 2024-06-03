@@ -62,7 +62,7 @@ const PaginaPub = ({ id }) => {
                             </Card.Text>
                             {/* Here you can add a map or location component */}
                             <Card.Text>
-                                <Map latP={parseInt(datos[0].latitud)} lonP={parseInt(datos[0].longitud)} />
+                                <Map latP={parseFloat(datos[0].latitud)} lonP={parseFloat(datos[0].longitud)} />
                             </Card.Text>
                         </Card.Body>
                     </Card>
