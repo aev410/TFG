@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import "./session.css";
-import {userNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import ValidadorCorreo from './formatoCorreo';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
 const Login = () => {
     const [errorMessage, setErrorMessage] = useState('');
-    const navigate = userNavigate()
+    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault();

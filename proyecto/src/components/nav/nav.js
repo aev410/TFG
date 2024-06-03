@@ -18,7 +18,9 @@ function Nav() {
           <Link to="/login">
             <button className="btn btn-outline-success mr-2" type="button">Regístrate o inicia sesión</button>
           </Link>
-          <button className="btn btn-primary" type="button">Vender</button>
+          <Link to="/newPub">
+            <button className="btn btn-primary" type="button">Vender</button>
+          </Link>
         </div>
       </div>
     </nav>

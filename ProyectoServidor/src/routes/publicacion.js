@@ -17,6 +17,7 @@ router.get('/', async (req, res) => {
     res.json(result.rows)
   })
 })
+
 // Obtiene las ultimas publicaciones
 router.get('/last', async (req, res) => {
   const date = new Date()

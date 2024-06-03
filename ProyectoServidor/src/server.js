@@ -22,15 +22,13 @@ app.use(cors({
 app.use(morgan('dev')) //   Muestra info sobre las solicitudes http
 app.use(express.json())//   Para que las solicitudes http sean accesibles con req.body
 
-
 // Configuración de express-session
 app.use(session({
-  secret: 'ClaveSecreta123', 
+  secret: 'ClaveSecreta123',
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false } // Cambiar a true para HTTPS
-}));
-
+}))
 
 app.use('/api/publicacion', uploadPub)
 app.use('/user', showUser)
@@ -40,8 +38,8 @@ app.use('/register', register)
 
 // Rutas protegidas
 app.use('/protected', verifyToken, (req, res) => {
-  res.json({ message: 'Esta es una ruta protegida', userId: req.userId });
-});
+  res.json({ message: 'Esta es una ruta protegida', userId: req.userId })
+})
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
