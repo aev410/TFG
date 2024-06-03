@@ -10,11 +10,11 @@ import Footer from "./components/footer/footer"
 // import { BrowserRouter as Router,Route , Routes } from 'react-router-dom';
 
 
-import LoginPage from "./pages/login";
-import Register from "./components/Sessions/register";
-import VistaUser from "./components/vistaUsuario/VistaUser";
-import UploadItem from"./components/nuevPub/UploadItem"
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+// import LoginPage from "./pages/login";
+// import Register from "./components/Sessions/register";
+// import VistaUser from "./components/vistaUsuario/VistaUser";
+// import UploadItem from"./components/nuevPub/UploadItem"
+// import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 
 import './App.css'
@@ -41,22 +41,29 @@ function App() {
     // </Router>
 
 
-    <Router>
-      <Nav />
-      <Link to="/newPub"><button>prueba</button></Link>
-      <Routes>
-        {/* <Route path="/" element={<Home/>}/> */}
-        <Route path="/login"  element={<><LoginPage/></>}/>
-        <Route path="/register"  element={<><Register/></>}/>
-        <Route path="/user" element={<><VistaUser/></>}/>
-        {/* <Route path="/register/tienda" element={<>  </>}/> */}
-        {/* <Route path="/user/tienda" element={<>  </>}/> */}
-        <Route path="/newPub" element={<><UploadItem/></>}/>
-        {/* <Route path="/publics" element={<>  </>}/> */}
-        {/* <Route path="/publics/idPub" element={<>  </>}/> */}
-      </Routes>
-      <Footer />
-    </Router>
+    // <Router>
+    <div>
+        <Nav />
+        {/* <Routes> */}
+          {/* <Route path="/" element={<Home/>}/> */}
+          {/* <Route path="/login"  element={<><LoginPage/></>}/>
+          <Route path="/register"  element={<><Register/></>}/>
+          <Route path="/user" element={<><VistaUser/></>}/> */}
+        {/* <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/login"  element={<><LoginPage/></>}/>
+          <Route path="/register"  element={<><Register/></>}/>
+          <Route path="/user" element={<><VistaUser/></>}/> */}
+          {/* <Route path="/register/tienda" element={<>  </>}/> */}
+          {/* <Route path="/user/tienda" element={<>  </>}/> */}
+          {/* <Route path="/newPub" element={<><UploadItem/></>}/> */}
+          {/* <Route path="/publics" element={<>  </>}/> */}
+          {/* <Route path="/publics/idPub" element={<>  </>}/> */}
+        {/* </Routes> */}
+        {/* </Routes> */}
+        <Footer />
+    </div>
+    /* </Router> */
 
   );
 }
