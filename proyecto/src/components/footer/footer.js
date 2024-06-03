@@ -24,52 +24,6 @@ function nav() {
                   alt="Logotipo"
               /></a>
             </div>
-            <div
-              class="text-center iconFooter justify-content-center col-xs-12 col-md-6 col-lg-12 pb-4 pb-md-5 d-flex flex-nowrap"
-            >
-              <a
-                target="_blank"
-                title=" "
-                class="iZoom"
-                href=" " rel="noreferrer"
-                ><i class="fa-brands fa-facebook fa-xl"></i
-              ></a>
-              <a
-                target="_blank"
-                title=" "
-                class="iZoom"
-                href=" " rel="noreferrer"
-                ><i class="fa-brands fa-instagram fa-xl"></i
-              ></a>
-              <a
-                target="_blank"
-                title=" "
-                class="iZoom"
-                href=" " rel="noreferrer"
-                ><i class="fa-brands fa-linkedin fa-xl"></i
-              ></a>
-              <a
-                target="_blank"
-                title=" "
-                class="iZoom"
-                href=" " rel="noreferrer"
-                ><i class="fa-brands fa-x-twitter fa-xl"></i
-              ></a>
-              <a
-                target="_blank"
-                title=" "
-                class="iZoom"
-                href=" " rel="noreferrer"
-                ><i class="fa-brands fa-youtube fa-xl"></i
-              ></a>
-              <a
-                target="_blank"
-                title=" "
-                class="iZoom"
-                href=" " rel="noreferrer"
-                ><i class="fa-brands fa-tiktok fa-xl"></i
-              ></a>
-            </div>
           </div>
         </div>
       </div>

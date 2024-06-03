@@ -31,7 +31,7 @@ function nav() {
         <div class="collapse navbar-collapse" id="main_nav">
           <ul class="navbar-nav">
             <li class="nav-item dropdown has-megamenu">
-              <a class="nav-link dropdown-toggle" href=" " data-bs-toggle="dropdown">Productos</a>
+              <a class="nav-link dropdown-toggle" href=" " data-bs-toggle="dropdown"><span class="navbar-toggler-icon"></span></a>
               <div class="dropdown-menu megamenu" role="menu">
               <div class="row g-3 text-center">		
 						<div class="col-lg-3 col-6">
