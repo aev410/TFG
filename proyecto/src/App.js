@@ -27,7 +27,7 @@ function App() {
         {/* <Route path="/user/tienda" element={<>  </>}/> */}
         <Route path="/newPub" element={<><UploadItem/></>}/>
         {/* <Route path="/publics" element={<>  </>}/> */}
-        <Route path="/publics/idPub" element={<><PaginaPub id={4}/></>}/>
+        <Route path="/publics/idPub" element={<><PaginaPub id={21}/></>}/>
       </Routes>
       <Footer />
     </Router>

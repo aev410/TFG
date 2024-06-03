@@ -20,6 +20,7 @@ const PaginaPub = ({ id }) => {
     }
     
     let imagenes = datos[0].imagenes.length > 1  ? datos[0].imagenes.split(";").filter(src => src) : datos[0].imagenes;
+    console.log(imagenes)
 
     // Format the date to a more readable format
     const formatDate = (fecha) => {
@@ -37,7 +38,7 @@ const PaginaPub = ({ id }) => {
                                 <Carousel.Item key={index}>
                                     <img
                                         className="d-block w-100"
-                                        src={src}
+                                        src={`http://localhost:3000/images/${src}`}
                                         alt={`Imagen ${index + 1}`}
                                     />
                                 </Carousel.Item>

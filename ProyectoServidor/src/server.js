@@ -9,6 +9,7 @@ const login = require('./routes/login.js')
 const register = require('./routes/register.js')
 const verifyToken = require('./middleware/authMiddleware.js')
 const showUser = require('./routes/mostrarUsuario.js')
+const path = require('path')
 
 const app = express()
 const port = process.env.PORT || 3000// El puerto se guarda en el archivo .env
@@ -29,6 +30,8 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: false } // Cambiar a true para HTTPS
 }))
+
+app.use('/images', express.static(path.join(__dirname, 'images')))
 
 app.use('/api/publicacion', uploadPub)
 app.use('/user', showUser)
