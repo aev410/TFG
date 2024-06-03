@@ -13,7 +13,7 @@ router.post('/', multiUpload.array('imagenes', 5), async (req, res) => {
 
   // Define las variables segun la informacion en la formData y segun el procesado de multer para las imagenes
   const { nombre, precio, descripcion, latitud, longitud } = req.body
-  const imagenes = req.files.map(file => file.path).join(';')
+  const imagenes = req.files.map(file => file.filename).join(';')
 
   try {
     // Query, los dolares llaman a variables que definimos y colocamos en pool.query()
