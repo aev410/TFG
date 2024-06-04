@@ -1,6 +1,6 @@
-const { Router } = require('express')
+const express = require('express')
 const { connectDB, pool } = require('../config/database')
-const router = Router()
+const router = express.Router()
 
 connectDB()
 
@@ -13,10 +13,10 @@ router.get('/', async (req, res) => {
       console.error('Error al ejecutar la consulta:', err)
       return
     }
-    console.log('Filas seleccionadas:', result.rows)
     res.json(result.rows)
   })
 })
+
 // Obtiene las ultimas publicaciones
 router.get('/last', async (req, res) => {
   const date = new Date()

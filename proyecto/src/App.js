@@ -16,7 +16,6 @@ function App() {
   return (
     <Router>
       <Nav />
-      <Link to="/user">Go to User Page</Link>
       <Link to="/newPub">Go to Publicacion Page</Link>
       <Link to="/publics/idPub">Go to existing publicacion</Link>
       <Routes>
@@ -28,7 +27,7 @@ function App() {
         {/* <Route path="/user/tienda" element={<>  </>}/> */}
         <Route path="/newPub" element={<><UploadItem/></>}/>
         {/* <Route path="/publics" element={<>  </>}/> */}
-        <Route path="/publics/idPub" element={<><PaginaPub id={4}/></>}/>
+        <Route path="/publics/idPub" element={<><PaginaPub id={21}/></>}/>
       </Routes>
       <Footer />
     </Router>

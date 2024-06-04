@@ -1,6 +1,28 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
+const GetAllPublicaciones = () => {
+    const [datos, setDatos] = useState(null);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`http://localhost:3000/publicacion`);
+                console.log("Publicación response:", response.data);
+                setDatos(response.data);
+            } catch (error) {
+                console.error("Error al buscar publicación:", error);
+                setError("Error al buscar publicación");
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    return { datos, error }
+};
+
 const usePublicacion = (id) => {
     const [datos, setDatos] = useState(null);
     const [cargando, setCargando] = useState(true);
@@ -76,4 +98,4 @@ const GetUsuario = (id) => {
 }
 
 
-export { usePublicacion, useUltimasPublicaciones, GetUsuario };
+export { usePublicacion, useUltimasPublicaciones, GetUsuario, GetAllPublicaciones };

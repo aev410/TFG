@@ -1,8 +1,7 @@
--- Active: 1715957714479@@127.0.0.1@5432@alpujarra_almeria@clientes
-
+-- Active: 1715949403010@@127.0.0.1@5432@alpujarra_almeria
 -- Insertar 20 registros en la tabla Usuarios
 
-select * from clientes.usuarios;
+select * from clientes.publicacion;
 
 
 INSERT INTO clientes.usuarios (nombre, apellido, contra, correo, fechaNac) VALUES
@@ -56,7 +55,7 @@ INSERT INTO clientes.tienda (nombreTienda, telefono, direccion, idUsuario) VALUE
 -- Asumiendo que la tabla Tienda ya está creada y tiene al menos 1 registro
 -- Puedes necesitar ajustar idTienda dependiendo de tus datos en la tabla Tienda
 
-TRUNCATE clientes.publicacion
+TRUNCATE TABLE clientes.publicacion RESTART IDENTITY;
 
 INSERT INTO clientes.Publicacion (nombre, precio, descripcion, fecha_pub, latitud, longitud, imagenes, idTienda) VALUES
 ('Publicacion 1', 100, 'Descripción de la publicación 1', '2023-01-01', '37.033', '-2.621', 'imagen1.jpg', 4),

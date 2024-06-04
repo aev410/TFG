@@ -1,8 +1,4 @@
--- Active: 1716075812714@@127.0.0.1@5432@alpujarra_almeria
-
-drop database alpujarra_almeria with (force)
-
-create DATABASE alpujarra_almeria;
+-- Active: 1715949403010@@127.0.0.1@5432@alpujarra_almeria
 
 use alpujarra_almeria;
 
@@ -57,3 +53,4 @@ FOREIGN KEY (idTienda)
 REFERENCES Tienda (idTienda)
 ON DELETE CASCADE
 ON UPDATE CASCADE;
+

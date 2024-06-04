@@ -16,7 +16,7 @@ const UltimasPublicaciones = () =>{
         return <p className='error'>{error}</p>;
     }
     
-    if (!datos) {
+    if (!datos || datos.lenght === 0) {
         return null;
     }
     console.log(datos);
