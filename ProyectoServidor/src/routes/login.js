@@ -2,10 +2,11 @@ const { Router } = require('express');
 const { pool } = require('../config/database');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+require('dotenv').config()
 
 const router = Router();
 
-const secretKey = 'ClaveSecreta123';
+const secretKey = process.env.SECRETKEY // Usa la misma clave secreta
 
 // Endpoint iniciar sesión
 router.post('/', (req, res) => {
