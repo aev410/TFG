@@ -4,7 +4,7 @@ require('dotenv').config()
 const secretKey = process.env.SECRETKEY // Usa la misma clave secreta
 
 const verifyToken = (req, res, next) => {
-  console.log(req.headers.authorization)
+  console.log('CABECERA PETICION: ' + req.headers.authorization)
   const token = req.session.token
 
   console.log('Token recibido:', token) // Verifica si el token se está recibiendo correctamente

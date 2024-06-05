@@ -72,6 +72,8 @@ const useUltimasPublicaciones = () => {
     return { datos, cargando, error };
 }
 
+
+
 const GetUsuario = () => {
     const [usuario, setUsuario] = useState(null);
     const [cargando, setCargando] = useState(true);
@@ -81,7 +83,7 @@ const GetUsuario = () => {
         const fetchData = async () => {
             try {
                 const token = localStorage.getItem('authToken');
-                console.log("TOKEN DE LOCALSTORAGE: "+token);
+                console.log("TOKEN DE LOCALSTORAGE: " + token);
                 const config = {
                     headers: {
                         'Authorization': `Bearer ${token}`

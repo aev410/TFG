@@ -11,7 +11,7 @@ const secretKey = process.env.SECRETKEY
 // Endpoint iniciar sesión
 router.post('/', (req, res) => {
   const { correo, contra } = req.body
-
+  console.log('*******entrando en el login server')
   // Verificar si el usuario existe en la base de datos
   const query = 'SELECT * FROM clientes.usuarios WHERE correo = $1'
   pool.query(query, [correo], (err, result) => {
@@ -48,6 +48,7 @@ router.post('/', (req, res) => {
       // Crear el JWT
       console.log('Creando token con idUsuario:', user.idusuario) // Log adicional
       const token = jwt.sign({ userId: user.idusuario }, secretKey, { expiresIn: '1h' })
+      console.log(token)
 
       // Guardar el token en la sesión
       req.session.token = token

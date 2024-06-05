@@ -1,5 +1,5 @@
 import React from "react";
-import { GetUsuario } from "../../services/api";
+import {  GetUsuario } from "../../services/api";
 import VistaPub from "../vistaPublicacion/vistaPub";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './vista.css';

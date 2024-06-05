@@ -11,35 +11,39 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const formData = new FormData(e.target);
-            const correo = formData.get('correo');
-            const contra = formData.get('contra');
-            console.log('Datos enviados:', { correo, contra });
-            const response = await axios.post('http://localhost:3000/login', { correo, contra });
-            console.log(response.data);
-            if (response.data.message === 'Inicio de sesión exitoso'){
+        const formData = new FormData(e.target);
+        const correo = formData.get('correo');
+        const contra = formData.get('contra');
+        console.log('Datos enviados:', { correo, contra });
+        axios.post('http://localhost:3000/login', {
+            correo: correo,
+            contra: contra
+        })
+        .then(response => {
+            if (response.data.message === 'Inicio de sesión exitoso' && response.data.token) {
+                // Almacenar el token en localStorage
                 localStorage.setItem('authToken', response.data.token);
-
-                // Purebas
+    
+                // Pruebas
                 const token = localStorage.getItem('authToken');
-                console.log("TOKEN DE LOCALSTORAGE 1: "+token);
-
+                console.log("TOKEN DE LOCALSTORAGE 1: " + token);
+    
+                // Navegar a la página del usuario
                 navigate('/user');
                 setErrorMessage('');
-            }else{
+            } else {
                 console.error('Respuesta inesperada:', response.status);
                 setErrorMessage('Error inesperado. Por favor, inténtalo de nuevo.');
             }
-
-        } catch (error) {
+        })
+        .catch(error => {
             console.error('Error al enviar el formulario:', error);
-            if (error.response && error.response.data && error.response.data.error) {
-                setErrorMessage("*Credenciales incorrectas"); 
-            } else {
-                setErrorMessage('Error interno del servidor');
-            }
+        if (error.response && error.response.data && error.response.data.error) {
+            setErrorMessage("*Credenciales incorrectas"); 
+        } else {
+            setErrorMessage('Error interno del servidor');
         }
+        });
     };
 
     return (
