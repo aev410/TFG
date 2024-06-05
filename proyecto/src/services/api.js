@@ -87,7 +87,7 @@ const GetUsuario = () => {
                         'Authorization': `Bearer ${token}`
                     }
                 };
-                const response = await axios.get(`http://localhost:3000/user`, config);
+                const response = await axios.get(`http://localhost:3000/user`, config)
                 console.log(response.data);
                 setUsuario(response.data);
             } catch (error) {

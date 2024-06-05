@@ -8,6 +8,7 @@ connectDB()
 router.get('/', verifyToken, async (req, res) => {
   try {
     const idUsuario = req.params.id
+    console.log(idUsuario)
     const user = await pool.query('SELECT * FROM clientes.usuarios WHERE idUsuario = $1', [idUsuario])
 
     if (user.rows.length === 0) {
