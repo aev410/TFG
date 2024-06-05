@@ -23,6 +23,28 @@ const GetAllPublicaciones = () => {
     return { datos, error }
 };
 
+const GetPublicacionesXnombre = (nombre) => {
+    const [datos, setDatos] = useState(null);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`http://localhost:3000/publicacion/nombre/${nombre}`);
+                console.log("Publicación response:", response.data);
+                setDatos(response.data);
+            } catch (error) {
+                console.error("Error al buscar publicación:", error);
+                setError("Error al buscar publicación");
+            }
+        };
+
+        fetchData();
+    }, [nombre]);
+
+    return { datos, error }
+};
+
 const usePublicacion = (id) => {
     const [datos, setDatos] = useState(null);
     const [cargando, setCargando] = useState(true);
@@ -98,4 +120,4 @@ const GetUsuario = (id) => {
 }
 
 
-export { usePublicacion, useUltimasPublicaciones, GetUsuario, GetAllPublicaciones };
+export { usePublicacion, useUltimasPublicaciones, GetUsuario, GetAllPublicaciones, GetPublicacionesXnombre };
