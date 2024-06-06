@@ -1,9 +1,15 @@
 import React from 'react'
 
-export default function SearchResultsList() {
+const SearchResultsList = ({ results }) => {
   return (
     <div className='results-list'>
-        <div>A</div>
+        {
+            results.map((results, id) => {
+                return <div key={id}>{results.name}</div>
+            })
+        }
     </div>
   )
 }
+
+export default SearchResultsList;

@@ -8,7 +8,8 @@ const BarraBusqueda = ({ setResults }) => {
 
     const handleChange = (value) => {
         setBusqueda(value)
-       usuario, cargando, error = GetPublicacionesXnombre(value);
+        usuario, cargando, error = GetPublicacionesXnombre(value);
+        setResults(usuario)
     }
 
     return (
