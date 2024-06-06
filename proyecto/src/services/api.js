@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import debounce from 'lodash.debounce'
 
 const GetAllPublicaciones = () => {
     const [datos, setDatos] = useState(null);
@@ -23,26 +24,33 @@ const GetAllPublicaciones = () => {
     return { datos, error }
 };
 
+//Esto impone un limite entre cada call
 const GetPublicacionesXnombre = (nombre) => {
     const [datos, setDatos] = useState(null);
     const [error, setError] = useState(null);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const fetchData = useCallback(debounce(async (nombre) => {
+        try {
+            const response = await axios.get(`http://localhost:3000/publicacion/nombre/${nombre}`);
+            console.log("Publicación response:", response.data);
+            setDatos(response.data);
+        } catch (error) {
+            console.error("Error al buscar publicación:", error);
+            setError("Error al buscar publicación");
+        }
+    }, 300), []);
+
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(`http://localhost:3000/publicacion/nombre/${nombre}`);
-                console.log("Publicación response:", response.data);
-                setDatos(response.data);
-            } catch (error) {
-                console.error("Error al buscar publicación:", error);
-                setError("Error al buscar publicación");
-            }
+        if (nombre) {
+            fetchData(nombre);
+        }
+        return () => {
+            fetchData.cancel();
         };
+    }, [nombre, fetchData]);
 
-        fetchData();
-    }, [nombre]);
-
-    return { datos, error }
+    return { datos, error };
 };
 
 const usePublicacion = (id) => {

@@ -1,27 +1,49 @@
-import React, { useState } from "react";
+// BarraBusqueda.js
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { GetPublicacionesXnombre } from "../../services/api";
+import { GetPublicacionesXnombre } from '../../services/api';
 
-const BarraBusqueda = ({ setResults }) => {
-    const [busqueda, setBusqueda] = useState();
-    const { usuario, cargando, error } = null;
+const BarraBusqueda = () => {
+    const [busqueda, setBusqueda] = useState('');
+    const [isFocused, setIsFocused] = useState(false);
+    const { datos, error } = GetPublicacionesXnombre(busqueda);
 
-    const handleChange = (value) => {
-        setBusqueda(value)
-        usuario, cargando, error = GetPublicacionesXnombre(value);
-        setResults(usuario)
-    }
+    const handleInputFocus = () => {
+        setIsFocused(true);
+    };
+
+    const handleInputChange = (e) => {
+        setBusqueda(e.target.value);
+        setIsFocused(true);
+    };
+
+    const handleInputBlur = () => {
+        setIsFocused(false);
+    };
 
     return (
-        <div>
+        <div className="position-relative">
             <input
                 type="search"
                 className="form-control mr-sm-2 w-100"
                 placeholder="Buscar..."
+                onChange={handleInputChange}
+                onFocus={handleInputFocus}
+                onBlur={handleInputBlur}
                 value={busqueda}
-                onChange={(e) => handleChange(e.target.value)}/> 
+            />
+            {(isFocused || busqueda.trim() !== '') && (
+                <ul className="list-group position-absolute w-100">
+                    {datos && datos.map((publicacion) => (
+                        <li key={publicacion.id} className="list-group-item">
+                            {publicacion.nombre}
+                        </li>
+                    ))}
+                </ul>
+            )}
+            {error && <div className="mt-2 alert alert-danger">{error}</div>}
         </div>
-    )
-}
+    );
+};
 
 export default BarraBusqueda;
