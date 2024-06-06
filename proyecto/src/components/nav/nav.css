@@ -1,43 +1,10 @@
-
-/* Parametros principales de nav-item */
-/* .navbar-nav .nav-link {
-  cursor: pointer;
-  color: var(--primary-600);
-  font-size: 1rem;
-  font-weight: bold;
-} */
-
-/* Animacion subrayado texto de nav-item */
-/* .navbar-light .navbar-nav .nav-link:hover {
-  cursor: pointer;
-  color: var(--principal);
-}
-.aUnL::after {
-  content: "";
-  display: block;
-  height: 1.7px;
-  background-color: var(--principal);
-  transform: scale(0, 1);
-  transform-origin: left;
-  transition: transform 0.2s;
-}
-.aUnL:hover::after {
-  transform: scale(1.05, 1);
-} */
-
-/* configuracion general navbar */
-/* nav{
-  margin: 0 !important; 
-  padding: 0 !important;
-} */
-
 .container-fluid{
-  background-color: var(--principal)
+  background-color: var(--principal);
 }
 
 .navbar-brand img {
-  height: 12.5em; 
-  width: auto;
+  height: 7em; 
+  width: 8rem;
 }
 .form-control {
   border-radius: 20px;
@@ -49,50 +16,34 @@
   background-color: var(--color1);
   border-color: var(--color1);
 }
+.btn-primary:hover{
+  background-color: var(--color2);
+  color: white;
+  transition: 0.5s ease;
+}
+
 .btn-outline-success {
-  color: var(--color2);
+  color: var(--secundario);
   border-color: var(--color1);
+  color: var(--color1);
+  background-color: white;
 }
 .btn-outline-success:hover {
   background-color: var(--color2);
   color: white;
+  transition: 0.5s ease;
 }
-/* Boton entrar al metaverso */
-
-/* #btnEntrar {
-  background-color: var(--acento);
-
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--secundario);
-} */
-
-/* #btnEntrar:hover {
-  background-color: var(--acento-hover);
-  color: var(--secundario);
+.navbar-toggler{
+  background-color: white;
 }
+.dropdown-menu{
 
-@media (max-width: 1140px) {
-  .aUnL::after {
-    content: "";
-    display: block;
-    height: 0;
-    background-color: var(--principal);
-    transform: none;
-    transition: none;
-  }
-} */
-
-/* .navbar .megamenu{ 
-  padding: 1rem; 
-} */
-
-/* ============ desktop view ============ */
+}
+/* Vista ordenador */
 @media all and (min-width: 992px) {
 
   .navbar .has-megamenu{
-    position:static!important;
+    position: static !important;
   }
   .navbar .megamenu{
     left:0; 
@@ -103,11 +54,21 @@
 
 }	
 
-/*  mobile view  */
+
+/*  Vista movil  */
 @media(max-width: 991px){
-  .navbar.fixed-top .navbar-collapse, .navbar.sticky-top .navbar-collapse{
+  .navbar.fixed-top .navbar-collapse, .navbar.sticky-top{
     overflow-y: auto;
     max-height: 90vh;
     margin-top:10px;
+  }
+  .form-control{
+    margin:1rem;
+  }
+  .btn-outline-success{
+    margin:1rem;
+  }
+  .navbar-brand img {
+    align-items: center;
   }
 }
