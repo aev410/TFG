@@ -35,6 +35,21 @@ router.get('/last', async (req, res) => {
     res.json(result.rows)
   })
 })
+
+router.get('/nombre/:nombre', async (req, res) => {
+  const nombre = req.params.nombre
+
+  const query = 'SELECT * FROM clientes.publicacion WHERE nombre = $1'
+  pool.query(query, nombre, (err, result) => {
+    if (err) {
+      res.status(500).send({ message: 'Error en la consulta' })
+      console.error('Error al ejecutar la consulta:', err)
+      return
+    }
+    res.json(result.rows)
+  })
+})
+
 //  Obtiene la publicacion por id
 router.get('/:id', async (req, res) => {
   const id = req.params.id
@@ -49,7 +64,7 @@ router.get('/:id', async (req, res) => {
   // Ejecuta la consulta
   pool.query(query, [parseInt(id)], (err, result) => {
     if (err) {
-      res.status(500).send({ message: 'Error en servidor' })
+      res.status(500).send({ message: 'Error en la consulta' })
       console.error('Error al ejecutar la consulta:', err)
       return
     }

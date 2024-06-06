@@ -1,6 +1,6 @@
 const { Router } = require('express')
 const { pool } = require('../config/database')
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcrypt')
 
 const router = Router()
 
@@ -26,8 +26,8 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ error: errorMessage.join(' / ') })
     }
 
-     //Hashear la contraseña:
-     const hashedPassword= await bcrypt.hash(contra, 10);
+    // Hashear la contraseña:
+    const hashedPassword = await bcrypt.hash(contra, 10)
 
     // Insertar el nuevo usuario en la base de datos
     const result = await pool.query(

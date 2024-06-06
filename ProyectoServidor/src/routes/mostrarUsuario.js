@@ -1,11 +1,14 @@
 const { Router } = require('express')
 const { connectDB, pool } = require('../config/database')
+const verifyToken = require('../middleware/authMiddleware')
+
 const router = Router()
 connectDB()
 
-router.get('/:id', async (req, res) => {
+router.get('/', verifyToken, async (req, res) => {
   try {
     const idUsuario = req.params.id
+    console.log(idUsuario)
     const user = await pool.query('SELECT * FROM clientes.usuarios WHERE idUsuario = $1', [idUsuario])
 
     if (user.rows.length === 0) {
