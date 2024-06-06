@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./nav.css";
 import logo from "./img/logo.png";
+import BarraBusqueda from '../barraBusqueda/BarraBusqueda';
+import SearchResultsList from '../barraBusqueda/SearchResultsList';
 
 // Navbar 
 function Nav() {
+	const [resulsts, setResults] = useState([])
   return (
     //   <nav class="navbar navbar-light bg-light p-0">
     //   <div class="container-fluid">
@@ -24,7 +27,8 @@ function Nav() {
       <div class="container-fluid">
         <a class="navbar-brand" href=" "><img src={logo} alt="Logo" /></a>
         <form class="form-inline d-flex w-50">
-           <input class="form-control mr-sm-2 w-100" type="search" placeholder="Buscar" aria-label="Search" />
+           <BarraBusqueda setResults={setResults}/>
+		   <SearchResultsList results={resulsts}/>
         </form>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
           <span class="navbar-toggler-icon"></span>

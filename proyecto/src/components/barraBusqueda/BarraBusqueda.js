@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { GetPublicacionesXnombre } from "../../services/api";
 
-const BarraBusqueda = () => {
+const BarraBusqueda = ({ setResults }) => {
     const [busqueda, setBusqueda] = useState();
     const { usuario, cargando, error } = null;
 
@@ -15,10 +15,12 @@ const BarraBusqueda = () => {
         <div>
             <input
                 type="search"
-                className="form-control me-2"
+                className="form-control mr-sm-2 w-100"
                 placeholder="Buscar..."
                 value={busqueda}
-                onChange={(e) => setBusqueda(e.target.value)}/> 
+                onChange={(e) => handleChange(e.target.value)}/> 
         </div>
     )
 }
+
+export default BarraBusqueda;
