@@ -2,15 +2,16 @@ const { Router } = require('express')
 const { pool } = require('../config/database')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+require('dotenv').config()
 
 const router = Router()
 
-const secretKey = 'ClaveSecreta123'
+const secretKey = process.env.SECRETKEY
 
 // Endpoint iniciar sesión
 router.post('/', (req, res) => {
   const { correo, contra } = req.body
-
+  console.log('*******entrando en el login server')
   // Verificar si el usuario existe en la base de datos
   const query = 'SELECT * FROM clientes.usuarios WHERE correo = $1'
   pool.query(query, [correo], (err, result) => {
@@ -47,12 +48,13 @@ router.post('/', (req, res) => {
       // Crear el JWT
       console.log('Creando token con idUsuario:', user.idusuario) // Log adicional
       const token = jwt.sign({ userId: user.idusuario }, secretKey, { expiresIn: '1h' })
+      console.log(token)
 
       // Guardar el token en la sesión
       req.session.token = token
 
       // Usuario autenticado, enviar respuesta exitosa
-      res.status(200).json({ message: 'Inicio de sesión exitoso', token: token })
+      res.status(200).json({ message: 'Inicio de sesión exitoso', data: token })
     })
   })
 })

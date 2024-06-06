@@ -94,7 +94,9 @@ const useUltimasPublicaciones = () => {
     return { datos, cargando, error };
 }
 
-const GetUsuario = (id) => {
+
+
+const GetUsuario = () => {
     const [usuario, setUsuario] = useState(null);
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(null);
@@ -102,7 +104,14 @@ const GetUsuario = (id) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/user/${id}`);
+                const token = localStorage.getItem('authToken');
+                console.log("TOKEN DE LOCALSTORAGE: " + token);
+                const config = {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                };
+                const response = await axios.get(`http://localhost:3000/user`, config)
                 console.log(response.data);
                 setUsuario(response.data);
             } catch (error) {
@@ -114,8 +123,8 @@ const GetUsuario = (id) => {
         };
 
         fetchData();
-    }, [id]);
-    
+    }, []);
+
     return { usuario, cargando, error };
 }
 
