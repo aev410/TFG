@@ -1,13 +1,27 @@
 const { Router } = require('express')
 const { connectDB, pool } = require('../config/database')
 const verifyToken = require('../middleware/authMiddleware')
+const jwt = require('jsonwebtoken')
+require('dotenv').config()
+
+const secretKey = process.env.SECRETKEY
 
 const router = Router()
 connectDB()
 
 router.get('/', verifyToken, async (req, res) => {
   try {
-    const idUsuario = req.params.id
+    const token = req.headers.authorization.split(' ')
+    console.log('TOKEN EN MOSTRA USUARIO: ' + token[1])
+    const payload = jwt.verify(token[1], secretKey, (err, decoded) => {
+      if (err) {
+        console.log('Error al verificar el token:', err) // Verifica si hay errores al verificar el token
+        return res.status(401).json({ message: 'Failed to authenticate token' })
+      }
+      return decoded
+    })
+    console.log('TOKEN DECODED: ' + payload)
+    const idUsuario = payload.userId
     console.log(idUsuario)
     const user = await pool.query('SELECT * FROM clientes.usuarios WHERE idUsuario = $1', [idUsuario])
 

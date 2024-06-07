@@ -38,13 +38,13 @@ router.post('/', (req, res) => {
       if (!passwordMatch) {
         return res.status(400).json({ error: '*Credenciales incorrectas' })
       }
-
+      console.log('PasswordMAtch' + passwordMatch)
       // Verificar que user.idusuario tenga un valor definido
       if (!user.idusuario) {
         console.error('El ID de usuario no está definido')
         return res.status(500).json({ error: 'Error interno del servidor' })
       }
-
+      console.log('IDUSUARIO' + user.idusuario)
       // Crear el JWT
       console.log('Creando token con idUsuario:', user.idusuario) // Log adicional
       const token = jwt.sign({ userId: user.idusuario }, secretKey, { expiresIn: '1h' })

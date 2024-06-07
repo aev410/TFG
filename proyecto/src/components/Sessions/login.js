@@ -20,9 +20,10 @@ const Login = () => {
             contra: contra
         })
         .then(response => {
-            if (response.data.message === 'Inicio de sesión exitoso' && response.data.token) {
+            console.log(response.data)
+            if (response.data.message === 'Inicio de sesión exitoso' && response.data) {
                 // Almacenar el token en localStorage
-                localStorage.setItem('authToken', response.data.token);
+                localStorage.setItem('authToken', response.data.data);
     
                 // Pruebas
                 const token = localStorage.getItem('authToken');

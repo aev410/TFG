@@ -108,12 +108,12 @@ const GetUsuario = () => {
     const [usuario, setUsuario] = useState(null);
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(null);
-
+    const token = localStorage.getItem('authToken');
+    console.log("TOKEN DE LOCALSTORAGE PARA MANDAR: " + token);
+    
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const token = localStorage.getItem('authToken');
-                console.log("TOKEN DE LOCALSTORAGE: " + token);
                 const config = {
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -131,7 +131,7 @@ const GetUsuario = () => {
         };
 
         fetchData();
-    }, []);
+    }, [token] );
 
     return { usuario, cargando, error };
 }

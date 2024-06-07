@@ -5,7 +5,7 @@ const session = require('express-session')
 require('dotenv').config()
 const publicacionRouter = require('./routes/publicacion.js')
 const uploadPub = require('./routes/uploadPub.js')
-const login = require('./routes/login.js')
+const login = require('./routes/login2.js')
 const register = require('./routes/register.js')
 // const verifyToken = require('./middleware/authMiddleware.js')
 const showUser = require('./routes/mostrarUsuario.js')
@@ -17,7 +17,7 @@ const port = process.env.PORT || 3000// El puerto se guarda en el archivo .env
 
 //  Midelware
 app.use(cors({
-  origin: ['http://localhost:80', 'http://localhost', 'http://localhost:3001', 'http://localhost:3000', 'https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true'],
+  origin: ['http://localhost:80', 'http://localhost', 'http://localhost:3001', 'http://localhost:3000', 'https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true', 'http://192.168.1.52'],
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization']
 }))
 
