@@ -34,7 +34,7 @@ function App() {
       <Footer2 /> {/*para dispositivos moviles */}
       <Footer />
     </Router>
-
+    //  <Nav></Nav> 
   );
 }
 

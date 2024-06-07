@@ -50,3 +50,83 @@
     /* Changing background color on hover */
     background-color: #f3f3f3;
   }
+
+  /* Copio y pego del css de nav.css */
+  .container-fluid{
+    background-color: var(--principal);
+  }
+  
+  .navbar-brand img {
+    height: 7em; 
+    width: 8rem;
+  }
+  .form-control {
+    border-radius: 20px;
+  }
+  .btn-outline-success, .btn-primary {
+    border-radius: 20px;
+  }
+  .btn-primary {
+    background-color: var(--color1);
+    border-color: var(--color1);
+  }
+  .btn-primary:hover{
+    background-color: var(--color2);
+    color: white;
+    transition: 0.5s ease;
+  }
+  
+  .btn-outline-success {
+    color: var(--secundario);
+    border-color: var(--color1);
+    color: var(--color1);
+    background-color: white;
+  }
+  .btn-outline-success:hover {
+    background-color: var(--color2);
+    color: white;
+    transition: 0.5s ease;
+  }
+  .navbar-toggler{
+    background-color: white;
+  }
+  .navbar-toggler:hover{
+    background-color: var(--color2);
+    transition: 0.5s ease;
+  }
+  /* .dropdown-menu{
+  
+  } */
+  /* Vista ordenador */
+  @media all and (min-width: 992px) {
+  
+    .navbar .has-megamenu{
+      position: static !important;
+    }
+    .navbar .megamenu{
+      left:0; 
+      right:0; 
+      width:100%; 
+      margin-top:0;  
+    }
+  
+  }	
+  
+  
+  /*  Vista movil  */
+  @media(max-width: 991px){
+    .navbar.fixed-top .navbar-collapse, .navbar.sticky-top{
+      overflow-y: auto;
+      max-height: 90vh;
+      margin-top:10px;
+    }
+    .form-control{
+      margin:1rem;
+    }
+    .btn-outline-success{
+      margin:1rem;
+    }
+    .navbar-brand img {
+      align-items: center;
+    }
+  }

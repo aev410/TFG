@@ -9,6 +9,9 @@
 .form-control {
   border-radius: 20px;
 }
+form{
+  border-radius:20px;
+}
 .btn-outline-success, .btn-primary {
   border-radius: 20px;
 }
@@ -35,6 +38,10 @@
 }
 .navbar-toggler{
   background-color: white;
+}
+.navbar-toggler:hover{
+  background-color: var(--color2);
+  transition: 0.5s ease;
 }
 /* .dropdown-menu{
 
