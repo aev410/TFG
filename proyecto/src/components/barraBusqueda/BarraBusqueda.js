@@ -25,7 +25,7 @@ const BarraBusqueda = () => {
         <div className="position-relative">
             <input
                 type="search"
-                className="form-control mr-sm-2 w-100"
+                className="form-control mx-2"
                 placeholder="Buscar..."
                 onChange={handleInputChange}
                 onFocus={handleInputFocus}

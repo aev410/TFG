@@ -25,13 +25,13 @@ export const AccesoUsuario = () => {
         <div>
             {email != null ? (
                 <Link to="/user">
-                    <button className="btn btn-outline-success" type="button">
+                    <button className="btn btn-outline-success mx-5" type="button">
                         {email}
                     </button>
                 </Link>
             ) : (
                 <Link to="/register">
-                    <button className="btn btn-outline-success" type="button">
+                    <button className="btn btn-outline-success mx-5" type="button">
                         Regístrate o inicia sesión
                     </button>
                 </Link>
