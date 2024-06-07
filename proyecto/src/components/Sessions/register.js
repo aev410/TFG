@@ -76,7 +76,7 @@ const Register = () => {
         </div>
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
         <ValidadorCorreo />
-        <button type="submit">Registrarse</button>
+        <button type="submit" className="session-submit">Registrarse</button>
       </form>
       <div className="bottom-text">
         <p>Ya tienes una cuenta?</p>

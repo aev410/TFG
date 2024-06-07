@@ -70,7 +70,7 @@ const Map = ({ Menu, setLat, setLon, latP, lonP }) => {
     }
 
     return (
-        <div className="container">
+        <div className="contenedor">
             <div className="controls">
                 <h1>Mapa</h1>
                 {Menu ? (

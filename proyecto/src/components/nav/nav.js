@@ -108,7 +108,7 @@ function Nav() {
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
 						<span class="navbar-toggler-icon"></span>
 					</button>
-					<form class="d-flex w-100">
+					<form>
 						{/* <input class="form-control mx-2 " type="search" placeholder="Buscar" aria-label="Search" /> */}
 						<BarraBusqueda />
 					</form>
