@@ -1,15 +1,25 @@
 const multer = require('multer')
 const path = require('path')
 const date = new Date()
+const fs = require('fs')
+const crypto = require('crypto')
+const imagesPath = path.join(__dirname, '../images/')
+
+if (!fs.existsSync(imagesPath)) {
+  fs.mkdirSync(imagesPath, { recursive: true })
+}
 
 // Define el destino del guardado de las imagenes, actualmente guardadas en /usr/scr/app/images
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.join(__dirname, '../images/'))
+    cb(null, imagesPath)
   },
   // Le da un formato legible a la imagen, con el nombre de la info subida a formData, la fecha y la extension
   filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + date.getFullYear + date.getMonth + date.getDate + '-' + file.originalname.match(/\..*$/)[0])
+    cb(null, file.fieldname + '-' + crypto.randomBytes(3).toString('hex') + date.getFullYear().toString() +
+    (date.getMonth() + 1).toString().padStart(2, '0') +
+    date.getDate().toString().padStart(2, '0') +
+    file.originalname.match(/\..*$/)[0])
   }
 })
 

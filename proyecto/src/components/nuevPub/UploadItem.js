@@ -5,6 +5,7 @@ import Autofill from '../google-map/menus/autofillMaps';
 import "./form.css";
 
 const UploadItem = () => {
+    const [nombre, setNombre] = useState('');
     const [precio, setPrecio] = useState('');
     const [descripcion, setDescripcion] = useState('');
     const [imagenes, setImagenes] = useState('');
@@ -13,12 +14,6 @@ const UploadItem = () => {
 
     const submitForm = async (e) => {
         e.preventDefault();
-
-        //Check de formato, si precio es numerico
-        if (isNaN(precio)) {
-            alert('Error: Precio debe ser un número.');
-            return;
-        }
     
         // Check de formato, si descripcion excede 200 caracteres
         if (descripcion.length > 200) {
@@ -35,19 +30,26 @@ const UploadItem = () => {
             if (!allowedExtensions.includes(extension)) {
                 alert('Error: Solo formatos de imagenes aceptados (png, jpg, jpeg).');
                 return;
+            //Checa si estan subiendo mas de 5 archivos a la vez    
+            } else if (file.length > 5){
+                alert('Error: Maximo 5 imagenes por publicacion.')
+                return;
             }
         }
 
+        //Aqui creamos el objeto para subir todo a servidor
         const formData = new FormData();
+        formData.append('nombre', nombre)
         formData.append('precio', precio);
         formData.append('descripcion', descripcion);
         formData.append('latitud', lat);
         formData.append('longitud', lon);
+        //Mediante este for subimos cada uno de los archivos que elija el usuario
         for (let i = 0; i < imagenes.length; i++) {
-            console.log('hola')
             formData.append('imagenes', imagenes[i]);
         }
 
+        //Aqui enviamos la peticion al servidor node
         try {
             const response = await axios.post('http://localhost:3000/api/publicacion', formData, {
                 headers: {
@@ -62,6 +64,10 @@ const UploadItem = () => {
 
     return (
         <form onSubmit={submitForm}>
+            <div className='input'>
+                Titulo:
+            <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
+            </div>
             <div className='input'>
                 Precio:
                 <input type="number" value={precio} onChange={(e) => setPrecio(e.target.value)} required />

@@ -22,6 +22,8 @@ FROM nginx:alpine
 # Copia el directorio de construcción de la aplicación React al directorio de trabajo del servidor web Nginx
 COPY --from=build /usr/src/app/build /usr/share/nginx/html
 
+COPY default.conf /etc/nginx/conf.d/default.conf
+
 # Expone el puerto 80 en el contenedor
 EXPOSE 80
 

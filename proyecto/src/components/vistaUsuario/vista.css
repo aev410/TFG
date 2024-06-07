@@ -1,0 +1,27 @@
+.mb-custom {
+    border-radius: 0 0 16px 16px;
+    margin-bottom: 3rem
+}
+
+.card{
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.tarjeta {
+    width: 450px;
+}
+
+#user-root {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#user-Name{
+    padding-left: 3rem;
+}
+
+#store-Info{
+    padding-right: 3rem;
+}

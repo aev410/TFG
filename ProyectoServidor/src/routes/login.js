@@ -9,6 +9,8 @@ const router = Router();
 const secretKey = process.env.SECRETKEY // Usa la misma clave secreta
 
 // Endpoint iniciar sesión
+// login.js
+
 router.post('/', (req, res) => {
   const { correo, contra } = req.body;
 
@@ -26,8 +28,6 @@ router.post('/', (req, res) => {
 
     const user = result.rows[0];
 
-    console.log('Usuario obtenido de la base de datos:', user); // Imprimir el objeto user en la consola
-
     // Comparar la contraseña hasheada con la ingresada
     bcrypt.compare(contra, user.contra, (err, passwordMatch) => {
       if (err) {
@@ -39,20 +39,13 @@ router.post('/', (req, res) => {
         return res.status(400).json({ error: '*Credenciales incorrectas' });
       }
 
-      // Verificar que user.idusuario tenga un valor definido
-      if (!user.idusuario) {
-        console.error('El ID de usuario no está definido');
-        return res.status(500).json({ error: 'Error interno del servidor' });
-      }
-
       // Crear el JWT
-      console.log('Creando token con idUsuario:', user.idusuario); // Log adicional
       const token = jwt.sign({ userId: user.idusuario }, secretKey, { expiresIn: '1h' });
 
       // Guardar el token en la sesión
       req.session.token = token;
 
-      // Usuario autenticado, enviar respuesta exitosa
+      // Enviar el token como respuesta
       res.status(200).json({ message: 'Inicio de sesión exitoso', token: token });
     });
   });

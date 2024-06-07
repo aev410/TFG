@@ -1,4 +1,4 @@
--- Active: 1716835071015@@127.0.0.1@5432@alpujarra_almeria
+-- Active: 1715949403010@@127.0.0.1@5432@alpujarra_almeria
 
 use alpujarra_almeria;
 
@@ -37,13 +37,13 @@ ON UPDATE CASCADE;
 CREATE TABLE Publicacion(
     idPublicacion SERIAL PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL,
-    precio INT NOT NULL,
+    precio FLOAT NOT NULL,
     descripcion TEXT,
     fecha_pub DATE NOT NULL,
     latitud VARCHAR(50) NOT NULL,
     longitud VARCHAR(50) NOT NULL,
     imagenes VARCHAR(450) NOT NULL,
-    idTienda INT
+    idTienda INT NOT NULL
 );
 
 -- Clave foránea para la tabla Publicacion

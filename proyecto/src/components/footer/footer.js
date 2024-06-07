@@ -1,6 +1,6 @@
 import React from 'react';
 import "./footer.css";
-
+import logo from "./img/logo.png";
 
 // navbar 
 function nav() {
@@ -17,162 +17,73 @@ function nav() {
         <div class="container">
           <div class="row g-4 align-middle">
             <div class="col-xs-12 col-md-6 col-lg-12">
-              <a target="_blank" title="MEDAC logo" href="https://medac.es/" rel="noreferrer"
+              <a target="_blank" title="ASAAPP logo" href=" " rel="noreferrer"
                 ><img
                   class="iFooter"
-                  src="assets/logo-vector/MEDAC_imagotipo_horiz_blanco_RGB.svg"
-                  alt="Logotipo de MEDAC"
+                  src={logo}
+                  alt="Logotipo"
               /></a>
-            </div>
-            <div
-              class="text-center iconFooter justify-content-center col-xs-12 col-md-6 col-lg-12 pb-4 pb-md-5 d-flex flex-nowrap"
-            >
-              <a
-                target="_blank"
-                title="MEDAC facebook"
-                class="iZoom"
-                href="https://www.facebook.com/institutomedac" rel="noreferrer"
-                ><i class="fa-brands fa-facebook fa-xl"></i
-              ></a>
-              <a
-                target="_blank"
-                title="MEDAC instagram"
-                class="iZoom"
-                href="https://www.instagram.com/institutomedac" rel="noreferrer"
-                ><i class="fa-brands fa-instagram fa-xl"></i
-              ></a>
-              <a
-                target="_blank"
-                title="MEDAC linkedin"
-                class="iZoom"
-                href="https://www.linkedin.com/school/medac/" rel="noreferrer"
-                ><i class="fa-brands fa-linkedin fa-xl"></i
-              ></a>
-              <a
-                target="_blank"
-                title="MEDAC twitter"
-                class="iZoom"
-                href="https://twitter.com/institutoMEDAC" rel="noreferrer"
-                ><i class="fa-brands fa-x-twitter fa-xl"></i
-              ></a>
-              <a
-                target="_blank"
-                title="MEDAC youtube"
-                class="iZoom"
-                href="https://www.youtube.com/user/medacdeportesalud" rel="noreferrer"
-                ><i class="fa-brands fa-youtube fa-xl"></i
-              ></a>
-              <a
-                target="_blank"
-                title="MEDAC tiktok"
-                class="iZoom"
-                href="https://www.tiktok.com/@institutomedac" rel="noreferrer"
-                ><i class="fa-brands fa-tiktok fa-xl"></i
-              ></a>
             </div>
           </div>
         </div>
       </div>
-
       <div class="col-lg-3 col-md-3 col-sm-12 align-items-center">
-        <h6 class="hFooter mb-2">Formación</h6>
+        <h6 class="hFooter mb-2">ASAA APP</h6>
         <ul class="list-unstyled ulFooter">
           <li>
-            <a
-              title="FP MEDAC presencial"
-              target="_blank"
-              href="https://medac.es/fp-presencial" rel="noreferrer"
-              >FP presencial</a
-            >
+            <a target="_blank" href=" " rel="noreferrer">
+              espacio 1
+            </a>
+          </li>
+          <li><a target="_blank" href=" " rel="noreferrer">Blog</a></li>
+          <li>
+            <a target="_blank" href=" " rel="noreferrer">
+            espacio 2
+            </a>
           </li>
           <li>
-            <a
-              title="FP MEDAC a distancia"
-              target="_blank"
-              href="https://medac.es/fp-a-distancia" rel="noreferrer"
-              >FP a distancia</a
-            >
+            <a target="_blank" href=" " rel="noreferrer">
+            espacio 3
+            </a>
           </li>
           <li>
-            <a
-              title="MEDAC cursos especialización"
-              target="_blank"
-              href="https://medac.es/cursos-especializacion-fp" rel="noreferrer"
-              >Curso de Especialización</a
-            >
+            <a target="_blank" href=" " rel="noreferrer">Contacto</a>
           </li>
           <li>
-            <a
-              title="MEDAC master"
-              target="_blank"
-              href="https://medac.es/master" rel="noreferrer"
-              >Másteres online</a
-            >
+            <a target="_blank" href=" " rel="noreferrer">
+            espacio 4
+            </a>
           </li>
         </ul>
       </div>
 
       <div class="col-lg-3 col-md-3 col-sm-12 align-items-center">
-        <h6 class="hFooter mb-2">MEDAC</h6>
+        <h6 class="hFooter mb-2">espacio 5</h6>
         <ul class="list-unstyled ulFooter">
           <li>
-            <a target="_blank" href="https://medac.es/fundacion" rel="noreferrer"
-              >Fundación MEDAC</a
-            >
-          </li>
-          <li><a target="_blank" href="https://medac.es/blogs" rel="noreferrer">Blog</a></li>
-          <li>
-            <a
-              target="_blank"
-              href="https://secure.webpublication.es/406386/1944586/#page=1" rel="noreferrer"
-              >Revista</a
-            >
+            <a target="_blank" href=" " rel="noreferrer">
+            espacio 6
+            </a>
           </li>
           <li>
-            <a target="_blank" href="https://medac.es/compromiso-y-canal-etico" rel="noreferrer"
-              >Canal ético</a
-            >
+            <a target="_blank" href=" " rel="noreferrer">
+            espacio 7
+            </a>
           </li>
           <li>
-            <a target="_blank" href="https://medac.es/contacto" rel="noreferrer">Contacto</a>
+            <a target="_blank" href=" " rel="noreferrer">
+            espacio 8
+            </a>
           </li>
           <li>
-            <a target="_blank" href="https://medac.es/trabaja-con-nosotros" rel="noreferrer"
-              >Trabaja con nosotros</a
-            >
-          </li>
-        </ul>
-      </div>
-
-      <div class="col-lg-3 col-md-3 col-sm-12 align-items-center">
-        <h6 class="hFooter mb-2">Alumnos</h6>
-        <ul class="list-unstyled ulFooter">
-          <li>
-            <a target="_blank" href="https://medac.instructure.com/" rel="noreferrer"
-              >Aula Virtual</a
-            >
+            <a target="_blank" href=" " rel="noreferrer">
+              Opiniones 
+            </a>
           </li>
           <li>
-            <a target="_blank" href="https://medac.es/preguntas-frecuentes" rel="noreferrer"
-              >Preguntas frecuentes</a
-            >
-          </li>
-          <li>
-            <a
-              target="_blank"
-              href="https://medac.es/sobre-nosotros/practicas-en-empresas" rel="noreferrer"
-              >Empresas colaboradoras</a
-            >
-          </li>
-          <li>
-            <a target="_blank" href="https://medac.es/opiniones-medac" rel="noreferrer"
-              >Opiniones MEDAC</a
-            >
-          </li>
-          <li>
-            <a target="_blank" href="https://medac.es/portal-empleo" rel="noreferrer"
-              >Portal de empleo</a
-            >
+            <a target="_blank" href=" " rel="noreferrer">
+              Portal de empleo 
+            </a>
           </li>
         </ul>
       </div>
@@ -183,27 +94,21 @@ function nav() {
       <div class="politica col-md-6 col-xs-12">
         <a
           target="_blank"
-          title="Política de privacidad MEDAC"
-          href="https://medac.es/politica-de-privacidad" rel="noreferrer"
+          title="Política de privacidad"
+          href=" " rel="noreferrer"
           >Política de privacidad</a
         >
         |
-        <a
-          target="_blank"
-          title="Política de cookies MEDAC"
-          href="https://medac.es/politica-de-cookies" rel="noreferrer"
-          >Política de cookies</a
-        >
+        <a target="_blank" title="Política de cookies" href=" " rel="noreferrer"
+          >Política de cookies
+        </a>
         |
-        <a
-          target="_blank"
-          title="Términos y condiciones MEDAC"
-          href="https://medac.es/terminos-y-condiciones" rel="noreferrer"
-          >Aviso legal</a
-        >
+        <a target="_blank" title="Términos y condiciones" href=" " rel="noreferrer">
+          Aviso legal
+        </a>
       </div>
       <div class="politica col-md-6 col-xs-12 text-xs-center text-md-end">
-        Copyright © 2024 MEDAC Instituto Oficial de Formación Profesional. Todos
+        Copyright © 2024 ASAA APP Artesanías de la Sierra Alpujarreña de Almeria. Todos
         los derechos reservados.
       </div>
     </div>
