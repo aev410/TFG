@@ -4,6 +4,7 @@ import {useNavigate} from 'react-router-dom'
 import ValidadorCorreo from './formatoCorreo';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import { setCookie } from '../../services/cookies';
 
 const Login = () => {
     const [errorMessage, setErrorMessage] = useState('');
@@ -11,35 +12,38 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const formData = new FormData(e.target);
-            const correo = formData.get('correo');
-            const contra = formData.get('contra');
-            console.log('Datos enviados:', { correo, contra });
-            const response = await axios.post('http://localhost:3000/login', { correo, contra });
-            console.log(response.data);
-            if (response.data.message === 'Inicio de sesión exitoso'){
-                localStorage.setItem('authToken', response.data.token);
-
-                // Purebas
-                const token = localStorage.getItem('authToken');
-                console.log("TOKEN DE LOCALSTORAGE 1: "+token);
-
+        const formData = new FormData(e.target);
+        const correo = formData.get('correo');
+        const contra = formData.get('contra');
+        console.log('Datos enviados:', { correo, contra });
+        axios.post('http://localhost:3000/login', {
+            correo: correo,
+            contra: contra
+        })
+        .then(response => {
+            console.log(response.data)
+            if (response.data.message === 'Inicio de sesión exitoso' && response.data) {
+                // Almacenar el token en localStorage
+                localStorage.setItem('authToken', response.data.data);
+    
+                setCookie('UserEmail', correo, 1)
+    
+                // Navegar a la página del usuario
                 navigate('/user');
                 setErrorMessage('');
-            }else{
+            } else {
                 console.error('Respuesta inesperada:', response.status);
                 setErrorMessage('Error inesperado. Por favor, inténtalo de nuevo.');
             }
-
-        } catch (error) {
+        })
+        .catch(error => {
             console.error('Error al enviar el formulario:', error);
-            if (error.response && error.response.data && error.response.data.error) {
-                setErrorMessage("*Credenciales incorrectas"); 
-            } else {
-                setErrorMessage('Error interno del servidor');
-            }
+        if (error.response && error.response.data && error.response.data.error) {
+            setErrorMessage("*Credenciales incorrectas"); 
+        } else {
+            setErrorMessage('Error interno del servidor');
         }
+        });
     };
 
     return (

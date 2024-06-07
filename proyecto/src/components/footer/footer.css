@@ -4,7 +4,7 @@
   }
   
   .hFooter {
-    color: var(--secundario);
+    color: var(--color2);
     font-weight: 600;
   }
   
@@ -22,7 +22,7 @@
   }
   
   .ulFooter li a:hover {
-    color: var(--acento);
+    color: var(--color3);
   }
   .iconFooter a {
     color: var(--acento-hover);
