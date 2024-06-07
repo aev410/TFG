@@ -1,6 +1,8 @@
+import navigate from 'react'
 import axios from 'axios';
 import { useState, useEffect, useCallback } from 'react';
 import debounce from 'lodash.debounce'
+import { deleteCookie } from './cookies';
 
 const GetAllPublicaciones = () => {
     const [datos, setDatos] = useState(null);
@@ -137,5 +139,10 @@ const GetUsuario = () => {
     return { usuario, cargando, error };
 }
 
+const cerrarSesion = () => {
+    deleteCookie('UserEmail')
+    localStorage.removeItem('authToken');
+    navigate('/login')
+}
 
-export { usePublicacion, useUltimasPublicaciones, GetUsuario, GetAllPublicaciones, GetPublicacionesXnombre };
+export { usePublicacion, useUltimasPublicaciones, GetUsuario, GetAllPublicaciones, GetPublicacionesXnombre, cerrarSesion };
