@@ -4,6 +4,7 @@ import {useNavigate} from 'react-router-dom'
 import ValidadorCorreo from './formatoCorreo';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import { setCookie } from '../../services/cookies';
 
 const Login = () => {
     const [errorMessage, setErrorMessage] = useState('');
@@ -25,9 +26,7 @@ const Login = () => {
                 // Almacenar el token en localStorage
                 localStorage.setItem('authToken', response.data.data);
     
-                // Pruebas
-                const token = localStorage.getItem('authToken');
-                console.log("TOKEN DE LOCALSTORAGE 1: " + token);
+                setCookie('UserEmail', correo, 1)
     
                 // Navegar a la página del usuario
                 navigate('/user');

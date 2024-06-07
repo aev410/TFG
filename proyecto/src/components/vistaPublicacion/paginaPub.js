@@ -3,9 +3,12 @@ import { usePublicacion } from "../../services/api";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Carousel, Row, Col, Card } from 'react-bootstrap';
 import Map from "../google-map/map";
+import { useParams } from "react-router-dom";
 
-const PaginaPub = ({ id }) => {
-    const { datos, cargando, error } = usePublicacion(id);
+const PaginaPub = () => {
+    const {idPub} = useParams()
+
+    const { datos, cargando, error } = usePublicacion(idPub);
 
     if (cargando) {
         return <p>Cargando...</p>;

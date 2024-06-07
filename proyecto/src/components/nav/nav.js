@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import "./nav.css";
 import logo from "./img/logo.png";
 import BarraBusqueda from '../barraBusqueda/BarraBusqueda';
+import { AccesoUsuario } from './accesoUsuario';
 
 
 
@@ -10,9 +11,10 @@ function Nav() {
 	return (
 		<nav class="navbar bg-light sticky-top navbar-expand-lg p-0">
 			<div class="container-fluid">
-				<a class="navbar-brand" href=" "><img src={logo} alt="Logo" /></a>
+				<Link class="navbar-brand" to={'/'}><img src={logo} alt="Logo" /></Link>
 				<form class="form-inline d-flex w-50">
-					<input class="form-control mr-sm-2 w-100" type="search" placeholder="Buscar" aria-label="Search" />
+					{/* <input class="form-control mr-sm-2 w-100" type="search" placeholder="Buscar" aria-label="Search" /> */}
+					<BarraBusqueda/>
 				</form>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
 					<span class="navbar-toggler-icon"></span>
@@ -80,6 +82,7 @@ function Nav() {
 						</li>
 				</ul>
 			</div>
+				<AccesoUsuario/>
 			</div>
 		</nav>
 	);

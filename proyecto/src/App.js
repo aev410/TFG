@@ -8,7 +8,7 @@ import VistaUser from "./components/vistaUsuario/VistaUser";
 import UploadItem from"./components/nuevPub/UploadItem";
 import PaginaPub from "./components/vistaPublicacion/paginaPub";
 import Home from "./pages/home"
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, useParams } from 'react-router-dom';
 
 
 import './App.css';
@@ -29,7 +29,7 @@ function App() {
         <Route path="/user/tienda" element={<>  </>}/>
         <Route path="/newPub" element={<><UploadItem/></>}/>
         <Route path="/publics" element={<>  </>}/>
-        <Route path="/publics/idPub" element={<><PaginaPub id={21}/></>}/>
+        <Route path="/publics/:idPub" element={<><PaginaPub id={useParams()}/></>}/>
       </Routes>
       <Footer2 /> {/*para dispositivos moviles */}
       <Footer />

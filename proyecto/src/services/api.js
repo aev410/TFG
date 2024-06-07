@@ -110,7 +110,7 @@ const GetUsuario = () => {
     const [error, setError] = useState(null);
     const token = localStorage.getItem('authToken');
     console.log("TOKEN DE LOCALSTORAGE PARA MANDAR: " + token);
-    
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -122,6 +122,7 @@ const GetUsuario = () => {
                 const response = await axios.get(`http://localhost:3000/user`, config)
                 console.log(response.data);
                 setUsuario(response.data);
+                
             } catch (error) {
                 console.error("Error al buscar usuario: " + error);
                 setError("Error al buscar publicacion " + error)
@@ -131,7 +132,7 @@ const GetUsuario = () => {
         };
 
         fetchData();
-    }, [token] );
+    }, [token]);
 
     return { usuario, cargando, error };
 }
