@@ -120,6 +120,9 @@ function Nav() {
               <li class="nav-item">
                 <Link class="nav-link" to="/contact">Contacto</Link>
               </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/login">Cuenta</Link>
+              </li>
             </ul>
             <AccesoUsuario />
           </div>
