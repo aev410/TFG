@@ -4,6 +4,7 @@ import Footer2 from "./components/footer2/footer2"
 import Footer from "./components/footer/footer"
 import LoginPage from "./pages/login";
 import Register from "./components/Sessions/register";
+import Contact from "./components/contact/contact";
 import VistaUser from "./components/vistaUsuario/VistaUser";
 import UploadItem from"./components/nuevPub/UploadItem";
 import PaginaPub from "./components/vistaPublicacion/paginaPub";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/login"  element={<><LoginPage/></>}/>
         <Route path="/register"  element={<><Register/></>}/>
+        <Route path="/contact"  element={<><Contact/></>}/>
         <Route path="/user" element={<><VistaUser/></>}/>
         <Route path="/register/tienda" element={<>  </>}/>
         <Route path="/user/tienda" element={<>  </>}/>
