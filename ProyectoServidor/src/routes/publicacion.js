@@ -39,8 +39,8 @@ router.get('/last', async (req, res) => {
 router.get('/nombre/:nombre', async (req, res) => {
   const nombre = req.params.nombre
 
-  const query = 'SELECT * FROM clientes.publicacion WHERE nombre = $1'
-  pool.query(query, nombre, (err, result) => {
+  const query = 'SELECT * FROM clientes.publicacion WHERE nombre LIKE $1'
+  pool.query(query, [`%${nombre}%`], (err, result) => {
     if (err) {
       res.status(500).send({ message: 'Error en la consulta' })
       console.error('Error al ejecutar la consulta:', err)

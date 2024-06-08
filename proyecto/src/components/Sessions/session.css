@@ -70,7 +70,7 @@ body {
   transform: scaleX(1);
 }
 
-button {
+.session-submit {
   width: 100%;
   padding: 12px;
   background-color: #6e9b5f;
@@ -81,7 +81,7 @@ button {
   transition: background-color 0.3s;
 }
 
-button:hover {
+.session-submit:hover {
   background-color: #DFDDDD;
   color: black;
 }

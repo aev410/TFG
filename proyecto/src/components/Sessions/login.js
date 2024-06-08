@@ -62,7 +62,7 @@ const Login = () => {
                     <div className="bar"></div>
                 </div>
                 {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-                <button type="submit">Iniciar sesión</button>
+                <button type="submit" className="session-submit">Iniciar sesión</button>
             </form>
             <div className="bottom-text">
                 <p>No tienes una cuenta? <Link to="/register" className="black-link">Registrarse</Link></p>

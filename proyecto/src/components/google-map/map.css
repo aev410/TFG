@@ -19,8 +19,9 @@ a {
   box-sizing: border-box;
 }
 
-.container {
+.contenedor {
   display: flex;
+  height: 100%;
 }
 
 .controls {
@@ -38,11 +39,6 @@ a {
 .controls input {
   border: none;
 }
-
-.container{
-  height: 100%;
-}
-
 
 .map {
   width: 100%;

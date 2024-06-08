@@ -1,6 +1,7 @@
 // BarraBusqueda.js
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./SearchBar.css"
 import { GetPublicacionesXnombre } from '../../services/api';
 
 const BarraBusqueda = () => {
@@ -13,6 +14,7 @@ const BarraBusqueda = () => {
     };
 
     const handleInputChange = (e) => {
+        console.log(datos)
         setBusqueda(e.target.value);
         setIsFocused(true);
     };
@@ -22,7 +24,7 @@ const BarraBusqueda = () => {
     };
 
     return (
-        <div className="position-relative">
+        <div>
             <input
                 type="search"
                 className="form-control mx-2"
@@ -33,7 +35,7 @@ const BarraBusqueda = () => {
                 value={busqueda}
             />
             {(isFocused || busqueda.trim() !== '') && (
-                <ul className="list-group position-absolute w-100">
+                <ul className="list-group position-absolute w-100 suggestions">
                     {datos && datos.map((publicacion) => (
                         <li key={publicacion.id} className="list-group-item">
                             {publicacion.nombre}
