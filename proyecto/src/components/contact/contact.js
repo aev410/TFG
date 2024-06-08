@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './contact.css';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';  // Asegúrate de importar useNavigate
 
 const Contact = () => {
@@ -51,32 +52,38 @@ const Contact = () => {
   };
 
   return (
-    <div className="login-container">
-      <h2>Contacto</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="input-group">
-          <input type="text" id="nombre" name="nombre" value={formData.nombre} maxLength="50" onChange={handleChange} required />
-          <label htmlFor="nombre">Nombre</label>
-          <div className="bar"></div>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '110vh' }}>
+      <div className="login-container">
+        <h2>Contacto</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <input type="text" id="nombre" name="nombre" value={formData.nombre} maxLength="50" onChange={handleChange} required />
+            <label htmlFor="nombre">Nombre</label>
+            <div className="bar"></div>
+          </div>
+          <div className="input-group">
+            <input type="email" id="correo" name="correo" value={formData.correo} maxLength="50" onChange={handleChange} required />
+            <label htmlFor="correo">Correo</label>
+            <div className="bar"></div>
+          </div>
+          <div className="input-group">
+            <input type="text" id="asunto" name="asunto" value={formData.asunto} maxLength="100" onChange={handleChange} required />
+            <label htmlFor="asunto">Asunto</label>
+            <div className="bar"></div>
+          </div>
+          <div className="input-group">
+            <textarea id="mensaje" name="mensaje" value={formData.mensaje} maxLength="500" onChange={handleChange} required />
+            <div className="bar"></div>
+          </div>
+          {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+          {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+          <button type="submit">Enviar</button>
+        </form>
+        <div className="bottom-text">
+          <p>¿Quieres volver al inicio?</p>
+          <Link to="/" className="black-link">Ir al inicio</Link>
         </div>
-        <div className="input-group">
-          <input type="email" id="correo" name="correo" value={formData.correo} maxLength="50" onChange={handleChange} required />
-          <label htmlFor="correo">Correo</label>
-          <div className="bar"></div>
-        </div>
-        <div className="input-group">
-          <input type="text" id="asunto" name="asunto" value={formData.asunto} maxLength="100" onChange={handleChange} required />
-          <label htmlFor="asunto">Asunto</label>
-          <div className="bar"></div>
-        </div>
-        <div className="input-group">
-          <textarea id="mensaje" name="mensaje" value={formData.mensaje} maxLength="500" onChange={handleChange} required />
-          <div className="bar"></div>
-        </div>
-        {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
-        <button type="submit">Enviar</button>
-      </form>
+      </div>
     </div>
   );
 };

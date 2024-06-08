@@ -114,7 +114,7 @@ function Nav() {
               <li class="nav-item">
                 <Link class="nav-link" to="/publics/21">Ver Publicación</Link>
               </li>
-			  <li class="nav-item">
+			        <li class="nav-item">
                 <Link class="nav-link" to="/newPub">Subir Publicación</Link>
               </li>
               <li class="nav-item">
