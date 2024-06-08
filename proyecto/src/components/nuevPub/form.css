@@ -1,10 +1,9 @@
 /* UploadItem.css */
 
-form {
+#pub-form {
     align-items: center;
     width: 100%;
     padding: 20px;
-    background-color: white;
     padding-top: 32px;
     padding-bottom: 32px;
 }
@@ -19,17 +18,11 @@ form {
     gap: 12px;
     margin-bottom: 16px;
     border: 1px solid lightgrey;
+    background-color: white;
     border-radius: 16px;
 }
 
-input, textarea {
-    margin-top: 5px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-button {
+#submit-form {
     margin-top: 10px;
     padding: 10px;
     border-radius: 5px;
@@ -39,13 +32,9 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #45a049;
-}
-
 /* Map.css */
 
-.container{
+.contenedor{
     height: 50vh; /* Adjust as needed */
 }
 

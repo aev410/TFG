@@ -57,13 +57,15 @@ const UploadItem = () => {
                 }
             });
             console.log(response.data);
+            // Redireccionar al inicio de la web
+            window.location.href = '/';
         } catch (error) {
             console.error(error);
         }
     };
 
     return (
-        <form onSubmit={submitForm}>
+        <form onSubmit={submitForm} id="pub-form">
             <div className='input'>
                 Titulo:
             <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
@@ -84,8 +86,7 @@ const UploadItem = () => {
                 Seleccionar Ubicacion:
                 <Map Menu={Autofill} setLat={setLat} setLon={setLon}/>
             </div>
-            <button type="submit"
-                >Subir Publicacion</button>
+            <button type="submit" id="submit-pub">Subir Publicacion</button>
         </form>
     );
 };
