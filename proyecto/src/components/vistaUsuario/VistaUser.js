@@ -45,7 +45,7 @@ const VistaUser = () => {
                             ) : (
                                 <div>
                                     <p>
-                                        Email: {userData.correo}
+                                        <strong>Email: {userData.correo}</strong>
                                     </p>
                                 </div>
                             )}
