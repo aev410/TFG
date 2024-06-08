@@ -20,7 +20,7 @@ function App() {
     <Router>
       <Nav />
       <Link to="/newPub">Go to Publicacion Page</Link>
-      <Link to="/publics/idPub">Go to existing publicacion</Link>
+      <Link to="/publics/21">Go to existing publicacion</Link>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/login"  element={<><LoginPage/></>}/>

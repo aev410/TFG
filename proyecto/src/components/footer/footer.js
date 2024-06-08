@@ -5,7 +5,7 @@ import logo from "./img/logo.png";
 // navbar 
 function nav() {
   return (
-    <footer class="footer fixed-bottom d-flex justify-content-center justify-content-lg-between p-4" id="footer">
+    <footer class="footer d-flex justify-content-center justify-content-lg-between p-4" id="footer">
       <div class="container-fluid">
         <div class="row pt-4 justify-content-evenly">
           <div

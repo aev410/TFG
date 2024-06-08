@@ -54,7 +54,7 @@ const VistaUser = () => {
                 </Card.Body>
             </Card>
     {
-        storeData && (
+        storeData ? (
             <Card className="p-3">
                 {/* Aqui es la carta de las publicaciones del usuario, p-3 es el padding arriba, de resto se encarga de mostrar el array de publicaciones si existe */}
                 <h2>Publicaciones de la tienda {storeData.nombretienda}:</h2>
@@ -72,6 +72,10 @@ const VistaUser = () => {
                 ) : (
                     <p>No hay publicaciones disponibles.</p>
                 )}
+            </Card>
+        ) : (
+            <Card className="p-3">
+                <h2>Este usuario no tiene una tienda registrada</h2>
             </Card>
         )
     }
