@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./SearchBar.css"
 import { GetPublicacionesXnombre } from '../../services/api';
+import "./SearchBar.css"
+
 
 const BarraBusqueda = () => {
     const [busqueda, setBusqueda] = useState('');
@@ -24,10 +26,12 @@ const BarraBusqueda = () => {
     };
 
     return (
+
         <div>
             <input
                 type="search"
-                className="form-control mx-2"
+                class="form-control mx-2"
+                aria-label="Search"
                 placeholder="Buscar..."
                 onChange={handleInputChange}
                 onFocus={handleInputFocus}
@@ -35,17 +39,19 @@ const BarraBusqueda = () => {
                 value={busqueda}
             />
             {(isFocused || busqueda.trim() !== '') && (
-                <ul className="list-group position-absolute w-100 suggestions">
-                    {datos && datos.map((publicacion) => (
-                        <li key={publicacion.id} className="list-group-item">
-                            {publicacion.nombre}
-                        </li>
-                    ))}
+                <ul class="list-group w-100">
+                    <ul className="list-group position-absolute w-100 suggestions">
+                        {datos && datos.map((publicacion) => (
+                            <li key={publicacion.id} class="list-group-item">
+                                {publicacion.nombre}
+                            </li>
+                        ))}
+                    </ul>
                 </ul>
-            )}
-            {error && <div className="mt-2 alert alert-danger">{error}</div>}
+             )}
+             {error && <div class="mt-2 alert alert-danger">{error}</div>}
         </div>
-    );
+    )
 };
 
 export default BarraBusqueda;

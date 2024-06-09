@@ -28,6 +28,9 @@ function App() {
         <Route path="/publics/:idPub" element={<LayoutRoute><PaginaPub id={useParams()} /></LayoutRoute>} />
       </Routes>
     </Router>
+
+    //  <Nav></Nav> 
+
   );
 }
 
@@ -52,6 +55,7 @@ function LoginRoute({ children }) {
     <>
       {children}
     </>
+
   );
 }
 

@@ -1,8 +1,8 @@
+/* Variables de colores y configuraciones principales */
 :root {
-  --principal: #4caf50; /* Color principal verde */
-  --color1: #388e3c;   /* Color verde oscuro */
-  --color2: #66bb6a;   /* Color verde claro */
-  --secundario: #ffffff; /* Color secundario blanco */
+  --principal: #f8f9fa; /* Color de ejemplo, ajusta según sea necesario */
+  --color1: #007bff; /* Color de ejemplo, ajusta según sea necesario */
+  --color2: #0056b3; /* Color de ejemplo, ajusta según sea necesario */
 }
 
 .container-fluid {
@@ -15,6 +15,10 @@
 }
 
 .form-control {
+  border-radius: 20px;
+}
+
+form {
   border-radius: 20px;
 }
 
@@ -49,12 +53,17 @@
   background-color: white;
 }
 
+.navbar-toggler:hover {
+  background-color: var(--color2);
+  transition: 0.5s ease;
+}
+
 .nav-link {
   color: white;
   font-weight: bold;
-  padding: 10px 20px; /* Incremento el padding para mayor separación */
+  padding: 10px 20px; /* Incremento del padding para mayor separación */
   border-radius: 5px;
-  margin: 0 15px; /* Incremento el margen horizontal */
+  margin: 0 15px; /* Incremento del margen horizontal */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -76,7 +85,7 @@
 .dropdown-item {
   color: white;
   transition: background-color 0.3s ease, color 0.3s ease;
-  margin: 10px 0; /* Incremento el margen vertical */
+  margin: 10px 0; /* Incremento del margen vertical */
 }
 
 .dropdown-item:hover {
@@ -84,20 +93,14 @@
   color: white;
 }
 
-/* Vista ordenador */
+/* Vista en ordenador */
 @media all and (min-width: 992px) {
   .navbar .has-megamenu {
     position: static !important;
   }
-  .navbar .megamenu {
-    left: 0;
-    right: 0;
-    width: 100%;
-    margin-top: 0;
-  }
 }
 
-/* Vista movil */
+/* Vista en móvil */
 @media (max-width: 991px) {
   .navbar.fixed-top .navbar-collapse, .navbar.sticky-top {
     overflow-y: auto;
