@@ -1,13 +1,60 @@
 // src/components/nav/nav.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./nav.css";
 import logo from "./img/logo.png";
 import { AccesoUsuario } from "./accesoUsuario";
 import BarraBusqueda from "../barraBusqueda/BarraBusqueda";
 import { cerrarSesion } from "../../services/api";
+import { getCookie } from "../../services/cookies";
+
+
 
 function Nav() {
+  const [userEmail, setEmail] = useState(getCookie('UserEmail'));
+  useEffect(() => {
+    const updateEmail = () => {
+      setEmail(getCookie('UserEmail'));
+  };
+
+  // Llamar a la función para actualizar el email inicialmente
+  updateEmail();
+
+  // Selecciona todos los elementos con la clase 'private'
+  const privateElements = document.querySelectorAll('.private');
+    
+  // Muestra u oculta los elementos según la existencia de la cookie
+  privateElements.forEach(element => {
+      if (userEmail) {
+          // Si la cookie existe, muestra los elementos
+          element.style.display = 'block';
+      } else {
+          // Si la cookie no existe, oculta los elementos
+          element.style.display = 'none';
+      }
+  });
+
+  const privateElements2 = document.querySelectorAll('.private2');
+
+  // Muestra u oculta los elementos según la existencia de la cookie
+  privateElements2.forEach(element => {
+      if (userEmail) {
+          // Si la cookie existe, muestra los elementos
+          element.style.display = 'none';
+      } else {
+          // Si la cookie no existe, oculta los elementos
+          element.style.display = 'block';
+      }
+  });
+
+  // Agregar un listener para detectar cambios en la cookie UserEmail
+  const interval = setInterval(updateEmail, 1000); // Puedes ajustar el intervalo según sea necesario
+
+  // Limpiar el intervalo cuando el componente se desmonte
+  return () => clearInterval(interval);
+    
+        
+  }, [userEmail])
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top p-0 mb-2">
       <div className="container-fluid">
@@ -51,10 +98,10 @@ function Nav() {
                 Publicación
               </Link>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <Link className="dropdown-item" to="/newPub">
+                <Link className="dropdown-item private" to="/newPub">
                   Subir Publicación
                 </Link>
-                <div className="dropdown-divider"></div>
+                <div className="dropdown-divider private"></div>
                 <Link className="dropdown-item" to="/publics/21">
                   Ver publicacion
                 </Link>
@@ -66,11 +113,11 @@ function Nav() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/login">
-                Cuenta
+              <Link className="nav-link private2" to="/login">
+                Iniciar Sesion
               </Link>
             </li>
-            <li className="nav-item dropdown">
+            <li className="nav-item dropdown  private">
               <Link
                 className="nav-link dropdown-toggle"
                 to="#"
@@ -84,8 +131,8 @@ function Nav() {
               </Link>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <AccesoUsuario />
-                <div className="dropdown-divider"></div>
-                <Link className="dropdown-item" to="/" onClick={cerrarSesion}>
+                <div className="dropdown-divider private"></div>
+                <Link className="dropdown-item private" to="#" onClick={cerrarSesion}>
                   Cerrar sesión
                 </Link>
               </div>
