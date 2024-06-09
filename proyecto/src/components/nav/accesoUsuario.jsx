@@ -26,7 +26,7 @@ export const AccesoUsuario = () => {
             {email != null ? (
                 <Link to="/user">
                     <div class="collapse navbar-collapse" id="main_nav">
-                        <button className="btn btn-outline-success mx-5" type="button">
+                        <button className="btn btn-outline-success mx-1" type="button" href="/user">
                             {email}
                         </button>
                     </div>
