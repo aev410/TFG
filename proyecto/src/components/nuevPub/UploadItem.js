@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Map from '../google-map/map';
 import Autofill from '../google-map/menus/autofillMaps';
-import "./form.css";
+import "./uploadItem.css";
 
 const UploadItem = () => {
     const [nombre, setNombre] = useState('');
@@ -84,7 +84,7 @@ const UploadItem = () => {
             </div>
             <div className='input'>
                 Seleccionar Ubicacion:
-                <Map Menu={Autofill} setLat={setLat} setLon={setLon}/>
+                <Map Menu={Autofill} setLat={setLat} setLon={setLon} idCss={"up-pub"}/>
             </div>
             <button type="submit" id="submit-pub">Subir Publicacion</button>
         </form>

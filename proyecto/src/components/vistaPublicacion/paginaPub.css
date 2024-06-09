@@ -1,0 +1,64 @@
+.container {
+    padding: 0;
+}
+
+#publi-pag {
+    background-color: var(--color2);
+}
+
+.card-text p {
+    margin: 0;
+}
+
+.card {
+    background-color: var(--color4);
+    border: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 40%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: fill;
+    border-radius: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+#pag-pub-map {
+    justify-content: center;
+    width: 100%;
+    height: 30vh;
+}
+
+.border-pub {
+    border-bottom: 1px solid var(--color2);
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.card-text {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+#pag-pub-map > .controls { 
+    display: none;
+}
+
+#pag-pub-map > .map {
+    width: 85%; 
+    height: 100%;
+}
+
+#pag-pub-map > .map > .map-container {
+    width: 100%; 
+    height: 100%;
+}

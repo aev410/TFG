@@ -4,9 +4,6 @@ import "./map.css";
 import { GetAllPublicaciones } from "../../services/api";
 import VistaPub from "../vistaPublicacion/vistaPub";
 
-/*Opciones para el mapa y el circulo que aparece cuando buscamos una zona en especifico
-respectivamente*/
-
 const defaultOptions = {
     strokeCapacity: 0.5,
     strokeWeight: 2,
@@ -26,14 +23,10 @@ const closeOptions = {
 
 const librariesConst = ["places"]
 
-/*Contiene dos props, menu es el tipo de interfaz que aparece en el rectangulo negro
-Siendo autofillMaps una barra de busqueda y places checkboxes con provincias*/
-
-const Map = ({ Menu, setLat, setLon, latP, lonP }) => {
+const Map = ({ Menu, setLat, setLon, latP, lonP, idCss, onLoadCallback }) => {
     const [office, setOffice] = useState();
-    const [selectedPubId, setSelectedPubId] = useState(null); // State for selected publication ID
-    const [selectedPosition, setSelectedPosition] = useState(null); // State for selected marker position
-    //Esto guarda una referencia como objeto de una instancia de google maps, permitiendole al componente trabajar con la api
+    const [selectedPubId, setSelectedPubId] = useState(null);
+    const [selectedPosition, setSelectedPosition] = useState(null);
     const mapRef = useRef();
 
     const center = useMemo(() => {
@@ -44,15 +37,18 @@ const Map = ({ Menu, setLat, setLon, latP, lonP }) => {
         }
     }, [latP, lonP]);
 
-    //Aplica las opciones
     const options = useMemo(() => ({
         disableDefaultUI: true,
         clickableIcons: false
     }), []);
-    //Esto llama una callback cuando se carga una instancia de google maps, que guarda la instancia en mapRef.current
-    const onLoad = useCallback(Map => (mapRef.current = Map), [])
 
-    //API de google
+    const onLoad = useCallback(Map => {
+        mapRef.current = Map;
+        if (onLoadCallback) {
+            onLoadCallback();
+        }
+    }, [onLoadCallback]);
+
     const { isLoaded } = useJsApiLoader({
         googleMapsApiKey: "AIzaSyBE2cF2mYtxB3H_LMxgpf_CxeBTjtfl3o4",
         libraries: librariesConst
@@ -64,37 +60,32 @@ const Map = ({ Menu, setLat, setLon, latP, lonP }) => {
         return <p>{error}</p>;
     }
 
-    //Si no ha cargado muestra esto
     if (!isLoaded) {
-        return <div>Loading...</div>
+        return <div>Loading...</div>;
     }
 
     return (
-        <div className="contenedor">
+        <div id={idCss || ""} className="contenedor">
             <div className="controls">
                 <h1>Mapa</h1>
                 {Menu ? (
                     <Menu setOffice={(position) => {
-                        setOffice(position); //setOffice aplica las coordenadas pasadas
-                        mapRef.current?.panTo(position) //panea a la zona
-                        //Este codigo permite que los props set sean opcionales, si no introduces nada, o los dejas nulls no te saltara un error
+                        setOffice(position);
+                        mapRef.current?.panTo(position);
                         if (typeof setLat === 'undefined' && typeof setLon === 'undefined') {
-                            console.log("Operando sin guardar coordenadas")
+                            console.log("Operando sin guardar coordenadas");
                         } else {
-                            console.log("Guardando coordenadas")
-                            setLat(position.lat)
-                            setLon(position.lng)
+                            console.log("Guardando coordenadas");
+                            setLat(position.lat);
+                            setLon(position.lng);
                         }
                     }} />
-                ) : (
-                    null
-                )}
+                ) : null}
             </div>
             <div className="map">
                 <GoogleMap zoom={17} center={center}
                     mapContainerClassName="map-container"
                     options={options}
-
                     onLoad={onLoad}>
                     {office && (
                         <>
@@ -109,30 +100,28 @@ const Map = ({ Menu, setLat, setLon, latP, lonP }) => {
                             key={index}
                             position={{ lat: parseFloat(dato.latitud), lng: parseFloat(dato.longitud) }}
                             onClick={() => {
-                                console.log("Marcador clickeado: ", dato.idpublicacion)
-                                setSelectedPubId(dato.idpublicacion); // Set the selected publication ID on click
-                                setSelectedPosition({ lat: parseFloat(dato.latitud), lng: parseFloat(dato.longitud) }); // Set the selected marker position on click
+                                console.log("Marcador clickeado: ", dato.idpublicacion);
+                                setSelectedPubId(dato.idpublicacion);
+                                setSelectedPosition({ lat: parseFloat(dato.latitud), lng: parseFloat(dato.longitud) });
                             }}
                         />
                     ))}
-
                     {selectedPubId && selectedPosition && (
                         <InfoWindow
                             position={selectedPosition}
                             onCloseClick={() => {
                                 setSelectedPubId(null);
                                 setSelectedPosition(null);
-                            }}
-                        >
+                            }}>
                             <div style={{ maxWidth: "200px" }}>
-                                <VistaPub id={selectedPubId}/>
+                                <VistaPub id={selectedPubId} />
                             </div>
                         </InfoWindow>
                     )}
                 </GoogleMap>
             </div>
         </div>
-    )
+    );
 }
 
 export default Map;
