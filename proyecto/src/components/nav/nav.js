@@ -85,7 +85,7 @@ function Nav() {
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <AccesoUsuario />
                 <div className="dropdown-divider"></div>
-                <Link className="dropdown-item" to="#" onClick={cerrarSesion}>
+                <Link className="dropdown-item" to="/" onClick={cerrarSesion}>
                   Cerrar sesión
                 </Link>
               </div>
