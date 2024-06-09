@@ -7,10 +7,10 @@ const publicacionRouter = require('./routes/publicacion.js')
 const uploadPub = require('./routes/uploadPub.js')
 const login = require('./routes/login2.js')
 const register = require('./routes/register.js')
-// const verifyToken = require('./middleware/authMiddleware.js')
+const tienda = require('./routes/tienda.js')
+const verifyToken = require('./middleware/authMiddleware.js')
 const showUser = require('./routes/mostrarUsuario.js')
 const path = require('path')
-const verifyToken = require('./middleware/authMiddleware.js')
 
 const app = express()
 const port = process.env.PORT || 3000// El puerto se guarda en el archivo .env
@@ -38,8 +38,8 @@ app.use('/api/publicacion', uploadPub)
 app.use('/publicacion', publicacionRouter)
 app.use('/login', login)
 app.use('/register', register)
-// app.use('/user', verifyToken)
 app.use('/user', verifyToken, showUser)
+app.use('/tienda', verifyToken, tienda)
 
 // Rutas protegidas
 // app.use('/protected', verifyToken, (req, res) => {

@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Route, Routes, Link, useParams } from 'react-r
 
 
 import './App.css';
+import RegistrarTienda from "./components/registrarTienda/registrarTienda";
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
         <Route path="/login"  element={<><LoginPage/></>}/>
         <Route path="/register"  element={<><Register/></>}/>
         <Route path="/user" element={<><VistaUser/></>}/>
-        <Route path="/register/tienda" element={<>  </>}/>
+        <Route path="/register/tienda" element={<> <RegistrarTienda/> </>}/>
         <Route path="/user/tienda" element={<>  </>}/>
         <Route path="/newPub" element={<><UploadItem/></>}/>
         <Route path="/publics" element={<>  </>}/>
