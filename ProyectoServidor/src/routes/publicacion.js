@@ -23,7 +23,7 @@ router.get('/last', async (req, res) => {
   const lastweek = new Date(date.getTime() - 7 * 24 * 60 * 60 * 1000)
   const lastweekFormat = lastweek.toISOString().slice(0, 19).replace('T', ' ')
 
-  const query = 'SELECT * FROM clientes.publicacion WHERE fecha_pub > $1 LIMIT 3'
+  const query = 'SELECT * FROM clientes.publicacion WHERE fecha_pub > $1 ORDER BY fecha_pub DESC LIMIT 3'
   // Ejecuta la consulta
   pool.query(query, [lastweekFormat], (err, result) => {
     if (err) {
