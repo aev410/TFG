@@ -33,7 +33,7 @@ const UltimasPublicaciones = () =>{
 const Home = () => {
     return(
         <div>
-            <Map Menu={Places} id="home-map"></Map>
+            <Map Menu={Places} idCss={"home-map"}></Map>
             <UltimasPublicaciones />
         </div>
     )
