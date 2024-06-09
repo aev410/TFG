@@ -142,7 +142,7 @@ const GetUsuario = () => {
 const cerrarSesion = () => {
     deleteCookie('UserEmail')
     localStorage.removeItem('authToken');
-    navigate('/login')
+    navigate('/')
 }
 
 export { usePublicacion, useUltimasPublicaciones, GetUsuario, GetAllPublicaciones, GetPublicacionesXnombre, cerrarSesion };

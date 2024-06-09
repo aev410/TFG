@@ -5,6 +5,7 @@ import "./nav.css";
 import logo from "./img/logo.png";
 import { AccesoUsuario } from "./accesoUsuario";
 import BarraBusqueda from "../barraBusqueda/BarraBusqueda";
+import { cerrarSesion } from "../../services/api";
 
 function Nav() {
   return (
@@ -84,7 +85,7 @@ function Nav() {
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <AccesoUsuario />
                 <div className="dropdown-divider"></div>
-                <Link className="dropdown-item" to="#">
+                <Link className="dropdown-item" to="#" onClick={cerrarSesion}>
                   Cerrar sesión
                 </Link>
               </div>
