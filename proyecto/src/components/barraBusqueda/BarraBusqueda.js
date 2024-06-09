@@ -40,12 +40,13 @@ const BarraBusqueda = () => {
             />
             {(isFocused || busqueda.trim() !== '') && (
                 <ul class="list-group w-100">
-                <ul className="list-group position-absolute w-100 suggestions">
-                    {datos && datos.map((publicacion) => (
-                        <li key={publicacion.id} class="list-group-item">
-                            {publicacion.nombre}
-                        </li>
-                    ))}
+                    <ul className="list-group position-absolute w-100 suggestions">
+                        {datos && datos.map((publicacion) => (
+                            <li key={publicacion.id} class="list-group-item">
+                                {publicacion.nombre}
+                            </li>
+                        ))}
+                    </ul>
                 </ul>
              )}
              {error && <div class="mt-2 alert alert-danger">{error}</div>}
