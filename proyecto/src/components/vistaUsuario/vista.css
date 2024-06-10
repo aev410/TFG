@@ -3,14 +3,10 @@
     margin-bottom: 3rem
 }
 
-.card{
+#tarjeta-user {
     width: 90%;
     margin-right: auto;
     margin-left: auto;
-}
-
-.tarjeta {
-    width: 450px;
 }
 
 #user-root {

@@ -1,4 +1,4 @@
-form {
+#tienda-form {
     align-items: center;
     width: 100%;
     padding: 20px;
@@ -7,7 +7,7 @@ form {
     padding-bottom: 32px;
 }
 
-.input{
+.tienda-input{
     display: flex;
     flex-direction: column;
     max-width: 700px;
@@ -19,15 +19,14 @@ form {
     border: 1px solid lightgrey;
     border-radius: 16px;
 }
-
-input, textarea {
+.input-box {
     margin-top: 5px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
 }
 
-button {
+#button-tienda {
     margin-top: 10px;
     padding: 10px;
     border-radius: 5px;
@@ -37,6 +36,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+#button-tienda:hover {
     background-color: #45a049;
 }
