@@ -69,7 +69,7 @@ function Nav() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <form className="w-100" className="d-flex w-100">
+        <form className="d-flex w-100">
           <BarraBusqueda />
         </form>
         <div className="collapse navbar-collapse" id="main_nav">
