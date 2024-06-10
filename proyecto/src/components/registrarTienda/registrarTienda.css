@@ -2,40 +2,33 @@
     align-items: center;
     width: 100%;
     padding: 20px;
-    background-color: white;
+    background-color: var(--color2);
     padding-top: 32px;
     padding-bottom: 32px;
 }
 
 .tienda-input{
-    display: flex;
-    flex-direction: column;
-    max-width: 700px;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 24px 16px;
-    gap: 12px;
-    margin-bottom: 16px;
+    max-width: 40%;
     border: 1px solid lightgrey;
-    border-radius: 16px;
+    background-color: var(--color4);
 }
+
 .input-box {
     margin-top: 5px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
+    width: 100%;
 }
 
 #button-tienda {
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 5px;
     border: none;
-    background-color: #4caf50;
+    width: 35%;
+    background-color: var(--color1);
     color: white;
     cursor: pointer;
 }
 
 #button-tienda:hover {
-    background-color: #45a049;
+    background-color: var(--color4);
 }

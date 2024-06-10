@@ -38,9 +38,14 @@ VistaPub img {
     margin: 20px 0;
 }
 
-#home-card {
-    height: 40vh;
+#publicaciones-card {
+    height: 80%;
     width: 100%;
-    background-color: var(--color4);
+    background-color: var(--color2);
     overflow: auto;
+    border-radius: 0;
+}
+
+#all-publicaciones {
+    background-color: var(--color3);
 }

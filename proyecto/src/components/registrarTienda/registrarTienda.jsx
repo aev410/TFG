@@ -37,21 +37,28 @@ const RegistrarTienda = () => {
     };
 
     return (
-        <form onSubmit={submitForm} id="tienda-form">
-            <div className='input tienda-input'>
-                Nombre de la tienda:
-                <input className="input-box" type="text" value={nombreTienda} onChange={(e) => setNombreTienda(e.target.value)} required />
+        <form onSubmit={submitForm} id="tienda-form" className="container-fluid">
+            <div className="row justify-content-center">
+                <div className='form-group mb-4 p-3 rounded tienda-input'>
+                    <label htmlFor="nombre-tienda">Nombre de la tienda:</label>
+                    <input name="nombre-tienda" className="input-box" type="text" value={nombreTienda} onChange={(e) => setNombreTienda(e.target.value)} required />
+                </div>
+            </div>  
+            <div className="row justify-content-center">
+                <div className='form-group mb-4 p-3 rounded tienda-input'>
+                    <label htmlFor="telefono">Teléfono de contacto:</label>
+                    <input name="telefono" className="input-box" type="tel" value={telefono} onChange={(e) => setTelefono(e.target.value)} required />
+                </div>
             </div>
-            <div className='input tienda-input'>
-                Teléfono de contacto:
-                <input className="input-box" type="tel" value={telefono} onChange={(e) => setTelefono(e.target.value)} required />
+            <div className="row justify-content-center">
+                <div className='form-group mb-4 p-3 rounded tienda-input'>
+                    <label htmlFor="direccion">Dirección de contacto:</label>
+                    <input name="direccion" className="input-box" type="text" value={direccion} onChange={(e) => setDireccion(e.target.value)} required />
+                </div>
             </div>
-            <div className='input tienda-input'>
-                Dirección de contacto:
-                <input className="input-box" type="text" value={direccion} onChange={(e) => setDireccion(e.target.value)} required />
+            <div className="row justify-content-center">
+                <button type="submit" id="button-tienda">Crear Tienda</button>
             </div>
-
-            <button type="submit" id="button-tienda">Subir Publicación</button>
         </form>
     );
 };

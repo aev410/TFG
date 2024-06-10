@@ -18,9 +18,9 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LayoutRoute><Home /></LayoutRoute>} />
-        <Route path="/login" element={<LoginRoute><LoginPage /></LoginRoute>} />
-        <Route path="/register" element={<LoginRoute><Register /></LoginRoute>} />
-        <Route path="/contact" element={<LoginRoute><Contact /></LoginRoute>} />
+        <Route path="/login" element={<LayoutRoute><LoginPage /></LayoutRoute>} />
+        <Route path="/register" element={<LayoutRoute><Register /></LayoutRoute>} />
+        <Route path="/contact" element={<LayoutRoute><Contact /></LayoutRoute>} />
         <Route path="/user" element={<LayoutRoute><VistaUser /></LayoutRoute>} />
         <Route path="/register/tienda" element={<LayoutRoute><RegistrarTienda/> </LayoutRoute>} />
         <Route path="/user/tienda" element={<> </>} />

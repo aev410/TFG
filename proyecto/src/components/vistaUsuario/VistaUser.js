@@ -33,12 +33,12 @@ const VistaUser = () => {
 
     //Este codigo esta usando la libreria de bootstrap con React, los nombres de los componentes se transportan a las clases de bootstrap
     return (
-        < Container fluid className = "bg-light py-3" id = "user-root" >
+        < Container fluid className = "py-3" id = "user-root" >
             <Card className="mb-custom" id="tarjeta-user">
                 <Card.Body>
                     {/* Esta es la carta que muestra la info del usuario y parcialmente la de la tienda, si existe esta, tiene los items en el centro y a cada esquina */}
                     <Row className="align-items-center">
-                        <Col className="text-start" id="user-Name">
+                        <Col className="text-start " id="user-Name font-weight-bold">
                             <h2>{userData.nombre} {userData.apellido}</h2>
                         </Col>
                         <Col className="d-flex flex-column align-items-end" id="store-Info">
@@ -61,7 +61,7 @@ const VistaUser = () => {
             </Card>
     {
         storeData ? (
-            <Card className="p-3">
+            <Card className="p-3" id="tienda-usuario">
                 {/* Aqui es la carta de las publicaciones del usuario, p-3 es el padding arriba, de resto se encarga de mostrar el array de publicaciones si existe */}
                 <h2>Publicaciones de la tienda {storeData.nombretienda}:</h2>
                 {publicacionData ? (
@@ -71,7 +71,7 @@ const VistaUser = () => {
                         {publicacionData.map((pub, i) => (
                             <Col md={{ span: 5, offset: i % 2 === 0 ? 1 : 0 }} key={i} className="d-flex">
                                 {/* Aqui mostramos las publicaciones, con estilo de carta Bootstrap*/}
-                                <VistaPub id={pub.idpublicacion} className="card h-100" />
+                                <VistaPub id={pub.idpublicacion} className="card h-100 publicaciones-user"/>
                             </Col>
                         ))}
                     </Row>
@@ -80,7 +80,7 @@ const VistaUser = () => {
                 )}
             </Card>
         ) : (
-            <Card className="p-3">
+            <Card className="p-3" id="tienda-usuario" style={{textAlign: "center", justifyContent: "center"}}>
                 <Link to={'/register/tienda'}>
                 <h2>Este usuario no tiene una tienda registrada</h2>
                 <p>Click para crear</p>

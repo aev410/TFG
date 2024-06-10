@@ -60,7 +60,7 @@ const PaginaPub = () => {
                     {imagenes.length > 0 ? (
                         <Carousel>
                             {imagenes.map((src, index) => (
-                                <Carousel.Item key={index}>
+                                <Carousel.Item key={index} id="img-pagina-pub">
                                     <img
                                         className="d-block w-100 img-fluid"
                                         src={`http://localhost:3000/images/${src}`}

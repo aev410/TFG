@@ -22,7 +22,7 @@ const Home = () => {
 
     return (
         <div className="container-fluid" id="home-div">
-            <div className="row align-items-center my-2">
+            <div className="row align-items-center" style={{height: "80vh"}}>
                 <div className="col" id="map-home-column">
                     <Map Menu={Places} idCss={"home-map"}></Map>
                 </div>

@@ -1,30 +1,5 @@
-/* Variables de colores y configuraciones principales */
-:root {
-  --principal: #f8f9fa; /* Color de ejemplo, ajusta según sea necesario */
-  --color1: #007bff; /* Color de ejemplo, ajusta según sea necesario */
-  --color2: #0056b3; /* Color de ejemplo, ajusta según sea necesario */
-}
 
-
-html, body, #root, .app-container {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.app-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.container-fluid {
+#navbar-container {
   background-color: var(--principal);
 }
 
@@ -33,11 +8,7 @@ html, body, #root, .app-container {
   width: 8rem;
 }
 
-.form-control {
-  border-radius: 20px;
-}
-
-form {
+#barra-busqueda {
   border-radius: 20px;
 }
 

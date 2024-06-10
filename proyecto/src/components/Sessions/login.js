@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./session.css";
-import { useNavigate } from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import ValidadorCorreo from './formatoCorreo';
 import { Link } from "react-router-dom";
 import axios from 'axios';
