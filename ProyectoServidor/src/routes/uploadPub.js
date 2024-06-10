@@ -1,18 +1,16 @@
 const { Router } = require('express')
 const { connectDB, pool } = require('../config/database')
 const { multiUpload } = require('../middleware/multer')
+
 const router = Router()
 connectDB()
 
 router.post('/', multiUpload.array('imagenes', 5), async (req, res) => {
-  // idTienda = placeholder, tengo que tomarlo de la sesion del usuario
-  const idTienda = 4
-
   // Da un formato de fecha legible para SQL
   const fechaPub = new Date().toISOString().slice(0, 19).replace('T', ' ')
 
   // Define las variables segun la informacion en la formData y segun el procesado de multer para las imagenes
-  const { nombre, precio, descripcion, latitud, longitud } = req.body
+  const { nombre, precio, descripcion, latitud, longitud, idTienda } = req.body
   const imagenes = req.files.map(file => file.filename).join(';')
 
   try {

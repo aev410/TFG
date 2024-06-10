@@ -4,6 +4,7 @@ import Map from '../google-map/map';
 import Autofill from '../google-map/menus/autofillMaps';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './uploadItem.css';
+import { getCookie } from '../../services/cookies';
 
 const UploadItem = () => {
     const [nombre, setNombre] = useState('');
@@ -45,6 +46,7 @@ const UploadItem = () => {
         formData.append('descripcion', descripcion);
         formData.append('latitud', lat);
         formData.append('longitud', lon);
+        formData.append('idTienda', getCookie('IdTienda'))
         //Mediante este for subimos cada uno de los archivos que elija el usuario
         for (let i = 0; i < imagenes.length; i++) {
             formData.append('imagenes', imagenes[i]);

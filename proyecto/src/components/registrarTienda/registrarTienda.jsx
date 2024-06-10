@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import './registrarTienda.css'
-import { Navigate } from 'react-router-dom'
-
+import { useNavigate } from 'react-router-dom'
 const RegistrarTienda = () => {
+    const Navigate = useNavigate()
     const [nombreTienda, setNombreTienda] = useState('');
     const [telefono, setTelefono] = useState('');
     const [direccion, setDireccion] = useState('');

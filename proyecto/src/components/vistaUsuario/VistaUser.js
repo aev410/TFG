@@ -4,6 +4,8 @@ import VistaPub from "../vistaPublicacion/vistaPub";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './vista.css';
 import { Container, Card, Row, Col } from 'react-bootstrap';
+import { Link } from "react-router-dom";
+import { setCookie } from "../../services/cookies";
 
 const VistaUser = () => {
     //Aqui guardo el resultado de la busqueda, dividido segun las tablas, 4 seria el ID
@@ -22,6 +24,10 @@ const VistaUser = () => {
     }
 
     const { userData, storeData, publicacionData } = usuario;
+
+    if (storeData) {
+        setCookie('IdTienda', storeData.idtienda, 1)
+    }
 
 
 
@@ -75,7 +81,10 @@ const VistaUser = () => {
             </Card>
         ) : (
             <Card className="p-3">
+                <Link to={'/register/tienda'}>
                 <h2>Este usuario no tiene una tienda registrada</h2>
+                <p>Click para crear</p>
+                </Link>
             </Card>
         )
     }
