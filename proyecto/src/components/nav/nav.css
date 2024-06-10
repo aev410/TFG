@@ -76,6 +76,7 @@
 .dropdown-menu {
   background-color: var(--principal);
   border: none;
+  left:0;
 }
 
 .dropdown-item {
@@ -93,6 +94,10 @@
 @media all and (min-width: 992px) {
   .navbar .has-megamenu {
     position: static !important;
+  }
+  .dropdown-menu {
+    left: auto;
+    left: 0; /* Asegura que el menú desplegable se alinee a la derecha */
   }
 }
 

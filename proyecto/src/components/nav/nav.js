@@ -56,61 +56,100 @@ function Nav() {
         
   }, [userEmail])
   return (
-		<div>
-			<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top p-0 mb-2">
-				<div class="container-fluid">
-					<Link class="navbar-brand mx-4" to={'/'} ><img src={logo} alt="Logo" /></Link>
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<form>
-						{/* <input class="form-control mx-2 " type="search" placeholder="Buscar" aria-label="Search" /> */}
-						<BarraBusqueda />
-					</form>
-					<div class="collapse navbar-collapse" id="main_nav">
-						<AccesoUsuario />
-					</div>
-				</div>
-			</nav>
-			<div class="container-fluid py-2">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="dropdown">
-							<button class=" btn btn-primary dropdown-toggle my-4 r-5" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-								Todas las categorias
-							</button>
-							<div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
-								<div class="container">
-									<div class="row text-center">
-										<div class="col-lg-6">
-											<ul class="list-unstyled">
-												<h6 class="dropdown-header">Título 1</h6>
-												<li><hr class="dropdown-divider" /></li>
-												<li><Link class="dropdown-item" to ={'/'}>Opción 1</Link></li>
-												<li><Link class="dropdown-item" to={'/'}>Opción 2</Link></li>
-												<li><Link class="dropdown-item" to={'/'}>Opción 3</Link></li>
-												<li><Link class="dropdown-item" to={'/'}>Opción 4</Link></li>
-											</ul>
-										</div>
-										<div class="col-lg-6">
-											<ul class="list-unstyled">
-												<h6 class="dropdown-header">Título 1</h6>
-												<li><hr class="dropdown-divider" /></li>
-												<li><Link class="dropdown-item" to={'/'}>Opción 1</Link></li>
-												<li><Link class="dropdown-item" to={'/'}>Opción 2</Link></li>
-												<li><Link class="dropdown-item" to={'/'}>Opción 3</Link></li>
-												<li><Link class="dropdown-item" to={'/'}>Opción 4</Link></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+    <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top p-0 mb-2">
+      <div className="container-fluid">
+        <Link className="navbar-brand mx-4" to="/">
+          <img src={logo} alt="Logo" />
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main_nav"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <form className="d-flex w-100">
+          <BarraBusqueda />
+        </form>
+        <div className="collapse navbar-collapse" id="main_nav">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link className="nav-link" to="/contact">
+                Contacto
+              </Link>
+            </li>
+            {/* Aquí puedes añadir más elementos de navegación si lo deseas */}
+            {/* <li className="nav-item">
+              <Link className="nav-link" to="/publics/21">
+                Ver Publicación
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/newPub">
+                Subir Publicación
+              </Link>
+            </li> */}
+            <li className="nav-item dropdown">
+              <Link
+                className="nav-link dropdown-toggle"
+                to="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Publicación
+              </Link>
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <Link className="dropdown-item private" to="/newPub">
+                  Subir Publicación
+                </Link>
+                <div className="dropdown-divider private"></div>
+                <Link className="dropdown-item" to="/publics">
+                  Ver publicacion
+                </Link>
+              </div>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/contact">
+                Contacto
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link private2" to="/login">
+                Iniciar Sesion
+              </Link>
+            </li>
+            <li className="nav-item dropdown  private">
+              <Link
+                className="nav-link dropdown-toggle"
+                to="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Cuenta
+              </Link>
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <AccesoUsuario />
+                <div className="dropdown-divider"></div>
+                <Link className="dropdown-item" to="#" onClick={cerrarSesion}>
+                  Cerrar sesión
+                </Link> */
+                <button onClick={cerrarSesion}>
+                  Cerrar Sesion
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
 }
 
 export default Nav;
