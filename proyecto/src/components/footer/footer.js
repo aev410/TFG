@@ -5,7 +5,7 @@ import logo from "./img/logo.png";
 
 function nav() {
   return (
-    <footer class="footer d-flex justify-content-center justify-content-lg-between p-4" id="footer">
+    <footer class="footer sticky-bottom d-flex justify-content-center justify-content-lg-between p-4" id="footer">
       <div class="container-fluid">
         <div class="row pt-4 justify-content-evenly">
           <div
@@ -29,47 +29,29 @@ function nav() {
             <ul class="list-unstyled ulFooter">
               <li>
                 <a target="_blank" href=" " rel="noreferrer">
-                  espacio 1
+                  Quienes Somos
                 </a>
               </li>
               <li><a target="_blank" href=" " rel="noreferrer">Blog</a></li>
               <li>
                 <a target="_blank" href=" " rel="noreferrer">
-                  espacio 2
-                </a>
-              </li>
-              <li>
-                <a target="_blank" href=" " rel="noreferrer">
-                  espacio 3
-                </a>
-              </li>
-              <li>
-                <a target="_blank" href=" " rel="noreferrer">Contacto</a>
-              </li>
-              <li>
-                <a target="_blank" href=" " rel="noreferrer">
-                  espacio 4
+                  Como funciona
                 </a>
               </li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-3 col-sm-12 align-items-center">
-            <h6 class="hFooter mb-2">espacio 5</h6>
+            <h6 class="hFooter mb-2">Soporte</h6>
             <ul class="list-unstyled ulFooter">
               <li>
                 <a target="_blank" href=" " rel="noreferrer">
-                  espacio 6
+                  Atencion al cliente
                 </a>
               </li>
               <li>
                 <a target="_blank" href=" " rel="noreferrer">
-                  espacio 7
-                </a>
-              </li>
-              <li>
-                <a target="_blank" href=" " rel="noreferrer">
-                  espacio 8
+                  Condiciones de uso
                 </a>
               </li>
               <li>
