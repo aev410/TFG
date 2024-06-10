@@ -5,6 +5,25 @@
   --color2: #0056b3; /* Color de ejemplo, ajusta según sea necesario */
 }
 
+
+html, body, #root, .app-container {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .container-fluid {
   background-color: var(--principal);
 }
@@ -80,6 +99,7 @@ form {
 .dropdown-menu {
   background-color: var(--principal);
   border: none;
+  left:0;
 }
 
 .dropdown-item {
@@ -97,6 +117,10 @@ form {
 @media all and (min-width: 992px) {
   .navbar .has-megamenu {
     position: static !important;
+  }
+  .dropdown-menu {
+    left: auto;
+    left: 0; /* Asegura que el menú desplegable se alinee a la derecha */
   }
 }
 

@@ -39,12 +39,14 @@ function LayoutRoute({ children }) {
     return children;
   } else {
     return (
-      <>
+      <div id="root">
         <Nav />
+        <div className="main-content">
         {children}
         <Footer2 />
         <Footer />
-      </>
+        </div>
+      </div>
     );
   }
 }

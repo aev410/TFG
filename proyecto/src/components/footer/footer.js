@@ -2,7 +2,7 @@ import React from 'react';
 import "./footer.css";
 import logo from "./img/logo.png";
 
-// navbar 
+
 function nav() {
   return (
     <footer class="footer d-flex justify-content-center justify-content-lg-between p-4" id="footer">

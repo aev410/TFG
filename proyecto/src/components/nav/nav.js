@@ -5,6 +5,7 @@ import "./nav.css";
 import logo from "./img/logo.png";
 import { AccesoUsuario } from "./accesoUsuario";
 import BarraBusqueda from "../barraBusqueda/BarraBusqueda";
+import { cerrarSesion } from "../../services/api";
 
 function Nav() {
   return (
@@ -26,22 +27,30 @@ function Nav() {
         </form>
         <div className="collapse navbar-collapse" id="main_nav">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <Link className="nav-link" to="/contact">
-                Contacto
+          <li className="nav-item dropdown">
+              <Link
+                className="nav-link dropdown-toggle"
+                to="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Cuenta
               </Link>
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <AccesoUsuario />
+                <div className="dropdown-divider"></div>
+                {/* <Link className="dropdown-item" to="#">
+                  Cerrar sesión
+                </Link> */}
+                <button onClick={cerrarSesion}>
+                  Cerrar Sesion
+                </button>
+              </div>
             </li>
-            {/* Aquí puedes añadir más elementos de navegación si lo deseas */}
-            {/* <li className="nav-item">
-              <Link className="nav-link" to="/publics/21">
-                Ver Publicación
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/newPub">
-                Subir Publicación
-              </Link>
-            </li> */}
+            {/* Aquí puedes añadir más elementos de navegación si lo deseas */} 
             <li className="nav-item dropdown">
               <Link
                 className="nav-link dropdown-toggle"
@@ -74,31 +83,10 @@ function Nav() {
                 Cuenta
               </Link>
             </li>
-            <li className="nav-item dropdown">
-              <Link
-                className="nav-link dropdown-toggle"
-                to="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Cuenta
-              </Link>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <AccesoUsuario />
-                <div className="dropdown-divider"></div>
-                <Link className="dropdown-item" to="#">
-                  Cerrar sesión
-                </Link>
-              </div>
-            </li>
           </ul>
         </div>
       </div>
     </nav>
-
   );
 }
 
