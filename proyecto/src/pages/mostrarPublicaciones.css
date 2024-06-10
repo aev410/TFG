@@ -1,0 +1,46 @@
+UltimasPublicaciones p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Estilos para VistaPub */
+VistaPub {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+VistaPub h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+VistaPub p {
+    font-size: 16px;
+    color: #666;
+}
+
+VistaPub img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Estilos de carga y error */
+.loading,
+.error {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#home-card {
+    height: 40vh;
+    width: 100%;
+    background-color: var(--color4);
+    overflow: auto;
+}

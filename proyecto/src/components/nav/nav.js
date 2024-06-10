@@ -102,7 +102,7 @@ function Nav() {
                   Subir Publicación
                 </Link>
                 <div className="dropdown-divider private"></div>
-                <Link className="dropdown-item" to="/publics/21">
+                <Link className="dropdown-item" to="/publics">
                   Ver publicacion
                 </Link>
               </div>

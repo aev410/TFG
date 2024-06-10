@@ -16,7 +16,7 @@ const Home = () => {
         return <p className='error'>{error}</p>;
     }
 
-    if (!datos || datos.lenght === 0) {
+    if (!datos || datos.length === 0) {
         return null;
     }
 
