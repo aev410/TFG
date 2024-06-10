@@ -74,22 +74,27 @@ function Nav() {
         </form>
         <div className="collapse navbar-collapse" id="main_nav">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <Link className="nav-link" to="/contact">
-                Contacto
+          <li className="nav-item dropdown  private">
+              <Link
+                className="nav-link dropdown-toggle"
+                to="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Cuenta
               </Link>
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <AccesoUsuario />
+                <div className="dropdown-divider"></div> 
+                <Link to ={"/"}><button onClick={cerrarSesion}>
+                  Cerrar Sesion
+                </button></Link>
+              </div>
             </li>
             {/* Aquí puedes añadir más elementos de navegación si lo deseas */}
-            {/* <li className="nav-item">
-              <Link className="nav-link" to="/publics/21">
-                Ver Publicación
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/newPub">
-                Subir Publicación
-              </Link>
-            </li> */}
             <li className="nav-item dropdown">
               <Link
                 className="nav-link dropdown-toggle"
@@ -121,29 +126,6 @@ function Nav() {
               <Link className="nav-link private2" to="/login">
                 Iniciar Sesion
               </Link>
-            </li>
-            <li className="nav-item dropdown  private">
-              <Link
-                className="nav-link dropdown-toggle"
-                to="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Cuenta
-              </Link>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <AccesoUsuario />
-                <div className="dropdown-divider"></div>
-                <Link className="dropdown-item" to="#" onClick={cerrarSesion}>
-                  Cerrar sesión
-                </Link> */
-                <button onClick={cerrarSesion}>
-                  Cerrar Sesion
-                </button>
-              </div>
             </li>
           </ul>
         </div>
