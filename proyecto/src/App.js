@@ -10,6 +10,7 @@ import UploadItem from "./components/nuevPub/UploadItem";
 import PaginaPub from "./components/vistaPublicacion/paginaPub";
 import Home from "./pages/home";
 import './App.css';
+import RegistrarTienda from "./components/registrarTienda/registrarTienda";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         <Route path="/register" element={<LoginRoute><Register /></LoginRoute>} />
         <Route path="/contact" element={<LoginRoute><Contact /></LoginRoute>} />
         <Route path="/user" element={<LayoutRoute><VistaUser /></LayoutRoute>} />
-        <Route path="/register/tienda" element={<> </>} />
+        <Route path="/register/tienda" element={<LayoutRoute><RegistrarTienda/> </LayoutRoute>} />
         <Route path="/user/tienda" element={<> </>} />
         <Route path="/newPub" element={<LayoutRoute><UploadItem /></LayoutRoute>} />
         <Route path="/publics" element={<> </>} />

@@ -1,25 +1,27 @@
 /* UploadItem.css */
 
 #pub-form {
-    align-items: center;
     width: 100%;
     padding: 20px;
     padding-top: 32px;
     padding-bottom: 32px;
+    background-color: var(--color2);
 }
 
-.input{
-    display: flex;
-    flex-direction: column;
-    max-width: 700px;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 24px 16px;
-    gap: 12px;
-    margin-bottom: 16px;
-    border: 1px solid lightgrey;
-    background-color: white;
-    border-radius: 16px;
+#submit-pub {
+    background-color: var(--color1);
+    color: white;
+}
+
+#submit-pub:hover {
+    background-color: var(--color4);
+    color: black;
+}
+
+#input-pub{
+    max-width: 40%;
+    border: 1px solid var(--color3);
+    background-color: var(--color4);
 }
 
 #submit-form {
@@ -35,7 +37,7 @@
 /* Map.css */
 
 #up-pub{
-    height: 50vh; /* Adjust as needed */
+    height: 40vh; /* Adjust as needed */
 }
 
 #up-pub > .controls{
@@ -47,7 +49,7 @@
     width: 90%;
 }
 
-#up-pub > .map-container {
+#up-pub > .map > .map-container {
     width: 100%; /* Changed from 530px to 100% */
     height: 100%;
 }

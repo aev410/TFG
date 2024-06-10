@@ -27,7 +27,55 @@ function Nav() {
         </form>
         <div className="collapse navbar-collapse" id="main_nav">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-          <li className="nav-item dropdown">
+            <li className="nav-item">
+              <Link className="nav-link" to="/contact">
+                Contacto
+              </Link>
+            </li>
+            {/* Aquí puedes añadir más elementos de navegación si lo deseas */}
+            {/* <li className="nav-item">
+              <Link className="nav-link" to="/publics/21">
+                Ver Publicación
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/newPub">
+                Subir Publicación
+              </Link>
+            </li> */}
+            <li className="nav-item dropdown">
+              <Link
+                className="nav-link dropdown-toggle"
+                to="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Publicación
+              </Link>
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <Link className="dropdown-item" to="/newPub">
+                  Subir Publicación
+                </Link>
+                <div className="dropdown-divider"></div>
+                <Link className="dropdown-item" to="/publics/21">
+                  Ver publicacion
+                </Link>
+              </div>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/contact">
+                Contacto
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/login">
+                Cuenta
+              </Link>
+            </li>
+            <li className="nav-item dropdown">
               <Link
                 className="nav-link dropdown-toggle"
                 to="#"
@@ -49,39 +97,6 @@ function Nav() {
                   Cerrar Sesion
                 </button>
               </div>
-            </li>
-            {/* Aquí puedes añadir más elementos de navegación si lo deseas */} 
-            <li className="nav-item dropdown">
-              <Link
-                className="nav-link dropdown-toggle"
-                to="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Publicación
-              </Link>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <Link className="dropdown-item" to="/publics/21">
-                  Subir Publicación
-                </Link>
-                <div className="dropdown-divider"></div>
-                <Link className="dropdown-item" to="/newPub">
-                  Ver publicacion
-                </Link>
-              </div>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/contact">
-                Contacto
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">
-                Cuenta
-              </Link>
             </li>
           </ul>
         </div>
