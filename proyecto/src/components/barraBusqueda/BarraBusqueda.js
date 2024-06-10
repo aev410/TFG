@@ -30,8 +30,7 @@ const BarraBusqueda = () => {
         <div>
             <input
                 type="search"
-                class="form-control mx-2"
-                aria-label="Search"
+                className="form-control w-100"
                 placeholder="Buscar..."
                 onChange={handleInputChange}
                 onFocus={handleInputFocus}
@@ -39,14 +38,12 @@ const BarraBusqueda = () => {
                 value={busqueda}
             />
             {(isFocused || busqueda.trim() !== '') && (
-                <ul class="list-group w-100">
-                    <ul className="list-group position-absolute w-100 suggestions">
-                        {datos && datos.map((publicacion) => (
-                            <li key={publicacion.id} class="list-group-item">
-                                {publicacion.nombre}
-                            </li>
-                        ))}
-                    </ul>
+                <ul className="list-group position-absolute w-100 suggestions">
+                    {datos && datos.map((publicacion) => (
+                        <li key={publicacion.idpublicacion} className="list-group-item">
+                            <a href={`/publics/${publicacion.idpublicacion}`}>{publicacion.nombre}</a>
+                        </li>
+                    ))}
                 </ul>
              )}
              {error && <div class="mt-2 alert alert-danger">{error}</div>}

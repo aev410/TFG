@@ -21,45 +21,25 @@
   
   .mb-custom {
     border-radius: 0 0 16px 16px;
-    margin-bottom: 3rem;
-  }
-  
-  .card {
+    margin-bottom: 3rem
+}
+
+#tarjeta-user {
     width: 90%;
-    margin: 2rem auto;
-    background-color: var(--secundario);
-    border: 1px solid var(--borde);
-    box-shadow: 0 4px 8px var(--sombra);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: transform var(--transicion);
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .tarjeta {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.tarjeta {
     width: 450px;
-    background-color: var(--secundario);
-    border: 1px solid var(--borde);
-    box-shadow: 0 4px 8px var(--sombra);
-    border-radius: 16px;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    transition: transform var(--transicion);
-  }
-  
-  .tarjeta:hover {
-    transform: translateY(-5px);
-  }
-  
-  #user-root {
-    padding: 2rem;
-    background-color: var(--gris-claro);
-  }
-  
-  #user-Name {
+}
+
+#user-root {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#user-Name{
     padding-left: 3rem;
     font-size: 1.8rem;
     font-weight: bold;

@@ -4,13 +4,15 @@
 
 #publi-pag {
     background-color: var(--color2);
+    display: grid;
+    justify-items: center;
 }
 
 .card-text p {
     margin: 0;
 }
 
-.card {
+#tarjeta-pag-pub {
     background-color: var(--color4);
     border: none;
     margin-top: 15px;

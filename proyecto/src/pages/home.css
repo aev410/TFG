@@ -1,4 +1,14 @@
 
+#home-div {
+    background-color: var(--color2);
+}
+
+#home-map {
+    height: 40vh;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
 /* Estilos para el componente de Mapa */
 #home-map > .map {
     width: 100%;
@@ -7,19 +17,6 @@
 #home-map > .map > .map-container {
     width: 100%;
     height: 100%;
-}
-
-/* Estilos para UltimasPublicaciones */
-UltimasPublicaciones {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 1200px;
-    border-radius: 8px;
 }
 
 UltimasPublicaciones p {
@@ -60,4 +57,11 @@ VistaPub img {
     color: #555;
     text-align: center;
     margin: 20px 0;
+}
+
+#home-card {
+    height: 40vh;
+    width: 100%;
+    background-color: var(--color4);
+    overflow: auto;
 }

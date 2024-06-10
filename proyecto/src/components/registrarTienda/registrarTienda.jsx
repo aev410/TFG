@@ -37,21 +37,21 @@ const RegistrarTienda = () => {
     };
 
     return (
-        <form onSubmit={submitForm}>
-            <div className='input'>
+        <form onSubmit={submitForm} id="tienda-form">
+            <div className='input tienda-input'>
                 Nombre de la tienda:
-                <input type="text" value={nombreTienda} onChange={(e) => setNombreTienda(e.target.value)} required />
+                <input className="input-box" type="text" value={nombreTienda} onChange={(e) => setNombreTienda(e.target.value)} required />
             </div>
-            <div className='input'>
+            <div className='input tienda-input'>
                 Teléfono de contacto:
-                <input type="tel" value={telefono} onChange={(e) => setTelefono(e.target.value)} required />
+                <input className="input-box" type="tel" value={telefono} onChange={(e) => setTelefono(e.target.value)} required />
             </div>
-            <div className='input'>
+            <div className='input tienda-input'>
                 Dirección de contacto:
-                <input type="text" value={direccion} onChange={(e) => setDireccion(e.target.value)} required />
+                <input className="input-box" type="text" value={direccion} onChange={(e) => setDireccion(e.target.value)} required />
             </div>
 
-            <button type="submit">Subir Publicación</button>
+            <button type="submit" id="button-tienda">Subir Publicación</button>
         </form>
     );
 };

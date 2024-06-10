@@ -34,7 +34,7 @@ const VistaUser = () => {
     //Este codigo esta usando la libreria de bootstrap con React, los nombres de los componentes se transportan a las clases de bootstrap
     return (
         < Container fluid className = "bg-light py-3" id = "user-root" >
-            <Card className="mb-custom">
+            <Card className="mb-custom" id="tarjeta-user">
                 <Card.Body>
                     {/* Esta es la carta que muestra la info del usuario y parcialmente la de la tienda, si existe esta, tiene los items en el centro y a cada esquina */}
                     <Row className="align-items-center">

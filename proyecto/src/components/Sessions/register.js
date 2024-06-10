@@ -3,6 +3,7 @@ import "./session.css";
 import ValidadorCorreo from './formatoCorreo';
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -50,7 +51,7 @@ const Register = () => {
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '130vh' }}>
+    <div className="container-fluid" id="register-page">
       <div className="login-container">
         <h2>Crear una cuenta</h2>
 
