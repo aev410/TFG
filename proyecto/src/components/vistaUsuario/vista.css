@@ -10,6 +10,10 @@
     background-color: var(--color4);
 }
 
+.tarjeta {
+    width: 450px;
+}
+
 #user-root {
     padding-left: 15px;
     padding-right: 15px;

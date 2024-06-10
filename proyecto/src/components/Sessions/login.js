@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import "./session.css";
+<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom'
+=======
+import {useNavigate} from 'react-router-dom'
+>>>>>>> a74df828e215cb38f19019253e46283d06d7f5ec
 import ValidadorCorreo from './formatoCorreo';
 import { Link } from "react-router-dom";
 import axios from 'axios';
@@ -47,6 +51,7 @@ const Login = () => {
     };
 
     return (
+<<<<<<< HEAD
         <div className="container-fluid" id="login-page">
             <div className="login-container">
                 <h2>Iniciar sesión</h2>
@@ -68,6 +73,27 @@ const Login = () => {
                 <div className="bottom-text">
                     <p>No tienes una cuenta? <Link to="/register" className="black-link">Registrarse</Link></p>
                 </div>
+=======
+        <div className="login-container">
+            <h2>Iniciar sesión</h2>
+            <form onSubmit={handleSubmit}>
+                <div className="input-group">
+                    <input type="text" id="correo" name="correo" minLength="5" maxLength="50" required />
+                    <label htmlFor="correo">Correo</label>
+                    <div className="bar"></div>
+                </div>
+                <ValidadorCorreo />
+                <div className="input-group">
+                    <input type="password" id="contra" name="contra" minLength="5" maxLength="50" required />
+                    <label htmlFor="contra">Contraseña</label>
+                    <div className="bar"></div>
+                </div>
+                {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+                <button type="submit" className="session-submit">Iniciar sesión</button>
+            </form>
+            <div className="bottom-text">
+                <p>No tienes una cuenta? <Link to="/register" className="black-link">Registrarse</Link></p>
+>>>>>>> a74df828e215cb38f19019253e46283d06d7f5ec
             </div>
         </div>
     );

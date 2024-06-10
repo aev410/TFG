@@ -17,16 +17,15 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LayoutRoute><Home /></LayoutRoute>} />
-        <Route path="/login" element={<LoginRoute><LoginPage /></LoginRoute>} />
-        <Route path="/register" element={<LoginRoute><Register /></LoginRoute>} />
-        <Route path="/contact" element={<LoginRoute><Contact /></LoginRoute>} />
-        <Route path="/user" element={<LayoutRoute><VistaUser /></LayoutRoute>} />
-        <Route path="/register/tienda" element={<LayoutRoute><RegistrarTienda/> </LayoutRoute>} />
-        <Route path="/user/tienda" element={<> </>} />
-        <Route path="/newPub" element={<LayoutRoute><UploadItem /></LayoutRoute>} />
-        <Route path="/publics" element={<LayoutRoute> <MostrarPublicaciones/> </LayoutRoute>} />
-        <Route path="/publics/:idPub" element={<LayoutRoute><PaginaPub id={useParams()} /></LayoutRoute>} />
+        <Route path="/" element={<Home/>}/>
+        <Route path="/login"  element={<><LoginPage/></>}/>
+        <Route path="/register"  element={<><Register/></>}/>
+        <Route path="/user" element={<><VistaUser/></>}/>
+        <Route path="/register/tienda" element={<>  </>}/>
+        <Route path="/user/tienda" element={<>  </>}/>
+        <Route path="/newPub" element={<><UploadItem/></>}/>
+        <Route path="/publics" element={<>  </>}/>
+        <Route path="/publics/:idPub" element={<><PaginaPub id={useParams()}/></>}/>
       </Routes>
     </Router>
 
