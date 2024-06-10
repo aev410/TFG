@@ -1,11 +1,5 @@
-/* Variables de colores y configuraciones principales */
-:root {
-  --principal: #f8f9fa; /* Color de ejemplo, ajusta según sea necesario */
-  --color1: #007bff; /* Color de ejemplo, ajusta según sea necesario */
-  --color2: #0056b3; /* Color de ejemplo, ajusta según sea necesario */
-}
 
-#nav-container {
+#navbar-container {
   background-color: var(--principal);
 }
 

@@ -45,8 +45,9 @@ VistaPub p {
     color: #666;
 }
 
-VistaPub img {
+#tarjeta-img > img {
     max-width: 100%;
+    max-width: 250px;
     border-radius: 8px;
 }
 

@@ -10,8 +10,12 @@
     background-color: var(--color4);
 }
 
-.tarjeta {
-    width: 450px;
+#tarjeta-img > img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: fill;
+  max-height: 250px;
 }
 
 #user-root {

@@ -11,6 +11,7 @@ const register = require('./routes/register.js')
 const showUser = require('./routes/mostrarUsuario.js')
 const path = require('path')
 const contact = require('./routes/contact.js')
+const tienda = require('./routes/tienda.js')
 const verifyToken = require('./middleware/authMiddleware.js')
 
 const app = express()
@@ -41,6 +42,7 @@ app.use('/login', login)
 app.use('/register', register)
 app.use('/contact', contact)
 app.use('/user', verifyToken, showUser)
+app.use('/tienda', tienda)
 
 // Rutas protegidas
 // app.use('/protected', verifyToken, (req, res) => {

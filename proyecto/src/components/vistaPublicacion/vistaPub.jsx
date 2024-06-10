@@ -29,7 +29,7 @@ const VistaPub = ({ id }) => {
         <div>
           <Carousel>
             {imagenes.map((src, index) => (
-              <Carousel.Item key={index}>
+              <Carousel.Item key={index} id="tarjeta-img">
                 <img
                   className="d-block w-100"
                   src={`http://localhost:3000/images/${src}`}

@@ -30,7 +30,7 @@ const BarraBusqueda = () => {
         <div style={{width: "100%"}}>
             <input
                 type="search"
-                className="form-control w-100"
+                className="form-control"
                 placeholder="Buscar..."
                 onChange={handleInputChange}
                 onFocus={handleInputFocus}

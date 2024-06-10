@@ -71,7 +71,7 @@ const VistaUser = () => {
                         {publicacionData.map((pub, i) => (
                             <Col md={{ span: 5, offset: i % 2 === 0 ? 1 : 0 }} key={i} className="d-flex">
                                 {/* Aqui mostramos las publicaciones, con estilo de carta Bootstrap*/}
-                                <VistaPub id={pub.idpublicacion} className="card h-100" />
+                                <VistaPub id={pub.idpublicacion} className="card h-100 publicaciones-user"/>
                             </Col>
                         ))}
                     </Row>

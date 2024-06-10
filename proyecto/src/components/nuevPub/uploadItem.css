@@ -24,16 +24,6 @@
     background-color: var(--color4);
 }
 
-#submit-form {
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #4caf50;
-    color: white;
-    cursor: pointer;
-}
-
 /* Map.css */
 
 #up-pub{

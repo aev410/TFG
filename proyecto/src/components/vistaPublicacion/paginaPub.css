@@ -20,7 +20,7 @@
     width: 40%;
 }
 
-.carousel-item img {
+#img-pagina-pub img {
     width: 100%;
     height: auto;
     max-height: 500px;
