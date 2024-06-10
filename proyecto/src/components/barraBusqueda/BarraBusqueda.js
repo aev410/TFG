@@ -27,7 +27,7 @@ const BarraBusqueda = () => {
 
     return (
 
-        <div>
+        <div style={{width: "100%"}}>
             <input
                 type="search"
                 className="form-control w-100"

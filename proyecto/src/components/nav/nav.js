@@ -56,8 +56,8 @@ function Nav() {
         
   }, [userEmail])
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top p-0 mb-2">
-      <div className="container-fluid">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top p-0">
+      <div className="container-fluid" id="nav-container">
         <Link className="navbar-brand mx-4" to="/">
           <img src={logo} alt="Logo" />
         </Link>
@@ -69,7 +69,7 @@ function Nav() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <form className="d-flex w-100">
+        <form className="d-flex w-100" id="barra-busqueda">
           <BarraBusqueda />
         </form>
         <div className="collapse navbar-collapse" id="main_nav">

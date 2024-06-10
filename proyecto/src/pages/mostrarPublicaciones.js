@@ -13,11 +13,11 @@ const MostrarPublicaciones = () => {
     }
 
     return (
-        <div className="col">
+        <div className="container-fluid" id="all-publicaciones">
             <div className="d-flex justify-content-center">
-                <div className="card" id="home-card">
+                <div className="card" id="publicaciones-card">
                     <div className="card-body">
-                        <div className="card-title" style={{ fontSize: "3rem", fontWeight: "bold" }}>Publicaciones</div>
+                        <div className="card-title" style={{ fontSize: "3rem", fontWeight: "bold", borderBottom: "1px solid var(--color1)" }}>Publicaciones</div>
                         <div className="row">
                             {datos.map((publicacion, index) => (
                                 <div className="col-3 mb-2" key={index}>
