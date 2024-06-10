@@ -55,7 +55,7 @@ const PaginaPub = () => {
 
     return (
         <Container fluid className="py-3" id="publi-pag">
-            <Card>
+            <Card id="tarjeta-pag-pub">
                 <Card.Body>
                     {imagenes.length > 0 ? (
                         <Carousel>

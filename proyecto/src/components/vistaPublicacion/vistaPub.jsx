@@ -25,7 +25,7 @@ const VistaPub = ({ id }) => {
   
   return (
     <Link to={vinculo}>
-      <div className='tarjeta'>
+      <div className='tarjeta' id="default-width-tarjeta">
         <div>
           <Carousel>
             {imagenes.map((src, index) => (

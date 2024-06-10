@@ -27,7 +27,7 @@ const BarraBusqueda = () => {
         <div>
             <input
                 type="search"
-                className="form-control mx-2"
+                className="form-control w-100"
                 placeholder="Buscar..."
                 onChange={handleInputChange}
                 onFocus={handleInputFocus}
@@ -37,8 +37,8 @@ const BarraBusqueda = () => {
             {(isFocused || busqueda.trim() !== '') && (
                 <ul className="list-group position-absolute w-100 suggestions">
                     {datos && datos.map((publicacion) => (
-                        <li key={publicacion.id} className="list-group-item">
-                            {publicacion.nombre}
+                        <li key={publicacion.idpublicacion} className="list-group-item">
+                            <a href={`/publics/${publicacion.idpublicacion}`}>{publicacion.nombre}</a>
                         </li>
                     ))}
                 </ul>
